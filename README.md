@@ -1,4 +1,0 @@
-infinite-buyer
-==============
-
-Infinite Buyer 
