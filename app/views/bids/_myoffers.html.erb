@@ -1,0 +1,25 @@
+<% if @my_offers.present? %>
+  <table style='table-layout:fixed;'>
+    <% @my_offers.each do |offer| %>
+      <tr class="ib-smo-tab-bg">
+        <td width="280px" align="left"><%= link_to offer.text, customized_bid_path(offer), :class => 'no-decoration indigo-color' %></td>
+        <td width="145px" align="left"><%= offer.user.username %></td>
+        <td width="85px" align="right"><%= offer.created_at.strftime('%m/%d/%Y') %></td>
+        <td width="122px" align="right"><%= number_to_currency offer.price %></td>
+        <td width="260px" align="left">
+          <a class="no-decoration" href="<%= customized_bid_path(offer) %>"><img src="/assets/ib_smo_accept.png" alt="Accept" title="Accept" /></a>
+          <a class="no-decoration" href="<%= customized_bid_path(offer) %>"><img src="/assets/ib_smo_counter.png" alt="Counter" title="Counter" /></a>
+          <%= link_to image_tag('ib_smo_decline.png', :alt => "Decline", :title => "Decline"), decline_offer_path(offer), :data => { :confirm => "Are you sure\n you want to decline?"} %>
+        </td>
+      </tr>
+      <tr><td></td></tr>
+    <% end %>
+
+  </table>
+<% else %>
+  <div class="seller-alert ib-empty-messages" style="margin-top: 50px;">
+    <span>
+      No current offers available yet.
+    </span>
+  </div>
+<% end %>

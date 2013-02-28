@@ -1,0 +1,21 @@
+<% if @declined_offers.present? %>
+  <table>
+    <% @declined_offers.each do |doffer| %>
+      <tr class="ib-smo-tab-bg">
+        <td width="39%" align="left" style="color:#144e8d;"><%= doffer.text %></td>
+        <td width="17%" align="left" ><%= doffer.user.username if doffer.user.present?  %></td>
+        <td width="11%" align="right"><%= doffer.created_at.strftime("%m/%d/%Y") %></td>
+        <td width="14%" align="right"><%= number_to_currency doffer.price %></td>
+        <td width="20%" align="left">
+        </td>
+      </tr>
+      <tr><td></td></tr>
+    <% end %>
+  </table>
+<% else %>
+  <div class="seller-alert ib-empty-messages" style="margin-top: 50px;">
+    <span>
+      There are no declined offers available yet.
+    </span>
+  </div>
+<% end %>

@@ -1,0 +1,20 @@
+<div>
+  <h2 style="color:#144E8D; font-family: Arial; font-weight: bold; font-size : 22px; text-align:left; background:#CCCCCC; vertical-align:middle; ">Hello <%= @offer.user.buyer_account.first_name %>  </h2>
+  <p style="font-family: Arial; font-size: 16px; margin-top:20px;"> Congratulations on your purchase of "<%= @offer.text %>"! We appreciate you using the Infinite Buyer service, and hope that you share your positive buying experience with your friends
+  <ul class="ib-social-media" style="margin-top:0px;">
+    <li><a href="http://www.facebook.com/InfiniteBuyer" title="Connect with us on Facebook" target="_blank" class="facebook"></a>
+    </li>
+    <li><a href="http://twitter.com/#!/InfiniteBuyer" title="Follow us on Twitter" target="_blank" class="twitter"></a></li>
+    <li><a href="#" title="Connect with us on LinkedIn" target="_blank" class="linkedin"></a>
+    </li>
+  </ul>
+</p>
+<p style="font-family: Arial; font-size: 16px; margin-top:20px;">Infinite Buyer is a great place to make a Buyer Offer for any product or service - so the next time you want to buy something, don't wait for a sale or daily deal, Make Your Own Deal anytime you want!</p>
+
+<p style="font-family: Arial; font-size: 16px; margin-top:20px;">You will receive an email survey within the next 10 days to ask you about your buying experience and to make sure you are happy with the item you have purchased. </p>
+<p style="font-family: Arial; font-size: 16px; margin-top:20px;"> If you have any problems or issues with your purchased item(s), please try to first communicate with your Seller.  </p>
+</div>
+
+<% content_for :email_title do %>
+  <span>Thank you Mail</span>
+<% end %>

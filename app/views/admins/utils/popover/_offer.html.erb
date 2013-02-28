@@ -1,0 +1,3 @@
+<%= javascript_tag do %>
+    $('#offer_<%= offer.id %>').popover({title: '<%= escape_javascript offer.text %>', content: 'Created At: <%= offer.created_at %> <br/> Updated At: <%= offer.updated_at %> <br/> Email: <%= offer.user.email %>'})
+<% end %>

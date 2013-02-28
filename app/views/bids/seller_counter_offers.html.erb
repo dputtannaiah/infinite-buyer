@@ -1,0 +1,24 @@
+<!-- Content Starts Here -->
+<div id="ib-content-wrapper">
+  <div class="ib-content">
+    <div class="ib-content-title" style="padding-bottom:25px;">MyOffers</div>
+
+    <div class="ib-smo-accepted" style="height:105px;">
+      <%= render :partial => 'offers_categorization' %>
+      <ul class="submenu">
+        <%= render :partial => 'counter_submenu' %>
+      </ul>
+    </div>
+
+    <div class="ib-myoffer-tab">
+      <%= render :partial => 'counter_bids_detail' %>
+    </div>
+
+    <div id="bids-paginate">
+      <%= paginate @bids, :remote => true %>
+    </div>
+
+  </div>
+</div>
+<!-- Contents Ends Here -->
+

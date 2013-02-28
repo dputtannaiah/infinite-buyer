@@ -1,0 +1,7 @@
+<h2>Administration Portal</h2>
+<br/>
+<br/>
+<% if admin_signed_in? %>
+  <p><%= link_to "Blog Posts", list_blog_posts_url %></p>
+  <p><%= link_to "Blog Comments", blog_comments_url %></p>
+<% end %>

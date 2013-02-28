@@ -1,0 +1,15 @@
+<% if @bids.present? %>
+  <li class="buyer text-left-align" style="width:169px">Description</li>
+  <li class="buyer text-left-align" style="width:133px">Buyer<br />User ID</li>
+  <li class="buyer text-right-align" style="width:79px">Buyer<br />Offer Date</li>
+  <li class="buyer text-right-align" style="width:91px">Buyer<br />Offer</li>
+  <li class="buyer text-right-align" style="width:89px">Counter</li>
+  <li class="buyer text-right-align" style="width:66px">Shipping</li>
+  <li class="buyer" style="width:50px">Status</li>
+  <li class="sort">
+    <label>Sort by:</label>
+    <%= form_tag counter_offers_path, :id => 'acc-bids-sort', :remote => true do %>
+      <%= select_tag 'sort_key', options_for_select([['Recent activity', 'created_at'],['Description', 'text'],['Buyer User ID', 'username'],['Buyer Offer Date','created_at'],['Buyer Offer','price'],['Shipping','shipping']], :selected => @selected) %>
+    <% end %>
+  </li>
+<% end %>

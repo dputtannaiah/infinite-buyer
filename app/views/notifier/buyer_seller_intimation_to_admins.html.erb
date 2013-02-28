@@ -1,0 +1,25 @@
+<div style="color:#144E8D !important; font-family: Arial; font-weight: bold; font-size: 18px; padding-bottom:20px; text-align:left;">
+  Great News!!&nbsp;&nbsp;A new <%= @type.capitalize %> has registered with Infinite Buyer. <br />
+  <ul style="list-style:none;font-weight: normal; font-size: 14px; color:black;">
+    <li><span style="font-weight: bold;"><%= @type.capitalize %> Screen Name :</span> <%= @user.username %> </li>
+    <% if @type =~ /seller/ %>
+      <li><span style="font-weight: bold;">Company : </span><%= @account.company %></li>
+    <% end %>
+    <li><span style="font-weight: bold;">First Name : </span><%= @account.first_name %></li>
+    <li><span style="font-weight: bold;">Last Name : </span><%= @account.last_name %></li>
+    <li><span style="font-weight: bold;">Email ID : </span><%= @user.email %></li>
+    <li><span style="font-weight: bold;">City : </span><%= @account.city %></li>
+    <li><span style="font-weight: bold;">State : </span><%= @account.state %></li>
+    <li><span style="font-weight: bold;">Zip : </span><%= @account.zip %></li>
+    <li><span style="font-weight: bold;">Phone Number :</span> <%= @account.phone1 if @account.phone1 %>-<%= @account.phone2  if @account.phone2 %>-<%= @account.phone3 if @account.phone3 %></li>
+    <% if @type =~ /seller/ %>
+      <li>&nbsp;</li>
+      <li style="text-align:justify;"><span style="font-weight: bold;">Categories</span> : <%= @user.categories.map(&:name).join(', ') %></li>
+    <% end %>
+  </ul>
+</div>
+
+<% content_for :email_title do %>
+  <span>Great news - Infinite Buyer</span>
+<% end %>
+

@@ -1,0 +1,15 @@
+configatron.site_address = 'ib.dev'
+
+configatron.google.analytics = false
+
+configatron.omniAuth.twitter.api_key = 'lgzv4DB5KzaoG8MovZ6Wg'
+configatron.omniAuth.twitter.secret_key = '1a9d4NDDN5NLZQkhGPDuLAcXpkob2LjmB5GKOPK1U8'
+
+configatron.omniAuth.facebook.api_key = '244253332318221'
+configatron.omniAuth.facebook.secret_key = '07338b5c23690611c214fe702cacf834'
+
+configatron.notifier.admin = 'admin@qwinixtech.com'
+
+configatron.paypal.merchant = 'merchant@qwinixtech.com'
+
+configatron.development.email = 'developer@qwinixtech.com'

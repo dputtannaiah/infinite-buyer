@@ -1,0 +1,115 @@
+<% if current_user.seller? %>
+
+  <p class="ib-my-rf">* Required fields</p>
+  <%= form_for @account, :url => update_seller_url, :remote => true do |f| %>
+    <div>
+      <label class="ib-bacc-left">Company</label>
+      <%= f.text_field :company, :id => "SellerCompany", :class => " ib-bacc-big-input", :value => my_seller_account(:company) %>
+    </div>
+
+    <div>
+      <p id="SellerCompanyError" class="ib-acc-info-error error" style="display:none;">&nbsp;</p>
+    </div>
+
+    <div>
+      <%= f.label 'First Name*', :class => 'ib-bacc-left ib-bacc-name-label' %>
+      <%= f.label 'Last Name*', :class => 'ib-bacc-right ib-bacc-name-label' %>
+      <%= f.text_field :first_name, :id => "SellerFName", :class => " ib-bacc-small-input", :value => my_seller_account(:first_name) %>
+      <%= f.text_field :last_name, :id => "SellerLName", :class => "ib-bacc-small-input", :value => my_seller_account(:last_name) %>
+    </div>
+
+    <div>
+      <p id="SellerFnameError" class="ib-acc-info-error error">First Name is a required field.</p>
+      <p id="SellerLnameError" class="ib-acc-info-error error">Last Name is a required field.</p>
+    </div>
+
+    <div>
+      <label class="ib-bacc-left ib-bacc-name-label ">Infinite Seller Screen Name*</label>
+      <label class="ib-bacc-right ib-bacc-name-label ">E-mail ID*</label>
+      <%= text_field_tag 'user[username]', (@account.user.username.presence || ''), :id => "SellerName", :class => " ib-bacc-small-input" %>
+      <%= text_field_tag 'user[email]', (@account.user.email.presence || ''), :id => "SellerEmail", :class => " ib-bacc-small-input" %>
+    </div>
+
+    <div>
+      <p id="SellerUsernameError" class="ib-acc-info-error error">Username is a required field.</p>
+      <p id="SellerEmailError" class="ib-acc-info-error error">Email is a required field.</p>
+    </div>
+
+    <div>
+      <label class="ib-bacc-left">PayPal Email ID*</label>
+      <%= f.text_field :paypal_email, :id => 'PaypadEmailID', :class => 'ib-bacc-big-input' %>
+    </div>
+
+    <div>
+      <p id="SellerPaypalEmailError" class="ib-acc-info-error error">Paypal Email is required field.</p>
+    </div>
+
+
+    <div>
+      <%= f.label :Address, :class => "ib-bacc-left" %>
+      <%= f.text_field :address, :id => "SellerAddress", :class => "ib-bacc-big-input", :value => my_seller_account(:address) %>
+    </div>
+    <div>
+      <p id="SellerAddressError" class="ib-acc-info-error error" style="width:400px;"></p>
+    </div>
+    <div>
+      <%= f.label "Apt/Suite/Other", :class => "ib-bacc-left" %>
+      <%= f.text_field :apt_suite_others, :id => "BuyerApt", :class => "ib-bacc-big-input", :value => my_seller_account(:apt_suite_others) %>
+    </div>
+     <div>
+      <p id="BuyerAptError" class="ib-acc-info-error error"></p>
+    </div>
+    <div>
+      <%= f.label :City, :class => "ib-bacc-left ib-bacc-city-label" %>
+      <label class="ib-bacc-right ib-bacc-zip-label ib-pr28">Zip Code*</label>
+      <%= f.text_field :city, :id => "SellerCity", :class => "ib-bacc-city-input", :value => my_seller_account(:city) %>
+      <%= f.text_field :zip, :id => "SellerZip", :class => "required ib-bac-zip-input", :value => my_seller_account(:zip), :maxlength => 5  %>
+    </div>
+  <div>
+    <p id="SellerCityError" class="ib-acc-info-error error"></p>
+  </div>
+
+    <p id="SellerZipError" class="ib-acc-info-error ib-zip-margin error">Zip Code is a required field.</p>
+    <p id="SellerZipError" class="ib-acc-info-error ib-zip-margin error">Zip Code should be at least 5 digits.</p>
+
+    <div>
+      <%= f.label :State, :class => "ib-bacc-left ib-bacc-city-label" %>
+      <label class="ib-bacc-right ib-bacc-search-label ib-sr">Search radius for location based services*</label>
+      <%= select_tag 'seller_account[state]', options_for_select(Account.all_states.collect { |state| [state, state] }, :selected => my_seller_account(:state)), {:class => "ib-bacc-state-select"} %>
+      <%= select_tag 'seller_account[search_radius]', options_for_select(Account.radii.collect { |radius| [radius, radius] }, :selected => my_seller_account(:search_radius)), {:class => "ib-bacc-search-select"} %>
+    </div>
+
+    <div>
+      <label class="ib-bacc-left ib-bacc-city-label">Phone*</label>
+      <label class="ib-bacc-right ib-bacc-miles-label ib-mz">miles from zip code</label>
+      <%= f.text_field :phone1, :id => "Phone1", :class => "ib-fl ib-ml18 ib-bacc-phone-input", :maxlength => "3", :value => my_seller_account(:phone1) %>
+      <span class="ib-bacc-seperator"></span>
+      <%= f.text_field :phone2, :id => "Phone2", :class => "ib-bacc-phone-input1", :maxlength => "3", :value => my_seller_account(:phone2) %>
+      <span class="ib-bacc-seperator"></span>
+      <%= f.text_field :phone3, :id => "Phone3", :class => "ib-bacc-phone-input2", :maxlength => "4", :value => my_seller_account(:phone3) %>
+      <%= f.hidden_field :user_id, :value => current_user.id %>
+    </div>
+
+    <div>
+      <p id="SellerPhone1Error" class="error float-none ib-acc-info-error">Phone Number Area code is required.</p>
+      <p id="SellerPhone2Error" class="error float-none ib-acc-info-error">Phone Number Prefix is required.</p>
+      <p id="SellerPhone3Error" class="error float-none ib-acc-info-error">Phone Number Suffix is required.</p>
+    </div>
+    <div class="clear"></div>
+    <div class="edit-category">
+      <%= link_to image_tag('edit_category_btn.png'), category_list_url %>
+    </div>
+    <div class="ib-myaccount-buttons">
+      <div class="float_l">
+        <%= link_to image_tag('ib-buyer-cancel.gif'), root_url, :class => 'ib-sai-cancel' %>
+      </div>
+      <div class="float_l" style="margin-left:460px;">
+        <%= image_submit_tag 'ib-buyer-update.gif', :class => "ib-sai-update", :id => 'SellerSubmit' %>
+      </div>
+      <div class="clear"></div>
+    </div>
+  <% end %>
+<% else %>
+  <label>No Seller Account with this User.</label>
+<% end %>
+

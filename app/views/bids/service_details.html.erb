@@ -1,0 +1,60 @@
+<!-- Content Starts Here -->
+<div id="ib-content-wrapper">
+  <div class="ib-content" style="padding-top:7px;">
+    <div class="ib-bpd-left-content">
+      <div style="margin-bottom:20px;">
+        <%= link_to image_tag('ib_blue_back_arrow.png', :alt => 'Back', :title => 'Back'), request.referer %>
+      </div>
+      <% @bid.photos.each do |photo| %>
+        <div class="ib-bpd-left-img-bg">
+          <%= image_tag photo.image_url(:thumb), :alt => "Buyer Product Image", :title => "Buyer Product Image", :border => '0' %>
+        </div>
+      <% end %>
+
+    </div>
+
+    <div class="ib-bpd-right-content">
+      <div class="ib-content-title" style="padding-bottom:20px;">Service Details</div>
+      <div class="ib-bpd-heading">
+        <table>
+          <tr>
+            <td width="60%" align="left"><h2><%= @bid.offer.text if @bid.offer %></h2></td>
+            <td width="18%" align="right">
+              <div>
+                <span class="ib-details">Original Offer<br />price</span><br />
+                <span class="ib-price">
+                  <%= number_to_currency @bid.offer.price if @bid.offer.present? %>
+                </span>
+              </div>
+            </td>
+            <td width="10%" align="right">
+              <div>
+                <span class="ib-details">Accepted/Countered<br />price</span><br />
+                <span class="ib-price"><%= number_to_currency @bid.price %></span></div>
+            </td>
+            <td width="1%" align="center" style="border-right:none;">
+              <% if (@bid.offer.get_offer_status =~ /open/i || @bid.offer.get_offer_status =~ /expiring/i) && buyer? %>
+                <a href="<%= buy_purchase_path(@bid.id)%>">
+                  <img src="/assets/ib_bpd_buy_now.png" alt="Buy Now" title="Buy Now" /></a>
+              <% end %>
+            </td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="ib-bpd-below-heading">
+        <p>Seller : <strong><%= @bid.user.username if @bid.user.present? %></strong></p>
+      </div>
+      <div class="ib-bpd-rhs-content">
+        <h2 class="ib-bpd-content-heading">Brief Description</h2>
+        <p><%= raw @service.brief_description %>
+        </p>
+        <h2 class="ib-bpd-content-heading">Detailed Description</h2>
+        <p><%= raw @service.detailed_description %></p>
+        <h2 class="ib-bpd-content-heading">Additional Information</h2>
+        <p><%= raw @service.additional_info %></p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Contents Ends Here -->

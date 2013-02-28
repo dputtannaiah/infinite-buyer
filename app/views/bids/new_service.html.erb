@@ -1,0 +1,197 @@
+<!-- Content Starts Here -->
+<div id="ib-content-wrapper">
+  <div class="ib-content" style="padding:4px 0 350px 0">
+    <%= error_messages_for @bid %>
+    <br /><br />
+
+    <div class="ib-smo-accepted" style="height:115px;">
+      <ul>
+        <li><a style="font-size:22px; padding:11px 40px; color:#000000;">Products</a></li>
+        <li><a class="active" style="font-size:22px; padding:11px 40px; color:#646363;">Services</a></li>
+      </ul>
+      <ul class="submenu2">
+        <li><a class="desc" href="#"><span class="ib-p-desc">Service Description</span> <br/><span class="ib-p-name" style=""><%= @offer.text %></span></a></li>
+        <li><a class="buyer" href="#"><span class="ib-p-desc">Offer</span> <br /><span class="ib-p-name" style="color:#000000;"><%= number_to_currency @offer.price %></span></a></li>
+        <li><a class="buyer" href="#"><span class="ib-p-desc">Buyer ID</span><br /><span class="ib-p-name" style="color:#000000;"><%= @offer.user.username  if @offer.user.present? %></span></a></li>
+        <li><a class="buyer" href="#" style=" border-right:none;"><span class="ib-p-desc">Expiration Date</span><br /><span class="ib-p-name" style="color:#000000;"><%= @offer.expire_at.strftime("%m/%d/%Y").presence || '' %></span></a></li>
+      </ul>
+    </div>
+
+    <!-- Service Details Here -->
+    <%= form_for @bid, :url => create_service_path(@offer) ,:html => {:id => 'accept-counter-form', :multipart => true } do |f| %>
+      <%= hidden_field_tag 'offer_id', @offer.id %>
+      <div class="ib-sm-product">
+        <p style="font-weight:bold;font-size:14px;;color:#3a3939; padding:3px 0 10px 0;">The more information you provide, the more likely your product or service will be selected.</p>
+        <div>
+          <label>Brief <br />Description</label>
+          <%= text_area_tag 'service[brief_description]', @service.brief_description.presence || @offer.text.presence || '', :style => 'height:90px;', :id => '', :class => 'wymeditor'  %>
+        </div>
+        <div>
+          <label class="ib-scp-left">Detailed<br />Description<br />of Service</label>
+          <%= text_area_tag 'service[detailed_description]', @service.detailed_description.presence || '', :style => " height:90px;", :class => 'wymeditor' %>
+        </div>
+        <div>
+          <label class="ib-scp-left">Additional Information</label>
+          <%= text_area_tag 'service[additional_info]', @service.additional_info.presence || '', :style => "height:90px;", :class => 'wymeditor' %>
+        </div>
+        <div>
+          <label class="ib-scp-left">Photos</label>
+        </div>
+        <div class="bid-photo-container">
+          <%= f.fields_for :photos do |photo| %>
+            <%= render "photo_fields", :f => photo %>
+          <% end %>
+
+          <div class="remove-photos-path">
+            <%= link_to_add_fields 'Add More Photos', f, :photos %>
+          </div>
+        </div>
+      </div>
+      <!-- Product Details Ends Here -->
+
+      <div style="width:270px; float:right; overflow:hidden">
+
+        <!-- Accept offer starts -->
+        <div class="ib-seller-offer-price" id="accept-bid-form">
+          <div>
+            <label class="ib-sop-left" style="padding-top:10px;">Offer Price</label>
+            <%= f.text_field :price, :value => @offer.price, :readonly => true, :id => "model", :class => "ib-sop-left", :style => "width:105px; float:right; height:22px; background-color:#E6E6E6; margin:7px 5px 10px 0px;font-size:18px; color:#000000" %>
+          </div>
+
+          <div>
+            <label class="ib-sop-left" style="line-height: 18px;float:left; ">Expiration <br /> Date</label>
+            <%= f.text_field :expires_at, :id => 'accept-datepicker', :class => "ib-sop-left", :style => "width:82px; float:left; height:18px;  margin:3px 2px 0 0px;font-size:14px; color:#000000" %>
+          </div>
+
+          <div style="margin-top:6px;">
+            <p id="acceptDateError" class="error" style="font-size:11px;">Please select a valid Offer expiry date and Accept.</p>
+          </div>
+          <%= f.hidden_field :offer_id, :value => @offer.id %>
+          <div style="float:right; cursor:pointer; margin:10px 15px 0 0;">
+            <%= image_submit_tag '/assets/ib_accept.png', :id => 'accept-submit', :class => 'wymupdate' %>
+          </div>
+
+        </div>
+        <!-- Accept offer ends -->
+
+        <!-- Counter offer starts -->
+        <div class="ib-seller-offer-price" id="counter-bid-form" style="margin-top:15px;">
+          <div>
+            <label class="ib-sop-left" style="padding-top:10px;">Counter Price</label>
+            <%= f.text_field :price, :value => (@bid.price.presence || @offer.price), :id => "model", :class => "ib-sop-left", :style => "width:105px; float:right; height:22px; margin:7px 5px 10px 2px;font-size:18px; color:#000000" %>
+          </div>
+
+          <div>
+            <label class="ib-sop-left" style="line-height: 18px;float:left; ">Expiration <br /> Date</label>
+            <%= f.text_field :expires_at, :id => 'counter-datepicker', :class => "ib-sop-left", :style => "width:82px; float:left; height:18px;  margin:3px 2px 0 0px;font-size:14px; color:#000000" %>
+            <%= f.hidden_field :offer_id, :value => @offer.id %>
+          </div>
+          <div style="margin-top:6px;">
+            <p id="counterDateError" class="error" style="font-size:11px;">Please select a valid Offer expiry date and Accept.</p>
+          </div>
+          <div style="float:right; cursor:pointer; margin:10px 15px 0 0;">
+            <%= image_submit_tag '/assets/ib_counter.png', :id => 'counter-submit'  %>
+          </div>
+        </div>
+        <!-- Counter offer ends -->
+
+        <div style="margin-top:30px;">
+          <a href="/my-offers" style="float:left; margin:30px 0 0 10px;">
+            <img src="/assets/ib_cancel2.png" alt="Cancel" title="Cancel" /></a>
+          <%= link_to image_tag('ib_smo_decline.png', :alt => "Decline", :title => "Decline"), decline_offer_path(@offer), :data => {:confirm => "Are you sure\n you want to decline?"}, :style => "float:right; margin:30px 0 0 10px;" %>
+        </div>
+      </div>
+    <% end %>
+
+  </div>
+</div>
+<!-- Contents Ends Here -->
+
+<% content_for :js do  %>
+  <%= javascript_include_tag 'wymeditor/application' %>
+<% end %>
+
+<% content_for :css do  %>
+  <%= stylesheet_link_tag 'wymeditor/application', :media => "all" %>
+<% end %>
+
+<script type="text/javascript">
+  jQuery(document).ready(function(){
+    var first = $("div#accept-bid-form input[type='text']:first");
+    var second = $("div#counter-bid-form input[type='text']:first");
+
+    var num1 = $("div#accept-bid-form input[type='text']:first")
+    //var num2 = $("div#accept-bid-form input[type='text']:eq(1)")
+
+    var num4 = $("div#counter-bid-form input[type='text']:first")
+    //var num5 = $("div#counter-bid-form input[type='text']:eq(1)")
+
+    num1.val(parseFloat(num1.val()).toFixed(2));
+    //num2.val(parseFloat(0.00).toFixed(2));
+    num4.val(parseFloat(num4.val()).toFixed(2));
+    //num5.val(parseFloat(0.00).toFixed(2));
+
+    var calculate_total = function(){
+      var a = num1.val();
+      //var b = num2.val();
+      var c = num4.val();
+      //var d = num5.val();
+      //$("div#accept-bid-form input[type='text']:eq(2)").val((parseFloat(a)+parseFloat(b)).toFixed(2));
+      //$("div#counter-bid-form input[type='text']:eq(2)").val((parseFloat(c)+parseFloat(d)).toFixed(2));
+    }
+
+    //Function to restrict some keys
+    var restrict_keys = function(event) {
+      // Allow: backspace, delete, tab, escape, and enter
+      if ( event.keyCode == 46 || event.keyCode == 8 || event.keyCode == 9 || event.keyCode == 27 || event.keyCode == 13 ||
+        // Allow: Ctrl+A
+      (event.keyCode == 65 && event.ctrlKey === true) || event.keyCode == 110 ||
+        // Allow: home, end, left, right
+      (event.keyCode >= 35 && event.keyCode <= 39)) {
+        // let it happen, don't do anything
+        return;
+      }
+      else {
+        // Ensure that it is a number and stop the keypress
+        if (event.shiftKey || (event.keyCode < 48 || event.keyCode > 57) && (event.keyCode < 96 || event.keyCode > 105 )) {
+          event.preventDefault();
+        }
+      }
+    }
+
+    calculate_total();
+
+    $(second).focusout(function() {
+      if($(this).val() == '') {
+        $(this).val(0.00);
+      }
+      calculate_total();
+      $(this).val(parseFloat($(this).val()).toFixed(2)); // IMPORTANT
+    });
+
+    $(first).focusout(function() {
+      if($(this).val() == '') {
+        $(this).val(0.00);
+      }
+      calculate_total();
+      $(this).val(parseFloat($(this).val()).toFixed(2)); // IMPORTANT
+    });
+
+    $(first).keydown(function(event){
+      restrict_keys(event);
+    });
+    $(second).keydown(function(event){
+      restrict_keys(event);
+    });
+
+    $(".color-picker").miniColors({
+      letterCase: 'lowercase',
+      change: function(hex, rgb) {
+        var node = jQuery(this).closest('.wym_box').find('iframe')[0].contentWindow.document;
+        node.execCommand('ForeColor', false, $(this).val());
+      }
+    });
+
+  });
+
+</script>

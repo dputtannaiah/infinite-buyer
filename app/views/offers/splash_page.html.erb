@@ -1,0 +1,50 @@
+<div id="ib-content-wrapper">
+  <div class="ib-content">
+    <div class="ib-content-left">
+      <div class="ib-cl-icon"></div>
+      <div class="ib-cl-text">
+        <h1 class="ib-cl-title" style="color:#144e8d; font-size:1.75em;"><%= user_signed_in? ? current_user.display_name("Hello ", "!") : ""%></h1>
+        <h2 class="ib-cl-title">You are about to make an offer to buy:
+          <span style="color:#144e8d;"><%= session[:offer]['text'] if session[:offer].present? %></span>
+          <span style="color:#000000;">for</span>
+          <span style="color:#144e8d;"><%= number_to_currency session[:offer]['price'] if session[:offer].present? %></span>
+        </h2>
+        <p class="ib-cl-text-light">
+          You will be notified via email when there is a match or counter. Your offer will expire in 7 days, unless you
+          extend it. For any changes to your offer or to check responses go to MyOffers page.</p>
+        <p class="ib-cl-text-dark">You are not purchasing the item(s) yet. You will have the opportunity to see
+          responses to this offer from sellers
+          before you buy.
+        </p>
+        <div class="ib-content-button">
+          <%= link_to 'Confirm Offer', offers_path, :method => "post", :id => 'create-my-offer', :class => 'ib-confirm-offer' if user_signed_in? && buyer? %>
+          <%= link_to 'Continue Offer', new_user_session_path, :class => 'ib-continue' unless user_signed_in? %>
+          <%= link_to 'Continue Offer', edit_user_account_path, :class => 'ib-continue' if (user_signed_in? && seller?) %>
+          <%= link_to 'Cancel Offer', root_path, :class => 'ib-cancel-offer' %>
+        </div>
+      </div>
+    </div>
+    <div class="ib-content-right" style="min-height:446px;">
+      <h2 class="ib-cr-title">Buyer Notifications:</h2>
+      <p class="ib-cr-text">Your offer will be sent to<br/> all sellers in this category.</p>
+      <% if (user_signed_in? && buyer?) %>
+    <p class="ib-cr-text" style="padding-top:1.5em;">Your service based offers will be <br/>sent to Sellers within
+            </p>
+          <p class="ib-cr-text ib-buyer">
+            <%= text_field_tag 'search_radius', current_user.accounts.first.search_radius, :class => 'buyer-1', :style => 'width:50px' %>
+            miles of
+            <%= text_field_tag 'zip', current_user.accounts.first.zip, :class => 'buyer-2', :style => 'width:65px' %>
+            <!--<span class="buyer-3"><a href="#"><img src="images/ib_change_btn.png" alt="Change" title="Change" /></a></span>-->
+          </p>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+

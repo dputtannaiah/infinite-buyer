@@ -1,0 +1,11 @@
+<sidebar>
+<h3 class="title"><span>Archive</span></h3>
+<ul class="sidebarNav">
+  <% Blog::Post.archives.each do |date| %>
+      <li>
+        <%= link_to Date::MONTHNAMES[date.month], blog_posts_path(:date => date.to_s)%>
+      </li>
+  <% end %>
+</ul>
+</sidebar>
+

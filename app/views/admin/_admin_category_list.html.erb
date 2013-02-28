@@ -1,0 +1,23 @@
+<ul style="list-style: none;">
+  <li style="float:left;margin-right:8px;">
+    <%= link_to_function 'Products', "categories('#{@product.category_type}')", :class => "active", :id => 'product' %>
+  </li>
+  <li style="float:left"><%= link_to_function 'Services', "categories('#{@service.category_type}')", :class => "", :id => 'jqueryService' %></li>
+  <li style="clear:both"></li>
+</ul>
+
+<div class="parent" style="margin-left: 30px; width:320px;font-size: 13px;margin-top: 6px;margin-bottom: 60px;">
+  <% @product.children.each do |node| %>
+      <div id="category_<%= node.id %>" class="children category_type_0">
+        <%= nested_messages_1(node.subtree.arrange(:order => :name), node) %>
+      </div>
+  <% end %>
+
+  <% @service.children.each do |node| %>
+      <div id="category_<%= node.id %>" class="children category_type_1">
+        <%= nested_messages_1(node.subtree.arrange(:order => :name), node) %>
+      </div>
+  <% end %>
+</div>
+
+

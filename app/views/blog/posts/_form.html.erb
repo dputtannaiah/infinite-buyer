@@ -1,0 +1,53 @@
+<%= form_for(@blog_post, :html => {:multipart => true, :class => 'form-horizontal'}) do |f| %>
+  <%= error_messages_for 'blog_post', :class => "alert alert-error", :header_tag => "h3" %>
+  <fieldset>
+    <legend><%= controller.action_name.capitalize %> Blog Post</legend>
+
+    <div class="control-group">
+      <%= f.label :avatar, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.file_field :avatar, :class => 'text_field' %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :title, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :title, :class => 'text_field' %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :body, :class => 'control-label' %>
+      <div class="" style="float: left !important; margin-left: 19px;">
+        <%= f.text_area :body, :class => 'text_field mceEditor', :class => 'wymeditor' %>
+      </div>
+    </div>
+    <div class="form-actions">
+      <%= f.hidden_field :admin_id, :class => 'number_field', :value => current_admin.id %>
+      <%= f.submit nil, :class => 'wymupdate btn btn-primary' %>
+      <%= link_to 'Cancel', list_blog_posts_path, :class => 'btn' %>
+    </div>
+  </fieldset>
+<% end %>
+
+<% content_for :js do  %>
+  <%= javascript_include_tag 'wymeditor/application' %>
+<% end %>
+
+<% content_for :css do  %>
+  <%= stylesheet_link_tag 'wymeditor/application', :media => "all" %>
+<% end %>
+
+<script type="text/javascript">
+  jQuery(document).ready(function($) {
+    $(".color-picker").miniColors({
+      letterCase: 'lowercase',
+      change: function(hex, rgb) {
+        var node = jQuery(this).closest('.wym_box').find('iframe')[0].contentWindow.document;
+        node.execCommand('ForeColor', false, $(this).val());
+      }
+    });
+  })
+
+</script>

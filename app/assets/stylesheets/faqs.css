@@ -1,0 +1,54 @@
+/* faq */
+
+.faq { }
+
+.faq p {
+padding: 10px 0 10px 0;
+margin:0px 20px 10px 20px;
+}
+.msg_list {
+margin: 10px;
+padding: 10px;
+width: 700px;
+-webkit-box-shadow: 0px 0px 3px rgba(0,0,0,.3);
+   -moz-box-shadow: 0px 0px 3px rgba(0,0,0,.3);
+   box-shadow: 0px 0px 3px rgba(0,0,0,.3);
+}
+p.msg_head {
+
+height:37px;
+cursor: pointer;
+position: relative;
+background-image:-moz-linear-gradient(0% 100px 90deg, #e9e9ea, #f9f9f9);
+background-image:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#e9e9ea), to(#f9f9f9));
+/*margin:55px 10px 10px 10px; */
+padding: 25px 10px 0px 5px; 
+	color:#144E8D;
+	font-family: Arial;
+	font-size : 16px;
+	/*line-height: 35px; */
+	border-top: 1px dashed #CCCCCC;
+	text-shadow: 0px 2px 2px #999999;
+}
+.msg_body {
+	margin: 20px;
+	/*padding: 15px 20px 20px 20px; */
+	font-weight: normal;
+	font-size : 14px;
+	text-indent: 0px;
+	font-style: normal;
+	line-height: 18px;
+	background-color:#FFFFFF;
+}
+
+.msg_body li {
+	margin-left:20px;
+	list-style:disc;
+	font-weight: normal;
+	font-size : 14px;
+	padding:15px 0px 0px 10px;
+	text-indent:0px;
+	font-style: normal;
+	line-height: 18px;
+}
+		

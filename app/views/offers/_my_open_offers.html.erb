@@ -1,0 +1,40 @@
+<% if @open_offers.present? %>
+  <table class="offer-details">
+    <tr class="ib-myoffer-title">
+      <td align="center" width="32%">Description</td>
+      <td align="center" width="10%">Price</td>
+      <td align="center" width="10%">Accepted Offers</td>
+      <td align="center" width="10%">Counter Offers</td>
+      <td align="center" width="10%">Offer Date</td>
+      <td align="center" width="30%" style="border-right:none;">Status</td>
+    </tr>
+    <tr><td></td></tr>
+
+    <% @open_offers.each do |offer| %>
+      <tr class="ib-myoffer-light">
+        <td align="left" style="color:#144e8d;"><%= link_to offer.text.presence || '', offer_bids_path(offer), :class => 'no-decoration indigo-color' %></td>
+        <td align="right" style="color:#144e8d;padding-right: 7px;"><%= number_to_currency offer.price %></td>
+        <td align="right" style="padding-right:7px;"><%= link_to offer.accepted_offers_count, offer_bids_path(offer), :class => 'no-decoration indigo-color'  %></td>
+        <td align="right" style="padding-right:7px;"><%= link_to offer.counter_offers_count, offer_bids_path(offer), :class => 'no-decoration indigo-color'  %></td>
+        <td align="center" style="padding-right:7px;"><%= offer.created_at.strftime('%m/%d/%Y') %></td>
+        <td align="center">
+          <div style="position: relative;top: 8px;float: left;width: 65px;" id="expire-at-<%= offer.id %>">
+            <img src="/assets/ib_myoffer_<%= offer.get_status_class %>_btn.png" alt="Expires on <%= offer.expire_at.strftime("%m/%d/%Y") if offer.expire_at.present? %>" title="Expires on <%= offer.expire_at.strftime("%m/%d/%Y") if offer.expire_at.present? %>" />
+          </div>
+          <div style="float: left;width: 70px;margin-left:16px; position:relative; top:6px;cursor:hand; cursor: pointer;">
+            <input type="hidden" name="datepicker" id="datepicker-<%= offer.id %>" class="datepicker"/>
+          </div>
+          <%= link_to image_tag('ib_myoffer_cancel.png'), offer, :method => :delete, :style => "position:relative; top:6px;", :data => {:confirm => 'Are you sure you want to cancel?'}%>
+        </td>
+      </tr>
+      <tr><td></td></tr>
+    <% end %>
+
+  </table>
+<% else %>
+  <div class="seller-alert ib-empty-messages" style="margin-top: 50px;">
+    <span>
+      There are no offers available yet.
+    </span>
+  </div>
+<% end %>

@@ -1,0 +1,12 @@
+<% if params['affid'] %>
+    <% if configatron.click_scipt.enabled %>
+        <!-- ADDED FOR CLICKINC.COM -->
+        <script type="text/javascript">
+            /*Replace XXXXX with your Merchant Id */
+            var merchant = "70632";
+            var cookieVal = 365;
+            document.write(unescape("%3Cscript src='https://impression.clickinc.com/impressions/servlet/CookeExpire?merchant=" + merchant + "' type='text/javascript'%3E%3C/script%3E")); </script>
+        <script language="JavaScript" type="text/javascript" src="/javascripts/clickscript.js"></script>
+        <!-- ADDED FOR CLICKINC.COM -->
+    <% end %>
+<% end %>

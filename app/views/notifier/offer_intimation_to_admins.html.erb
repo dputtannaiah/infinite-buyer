@@ -1,0 +1,18 @@
+<div style="color:#144E8D !important; font-family: Arial; font-weight: bold; font-size: 18px; padding-bottom:20px; text-align:left;">
+  A new offer has been created, please take suitable action.  Following are the details:
+  <ul style="list-style:none;font-weight: normal; font-size: 14px; color:black;">
+    <li><span style="font-weight: bold;">Offer : </span><%= @offer.text %></li>
+    <li><span style="font-weight: bold;">Offer Price : </span><%= number_to_currency @offer.price %></li>
+    <li><span style="font-weight: bold;">Buyer Screen Name : </span><%= @user.username %></li>
+    <li><span style="font-weight: bold;">Buyer Name : </span><%= @account.first_name %> <%= @account.last_name %></li>
+    <li><span style="font-weight: bold;">Email ID : </span><%= @user.email %></li>
+    <li><span style="font-weight: bold;">City: </span><%= @account.city %></li>
+    <li><span style="font-weight: bold;"> Zip : </span><%= @account.zip %></li>
+    <li><span style="font-weight: bold;">Phone Number : </span><%= @account.phone1 %>-<%= @account.phone2 %>-<%= @account.phone3 %></li>
+  </ul>
+</div>
+
+<% content_for :email_title do %>
+  <span>Great news - Infinite Buyer</span>
+<% end %>
+

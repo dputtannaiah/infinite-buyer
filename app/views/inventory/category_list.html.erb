@@ -1,0 +1,123 @@
+<!-- Content Starts Here -->
+<style>
+  ul.list li {
+    margin: auto;
+    padding: 6px 0 0px 20px;
+  }
+</style>
+<div id="ib-content-wrapper">
+  <div class="ib-content">
+    <div class="ib-content-title" style="padding-bottom:15px;">Seller Categories</div>
+    <div class="ib-sc-accepted" style="height:36px;">
+      <ul>
+        <li>
+          <%= link_to_function 'Products', "categories('#{@product.children.first.id}', '#{@product.category_type}')", :class => "active", :id => 'product' %>
+        </li>
+        <li><%= link_to_function 'Services', "categories('#{@service.children.first.id}', '#{@service.category_type}')", :class => "", :id => 'jqueryService' %></li>
+      </ul>
+    </div>
+    <div class="seller-alert seller-alert-block fade in"> Please select categories and keywords in order to complete your seller registration </div>
+    <div id="ib-seller-wrapper">
+      <div class="ib-seller-content">
+        <!-- Tree Structure starts here -->
+        <%= form_tag assign_category_and_keywords_path do %>
+          <div class="parent" style="margin-left: 30px; width:320px;font-size: 13px;margin-top: 6px;margin-bottom: 60px;">
+            <% @product.children.each do |node| %>
+              <div id="category_<%= node.id %>" class="children category_type_0">
+                <%= nested_messages(node.subtree.arrange(:order => :name), node) %>
+              </div>
+            <% end %>
+
+            <% @service.children.each do |node| %>
+              <div id="category_<%= node.id %>" class="children category_type_1">
+                <%= nested_messages(node.subtree.arrange(:order => :name), node) %>
+              </div>
+            <% end %>
+          </div>
+          <!-- Tree Structure ends here -->
+          <div class="ib-category-btns">
+            <%= link_to "Cancel", home_reset_logged_in_as_session_path, :class => "ib-cancel-button", :style => 'float:right' %>
+            <%= submit_tag 'save', :class => 'ib-save-btn', :style => 'float:left' %>
+            <div class="clear"></div>
+          </div>
+
+        <% end %>
+        <%= javascript_tag "jQuery(document).ready(function(){$('a#product').click()});" %>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Contents Ends Here -->
+
+<script type="text/javascript">
+  jQuery(document).ready(function($) {
+    $('div.major-category').click(function() {
+      $(this).next('div.nested-messages').toggle("fast", function() {
+        var dis = $(this).css('display')
+        if(dis == 'none') {
+          $(this).prev('div.major-category').find('span').html("<img src='assets/plus_icon.png'></img>")
+        }
+        else
+        {
+          $(this).prev('div.major-category').find('span').html("<img src='assets/minus_icon.png'></img>")
+        }
+      });
+    });
+
+
+    $('.sub > span.expand-collapse, .sub > .nested-label-class').click(function() {
+      $(this).parent('div.sub-category').next('.nested-messages').toggle('fast', function(){
+        var dis = $(this).css('display')
+        if(dis == 'none') {
+          $(this).prev('div.sub').find('span').html("<img src='assets/plus_icon.png'></img>")
+        }
+        else
+        {
+          $(this).prev('div.sub').find('span').html("<img src='assets/minus_icon.png'></img>")
+        }
+      });
+    });
+
+    $('.expand-collapse').next('label').css({
+      'font-size' : '15px',
+      'color': '#144E8D',
+      'font-weight': 'bold'
+    });
+
+    $('.sub-category').hover(function(){
+      $(this).find('input[type=text]').toggle();
+    })
+
+    $('.childless_textbox').keypress(function(event) {
+      if($(this).siblings('input[type=checkbox]').is(':checked')) {
+        return true;
+      }
+      else {
+        event.preventDefault();
+        return false;
+      }
+      
+    });
+
+    $('a#product').click(function() {
+      $(this).addClass('active');
+      $('a#jqueryService').removeClass('active');
+    });
+
+    $('a#jqueryService').click(function() {
+      $(this).addClass('active');
+      $('a#product').removeClass('active');
+    });
+
+    $('a.jqueryCategoryType').first().addClass('active');
+    $('a.jqueryCategoryType').click(function(){
+      $('a.jqueryCategoryType').removeClass('active');
+      $(this).addClass('active');
+    });
+
+
+  });
+</script>
+
+
+

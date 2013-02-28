@@ -1,0 +1,28 @@
+<% if @bids.present? %>
+  <table>
+    <% @bids.each do |bid| %>
+
+      <tr class="ib-smo-tab-bg">
+        <td style="width:155px" align="left">
+          <%= link_to bid.offer.text, product_or_service_path(bid), :class => 'no-decoration indigo-color' if (bid.product.present? || bid.service.present?) && bid.offer.present? %>
+        </td>
+        <td style="width:70px" align="left"><%= bid.offer.user.username if bid.offer.present? && bid.offer.user.present? %></td>
+        <td style="width:92px" align="right"><%= bid.offer.created_at.strftime('%m/%d/%Y') if bid.offer.present? %></td>
+        <td style="width:80px" align="right"><%= number_to_currency(bid.offer.price) if bid.offer.present? %></td>
+        <td style="width:80px" align="right"><%= number_to_currency(bid.price) %></td>
+        <td style="width:60px" align="right"><%= number_to_currency(bid.shipping) %></td>
+        <td style="width:150px" align="left">
+          <% status = bid.status %>
+          <span class="ib-buyer"><%= status.capitalize if status.present? %></span>
+        </td>
+      </tr>
+      <tr><td></td></tr>
+    <% end %>
+  </table>
+<% else %>
+  <div class="seller-alert ib-empty-messages" style="margin-top: 50px;">
+    <span>
+      There are no countered offers available yet.
+    </span>
+  </div>
+<% end %>

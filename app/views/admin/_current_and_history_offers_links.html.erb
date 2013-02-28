@@ -1,0 +1,15 @@
+<ul class="nav nav-tabs jquery-admin-nav">
+  <li class=""><%= link_to 'Current Offers', current_admin_offers_path %></li>
+  <li class=""><%= link_to 'Offer history', history_admin_offers_path %></li>
+</ul>
+
+<script type="text/javascript">
+  // Current Offers and Admin Offers
+<% if controller.action_name == 'history_admin_offers' %>
+    $('ul.jquery-admin-nav li').eq(1).addClass('active');
+<% elsif controller.action_name == 'current_admin_offers' %>
+    $('ul.jquery-admin-nav li').eq(0).addClass('active');
+<% end %>
+
+
+</script>

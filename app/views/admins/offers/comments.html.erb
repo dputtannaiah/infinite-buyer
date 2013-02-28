@@ -1,0 +1,5 @@
+<h2><%= @offer.text %></h2>
+<%= render :partial => '/utils/disqus',
+           :locals => {:title => @offer.text,
+                       :identifier => @offer.id,
+                       :url => comments_admins_offer_url(@offer.id)} %>

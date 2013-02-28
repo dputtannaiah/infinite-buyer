@@ -1,0 +1,22 @@
+<div class="ib-content">
+  <div class="account-bc-errors">
+    <%= error_messages_for(resource) %>
+  </div>
+  <div class="ib-content-title">
+    Change your password
+  </div>
+  <div class="ib-registration-form">
+    <%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :put }) do |f| %>
+
+      <%= f.hidden_field :reset_password_token %>
+
+      <div><%= f.label :password, "New password*" %><br />
+        <%= f.password_field :password %></div>
+
+      <div><%= f.label :password_confirmation, "Confirm new password*" %><br />
+        <%= f.password_field :password_confirmation %></div>
+
+      <div><%= image_submit_tag "/assets/ib-buyer-submit.png" %></div>
+    <% end %>
+  </div>
+</div>

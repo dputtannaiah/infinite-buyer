@@ -1,0 +1,36 @@
+<h2>Search Offers</h2>
+<%= form_tag search_super_admins_offers_path do %>
+    <table class="table table-bordered">
+      <tbody>
+      <tr>
+        <td>Created at greater
+          than<br/><%= text_field_tag 'created_at_greater_than', params[:created_at_greater_than], :class => 'datetime_select' %>
+        </td>
+
+        <td>Created at less
+          than<br/><%= text_field_tag 'created_at_less_than', params[:created_at_less_than], :class => 'datetime_select' %></td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <%= submit_tag 'Search', :class => 'btn  btn-primary' %>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+    <% if @offers.present? %>
+        <%= paginate @offers, :theme => 'bootstrap' %>
+        <table class="table">
+          <thead>
+          <tr>
+            <th>Text</th>
+            <th>Created at</th>
+            <th>Status</th>
+          </tr>
+          </thead>
+          <tbody>
+          <%= render @offers %>
+          </tbody>
+        </table>
+    <% end %>
+<% end %>
+<%= link_to '&laquo; Back to Offers'.html_safe, super_admins_offers_path %>

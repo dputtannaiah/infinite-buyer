@@ -1,0 +1,14 @@
+<% if params[:controller].match(/super_admins/) || (devise_controller? && resource_name == :super_admin)%>
+    <ul class="nav">
+      <li> <%= link_to "Home", super_admin_root_url %></li>
+      <%= render :partial => 'super_admins/menu/registration_items' %>
+      <%= render :partial => 'super_admins/menu/login_items' %>
+    </ul>
+<% else %>
+    <ul class="nav">
+      <li> <%= link_to "Home", admin_root_url %></li>
+      <%= render :partial => 'admins/menu/registration_items' %>
+      <%= render :partial => 'admins/menu/login_items' %>
+      <li><%= link_to('Blog', admin_activity_url) %></li>
+    </ul>
+<% end %>

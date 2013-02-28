@@ -1,0 +1,1080 @@
+
+/* Reset CSS Starts Here */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* Reset CSS Ends Here */
+/* For Responsive Web Design
+* { margin:0; padding:0; }
+div.container { margin:0 auto; overflow:hidden; width:100%; }
+div div div { float:left; margin:0 2% 2% 0; overflow:hidden; }
+div div div:last-child { margin-right:0; }
+div div.row01 div { width:15%; }
+div div.row02 div { width:32%; }
+div div.row03 div { width:49%; }
+div div.row04 div { width:100%; }
+*/
+
+body { background:#ffffff; font-family:"Tahoma", Arial, Helvetica, sans-serif; font-size:100%; color:#222222;}
+a { outline:none; }
+
+/* Font Style Starts Here*/
+
+/* Font Style Ends Here*/
+
+/* Home Page Starts Here*/
+/*div.container .row04 { width:100%;}*/
+
+/* Home Page Ends Here*/
+#ib-header-wrapper,#ib-nav-wrapper,#ib-content-wrapper,#ib-footer-wrapper,#ib-banner-wrapper{ width:100%;}
+.ib-header-content,.ib-nav-content,.ib-content,.ib-footer-content,.ib-content,.ib-home-content{ width:960px; margin:0 auto; clear:both; overflow:hidden;}
+.ib-logo{ float:left; margin-top:15px;}
+.ib-header-right{ float:right; margin-top:17px; width:60%;}
+.ib-header-top{ float:right; overflow:hidden;}
+.ib-header-top li{ display:inline; float:left; color:#144e8d; font-size:12px; padding:5px 0;}
+.ib-header-top li a{ display:inline-block; float:left; color:#362F2D; border-right:1px solid #333333; padding:0 7px; text-decoration:none;}
+.ib-header-top li:last-child a{ border-right:none;}
+.ib-header-top li a:hover{ text-decoration:underline!important;}
+.ib-social-media{ clear:both; overflow:hidden; float:right; margin-top:5%; margin-right:5px;}
+.ib-social-media li{ display:inline; float:left;}
+.ib-social-media li a{ display:inline-block; float:left; width:37px; height:37px; margin-left:4px; background:url(/assets/ib_sprites.png) 0 0; opacity:0.85;}
+.ib-social-media li a:hover{ opacity:1;}
+.ib-social-media li a.facebook{ background-position:0 0;}
+.ib-social-media li a.twitter{ background-position:-40px 0;}
+.ib-social-media li a.linkedin{ background-position:-80px 0;}
+
+.ib-navigation{ height:55px; background:url(/assets/ib_nav_bg.png) top left no-repeat; margin-top:10px; width:960px;}
+.ib-navigation li{ display:inline-block; float:left;}
+.ib-navigation li a{ background:url(/assets/ib_sprites.png) 0 0; opacity:0.85; height: 45px;}
+.ib-navigation li a:hover{ opacity:1;}
+.ib-navigation li a.home{ background-position:35px -53px; display: inline-block;  width: 150px;}
+.ib-navigation li a.my-offers{ background-position:40px -101px; display: inline-block; width: 195px;}
+.ib-navigation li a.buyer-talk{ background-position: 37px -145px; display: inline-block; width: 195px;}
+.ib-navigation li a.seller-talk{ background-position: 37px -815px; display: inline-block; width: 195px;}
+.ib-navigation li a.raves{  background-position: 58px -187px; display: inline-block; width: 196px;}
+.ib-navigation li a.how-it-works{  background-position: 0 -235px; display: inline-block; margin-left: 25px; width: 150px;}
+.ib-navigation li a.home,.ib-navigation li a.my-offers,.ib-navigation li a.buyer-talk, a.seller-talk,.ib-navigation li a.raves{ border-right:1px solid #41269b;}
+.ib-content-form{ overflow:hidden;  margin:3% 0 0; position:relative;}
+.ib-content-form form{ overflow:hidden;}
+.ib-content-form label{ color: #000000; display: inline-block; float: left; font-size: 1.75em; padding: 1.5% 1% 0 0; }
+.ib-content-form .offer-item {background: url("/assets/ib_buy.png") no-repeat scroll left top transparent;
+                              float: left;
+                              height: 60px;
+                              padding: 3px 0 0px 5px;
+                              width: 386px;}
+.ib-content-form .offer-item input[ type="text"] { border: 0 none;
+                                                   height: 45px;
+                                                   padding-left: 9px;
+                                                   padding-right: 3px;
+                                                   width: 360px; }
+.ib-content-form .offer-price {background: url("/assets/ib_for.png") no-repeat scroll left top transparent;
+                               float: left;
+                               height: 60px;
+                               margin-right: 15px;
+                               padding: 5px 3px 2px 30px;
+                               width: 134px;}
+.ib-content-form .offer-price input[ type="text"] { border: medium none;
+                                                    height: 37px;
+                                                    padding: 5px 3px 2px 1px;
+                                                    width: 117px;
+                                                    text-align: right;
+}
+.ib-content-form input[ type="text"]{ height:61px; border:none; font-size: 1.35em; display:inline-block; color:#222222;}
+.ib-content-form input[ type="text"].item{float:left; width:362px; padding-left:12px; padding-right: 19px;}
+.ib-content-form input[ type="text"].price{ width:124px; padding-left: 1.45em; padding-right: 8px; margin-right: 18px;}
+.ib-content-form span{ display:inline-block; font-size: 1.35em; color:#000000; padding:2% 9px 0 9px; float:left;}
+.ib-content-form i{ background:url(/assets/ib_sprites.png) 0 -703px no-repeat; display: inline-block; float: left; height: 28px; left: 2.5%; margin: 1px; position: relative; top:1em;  width: 15px;}
+.ib-content-form input[ type="submit"].make-offer{ height:61px; width:164px; text-indent:-99999px; cursor:pointer; background:url(/assets/ib_make_offer.png) top left no-repeat; border:none;}
+.ib-content-form input[ type="submit"]:hover{ }
+.ib-content-form input[ type="text"],.ib-content-form input[ type="text"]:hover,.ib-content-form input[ type="text"]:active,.ib-content-form input[ type="text"]:visited{ border:none; outline:none;}
+.ib-buy{ color: #000000; font-size: 1.75em; padding-bottom:2.5%; margin-top: 28px;}
+.ib-form-hints-container { position: relative; top: 5px; margin-left: 160px; margin-right: auto; width: 440px; padding-bottom:100px; }
+.ib-form-hints { float:left; color: #362F2D; font-size:0.75573em; font-weight: bold; padding-left:20px; padding-right:20px }
+.ib-form-hints-r { float:left; color: #362F2D; font-size:0.75573em; font-weight: bold; padding-right: 10px; padding-left:13px}
+.ib-form-hints-r li { color: #362F2D; font-size:0.75573em; font-weight: bold; text-decoration:underline; }
+.ib-form-hints a:hover{ color: #362F2D; text-decoration:underline;}
+.ib-form-hints-r a:hover{ color: #666666; text-decoration:underline;}
+
+#ib-banner-wrapper{ padding-bottom:5%; }
+#ib-footer-wrapper{ height:153px; background:#d5d5d6 url(/assets/ib_sprites.png) 0 -547px repeat-x;}
+.ib-footer-menu{ overflow:hidden; margin:2% 2.5% 1%;}
+.ib-footer-menu li{ float:left; display:inline-block; color:#5f5f5f; font-size:.85em; padding-bottom:10px; width:100%; }
+.ib-footer-menu li strong{ font-weight:bold; width:19.5%; color:#5F5F5F; display:inline-block; }
+.ib-footer-menu li a{ text-decoration:none; color:#5f5f5f; font-size:1em; font-family:"Tahoma",Arial, Helvetica, sans-serif;}
+.ib-footer-menu li a:hover{ text-decoration:underline;}
+#ib-footer-wrapper p{ clear: both; color: #999999; float: right; font-size: 0.7em; line-height: 2em;}
+
+#ib-content-wrapper{ background:url(/assets/ib_content_bg.png) bottom left repeat-x;}
+.ib-home-content{ overflow:hidden;}
+.ib-content{ padding:55px 0 50px 0px; overflow:hidden;}
+
+.ib-content-left{ width:590px; min-height:340px; float:left; overflow:hidden; background-color:#f3f3f4; border-radius:15px; padding:20px 20px 90px 20px;}
+.ib-cl-icon{ background:url(/assets/ib_content_left_icon.png) top left no-repeat; float:left; width:157px; height:80px;}
+.ib-cl-text{ float:left; margin-left:20px; float:left; width:70%;}
+.ib-cl-title{ font-family:Arial, Helvetica, sans-serif; font-weight:bold; font-size:22px; color:#656565; line-height: 1.15em;  padding-top: 20px;}
+.ib-cl-text-light{ font-family:"Tahoma",Arial, Helvetica, sans-serif; font-weight:normal; font-size:13px; color:#5c5b5b; line-height: 1.15em;  padding: 30px 0 10px 0;}
+.ib-cl-text-dark{ font-family:Arial, Helvetica, sans-serif; font-weight:bold; font-size:13px; color:#5c5b5b; line-height: 1.15em;  padding:10px 0 10px 0;}
+.ib-cl-text-light a{ color:#1e7ebc; text-decoration:underline; font-weight:bold;}
+.ib-cl-text-light a:hover{ text-decoration:none;}
+.ib-content-button{ padding:70px 0px 0px 0px;}
+.ib-content-button a{ /*background:url(/assets/ib_sprites.png) 0 -752px repeat-x; height:46px; border: medium none; border-radius: 10px 10px 10px 10px; color: #F9F9F9;
+    cursor: pointer; font-size: 1.075em; line-height:2.15em; text-decoration:none;  padding:0px 35px; display:inline-block;   text-shadow: 1px 1px 1px #666666;*/}
+.ib-content-button a:hover{ }
+.ib-content-button a.ib-cancel{ float:right;}
+.ib-continue{ background:url(/assets/ib_continue.png) top left no-repeat; text-indent:-99999px; width:146px; height:47px; display:inline-block; cursor:pointer;}
+.ib-cancel{ background:url(/assets/ib_cancel.png) top left no-repeat; text-indent:-99999px; width:146px; height:47px; display:inline-block; cursor:pointer;}
+.ib-confirm-offer{ background:url(/assets/ib_confirm_offer.png) top left no-repeat; text-indent:-99999px; width:146px; height:47px; display:inline-block; cursor:pointer;}
+.ib-cancel-offer{ background:url(/assets/ib_cancel_offer.png) top left no-repeat; float:right; text-indent:-99999px; width:146px; height:47px; display:inline-block; cursor:pointer;}
+.ib-content-right{ width:250px; float:right; padding:30px 19px 20px 19px; overflow:hidden;  background:#0f77bf url(/assets/ib_content_right_bg.png) bottom center no-repeat;border-radius:15px; min-height:400px;}
+.ib-cr-title{ font-family:"Tahoma",Arial, Helvetica, sans-serif; font-weight:normal; font-size:22px; color:#ffffff; line-height: 1.15em; padding-bottom:2em;}
+.ib-cr-text{ font-family:Arial, Helvetica, sans-serif; font-weight:normal; font-size:15px; color:#ffffff; line-height: 1.15em;}
+.ib-buyer{ padding-top:5px;}
+.ib-buyer .buyer-1,.ib-buyer .buyer-2{ background-color:#b8d1e6; color:#1e7ebc; font-size:16px; font-weight:bold; font-family:Arial, Helvetica, sans-serif; border-radius:2px; padding:2px 5px; margin-right:10px;}
+.ib-buyer .buyer-2{ padding:2px 5px; margin-right:10px; margin-left:3px;}
+.ib-buyer .buyer-3{ width:50px; height:27px; display:inline-block; cursor:pointer; padding-top:10px;}
+.ib-buyer .buyer-3 a img{ position:relative; top:9px;}
+.ib-copyright{ background-color:#ffffff; text-align:center; color: #767676; font-family:"Tahoma",Arial, Helvetica, sans-serif; font-size: 0.8em; line-height: 3em;}
+.ib-content-title { color:#144e8d; font-family:Arial, Helvetica, sans-serif; font-size:32px; font-weight:bold;}
+.ib-sm-title{ color:#777777; font-family:Arial, Helvetica, sans-serif; font-size:28px; font-weight:bold;}
+.ib-bs-left{background:url(/assets/free_sign_up_buyer.png) top left no-repeat; height: 130px; width: 821px; margin:auto;}
+.ib-ss-left{ background:url(/assets/free_sign_up_seller.png) top left no-repeat; height: 130px; width: 821px; margin:auto;}
+.ib-bs-right{ margin-top: auto;}
+.ib-bs-right-bg{ background:url(/assets/ib_bs_right_bg.png) top left no-repeat; height: 340px; width: 825px; margin:27px auto auto;}
+.ib-bs-sign-in-content { padding:10px 40px 0 70px; min-height: 274px;}
+.ib-bs-sign-in-content p.ibTextAlign { text-align:right;}
+.ib-bs-sign-in-content p a{padding-left: 15px; text-align:right; color:#7f7f7f; font-family:Arial, Helvetica, sans-serif; font-size:11px; font-weight:bold; text-decoration:underline;}
+.ib-bs-sign-in-content p a:hover{ text-decoration:none;}
+.ib-mar-t35{ margin-top:35px;}
+
+.ib-registration-form{ background-color:#f3f3f4; border-radius:5px; overflow:hidden; width:480px; padding:30px 35px 10px 35px; margin-top:20px;}
+.ib-registration-form p{ text-align:right; color:#000000; font-family:Arial, Helvetica, sans-serif; font-weight:normal; font-size:12px;}
+.ib-registration-form div{ clear:both; margin-bottom:16px; float:left;}
+.ib-registration-form label{ text-align:left; width:400px; color:#000000; font-family:Arial, Helvetica, sans-serif; font-weight:normal; font-size:16px; line-height:30px; float:left; }
+
+.ib-registration-form input[type="text"] { border:2px solid #2b4980; width:335px; border-radius:5px; padding:11px; float:left; font-size:16px; color:#000000; }
+.ib-registration-form input[type="password"] { border:2px solid #2b4980; width:335px; border-radius:5px; padding:11px; float:left; font-size:16px; color:#000000;  }
+.ib-registration-form input[type="text"]:focus { color:#000000!important;}
+.ib-registration-form input[type="password"]:focus { color:#000000!important;}
+
+.ib-registration-form span a{ display:inline-block; color:#828385; font-family:Arial, Helvetica, sans-serif; font-weight:normal; font-size:11px; padding:16px 0 0 10px; text-decoration:none; }
+.ib-registration-form span a:hover{ text-decoration:underline;}
+.ib-registration-form input[type="submit"]{ float:right; margin-top:56px; background:url(/assets/ib_register.png) top left no-repeat; width:171px; height:66px; cursor:pointer; border:none; text-indent:-99999px; }
+.error{color:#ff0000!important;}
+.ib-myoffer-heading{ background:url(/assets/ib_myoffer_heading.png) top left no-repeat; width:100%; height:46px; padding:5px 20px;}
+.ib-myoffer-heading h2{ color:#000000; width:724px; font-family:Arial, Helvetica, sans-serif; line-height:1.35em; font-size:20px; font-weight:bold; float:left;}
+.ib-myoffer-heading label{ color:#000000; font-family:Arial, Helvetica, sans-serif; line-height:2em; font-size:14px;  float:left;}
+.ib-myoffer-heading select{ border: 1px solid #FFFFFF;
+                            color: #666666;
+                            float: left;
+                            height: 25px;
+                            margin: 1px 2px 0 12px;
+                            width: 9.25em;}
+.ib-myoffer-tab{ width:100%;}
+.ib-myoffer-tab table{ width:100%;}
+.ib-myoffer-tab table tr.ib-myoffer-title td{ color:#2d2c2c; border-right:3px double #bbbbbb; font-family:Arial, Helvetica, sans-serif; line-height:1.25em; padding:5px 0 5px 10px;  font-size:15px; font-weight:bold; margin-bottom:10px;}
+.ib-myoffer-tab table tr.ib-myoffer-light{ height:auto!important;
+                                           border:1px solid #fbfbfb;
+                                           background: #e3e3e3;
+                                           background: -moz-linear-gradient(top, #e3e3e3 0%, #f6f6f6 100%) ;
+                                           background: -webkit-gradient(linear, left top, left bottom,
+                                             color-stop(0%,#e3e3e3), color-stop(100%,#f6f6f6));
+                                           background: -webkit-linear-gradient(top, #e3e3e3 0%,#f6f6f6 100%);
+                                           background: -o-linear-gradient(top, #e3e3e3 0%,#f6f6f6 100%);
+                                           background: -ms-linear-gradient(top, #e3e3e3 0%,#f6f6f6 100%);
+                                           background: linear-gradient(top, #e3e3e3 0%,#f6f6f6 100%);
+                                           filter: progid:DXImageTransform.Microsoft.gradient(
+                                             startColorstr='#e3e3e3', endColorstr='#f6f6f6',GradientType=0 );
+                                           box-shadow:0 0 5px #bfbfbf;
+                                           -moz-box-shadow:0 0 5px #bfbfbf;
+                                           -webkit-box-shadow:0 0 5px #bfbfbf;
+                                           border-radius:5px;
+                                           -moz-border-radius:5px;
+                                           -webkit-border-radius:5px;
+                                           -ms-border-radius:5px; }
+.ib-myoffer-tab table tr.ib-myoffer-dark{ background:url(/assets/ib_myoffer_form_dark.png) top left no-repeat; width:100%; height:56px; }
+.ib-myoffer-tab table tr td{ color:#2d2c2c; font-family:Arial, Helvetica, sans-serif; line-height:1em; padding:6px 0 5px 10px;  font-size:16px; font-weight:bold; margin:5px 0;}
+.ib-buyer-open{ border-radius:3px; font-family:Arial, Helvetica, sans-serif; padding:5px 10px; font-size:14px; font-weight:bold; color:#ffffff; text-decoration:none; background-color:#04720D; }
+.ib-buyer-expired{ border-radius:3px; font-family:Arial, Helvetica, sans-serif; padding:5px 10px; font-size:14px; font-weight:bold; color:#ffffff; text-decoration:none; background-color:#d01414; }
+.ib-buyer-fullfilled{ border-radius:3px; font-family:Arial, Helvetica, sans-serif; padding:5px 10px; font-size:14px; font-weight:bold; color:#ffffff; text-decoration:none; background-color:#046c0c; }
+.ib-buyer-canceled{ border-radius:3px; font-family:Arial, Helvetica, sans-serif; padding:5px 10px; font-size:14px; font-weight:bold; color:#ffffff; text-decoration:none; background-color:#2a2a2a; }
+
+.ib-od-heading{ height:auto!important;
+                border:1px solid #fbfbfb;
+                background: #e3e3e3;
+                background: -moz-linear-gradient(top, #e3e3e3 0%, #f6f6f6 100%) ;
+                background: -webkit-gradient(linear, left top, left bottom,
+                  color-stop(0%,#e3e3e3), color-stop(100%,#f6f6f6));
+                background: -webkit-linear-gradient(top, #e3e3e3 0%,#f6f6f6 100%);
+                background: -o-linear-gradient(top, #e3e3e3 0%,#f6f6f6 100%);
+                background: -ms-linear-gradient(top, #e3e3e3 0%,#f6f6f6 100%);
+                background: linear-gradient(top, #e3e3e3 0%,#f6f6f6 100%);
+                filter: progid:DXImageTransform.Microsoft.gradient(
+                  startColorstr='#e3e3e3', endColorstr='#f6f6f6',GradientType=0 );
+                box-shadow:0 0 5px #bfbfbf;
+                -moz-box-shadow:0 0 5px #bfbfbf;
+                -webkit-box-shadow:0 0 5px #bfbfbf;
+                border-radius:10px;
+                -moz-border-radius:10px;
+                -webkit-border-radius:10px;
+                -ms-border-radius:10px;
+                width:98%;
+                margin-bottom: 16px;
+                padding: 5px;
+}
+.ib-od-heading table{ width:99%;}
+.ib-od-heading table tr td{ vertical-align:middle; margin:0; padding:0; border-right: 3px double grey;padding: 0 4px 0 0;}
+.ib-od-heading table tr td h2{ color:#0e558f; font-family:Arial, Helvetica, sans-serif; font-size:20px; font-weight:bold; float:left; line-height:2em;}
+.ib-od-heading table tr td div span.ib-offer{ display:inline-block; color:#838383; font-family:Arial, Helvetica, sans-serif; font-size:14px; font-weight:bold;}
+.ib-od-heading table tr td div span.ib-date{ display:inline-block; color:#000000; font-family:Arial, Helvetica, sans-serif; padding-top:3px; font-size:20px; font-weight:bold;}
+.ib-od-heading table tr td label{ color:#000000; font-family:Arial, Helvetica, sans-serif; line-height:2.75em; font-size:14px;  float:left;}
+.ib-od-heading table tr td label.heading {margin-left: 7px;}
+
+.ib-od-heading table tr td select{border: 1px solid #FFFFFF;
+                                  color: #666666;
+                                  float: right;
+                                  margin: 9px 0px 0 0;
+                                  width: 9.25em;}
+.ib-od-heading table tr td span {font-size: 19px; font-weight: bold; color:#144e8d;}
+.price-align {vertical-align: middle!important;}
+.ib-mod-tab{ width:100%;}
+.ib-mod-tab table{ width:100%; border:none;}
+.ib-mod-tab tr.ib-mod-title td{ color:#2d2c2c; border-right:3px double #bbbbbb; font-family:Arial, Helvetica, sans-serif; line-height:1.25em; padding:10px 6px 10px 10px;  font-size:15px; font-weight:bold; margin-bottom:10px;}
+.ib-mod-tab tr.ib-mod-light{ width:98%;
+                             height:auto!important;
+                             border:1px solid #fbfbfb;
+                             background: #e3e3e3;
+                             background: -moz-linear-gradient(top, #e3e3e3 0%, #f6f6f6 100%) ;
+                             background: -webkit-gradient(linear, left top, left bottom,
+                               color-stop(0%,#e3e3e3), color-stop(100%,#f6f6f6));
+                             background: -webkit-linear-gradient(top, #e3e3e3 0%,#f6f6f6 100%);
+                             background: -o-linear-gradient(top, #e3e3e3 0%,#f6f6f6 100%);
+                             background: -ms-linear-gradient(top, #e3e3e3 0%,#f6f6f6 100%);
+                             background: linear-gradient(top, #e3e3e3 0%,#f6f6f6 100%);
+                             filter: progid:DXImageTransform.Microsoft.gradient(
+                               startColorstr='#e3e3e3', endColorstr='#f6f6f6',GradientType=0 );
+                             box-shadow:0 0 5px #bfbfbf;
+                             -moz-box-shadow:0 0 5px #bfbfbf;
+                             -webkit-box-shadow:0 0 5px #bfbfbf;
+                             border-radius:10px;
+                             -moz-border-radius:10px;
+                             -webkit-border-radius:10px;
+                             -ms-border-radius:10px;
+}
+.ib-mod-tab tr.ib-mod-dark{ background:url(/assets/ib_myoffer_form_dark.png) top left no-repeat; width:100%; height:56px; }
+.ib-mod-tab tr td{ color:#2d2c2c; vertical-align:middle; font-family:Arial, Helvetica, sans-serif; line-height:21px; padding:6px 6px 5px 10px; border:none;  font-size:16px; font-weight:bold; margin:5px 0;}
+.ib-bpd-left-content{ width:210px; float:left; margin-top:20px; }
+.ib-bpd-right-content{ width:750px; float:right; margin-top:20px; }
+.ib-bpd-left-img-bg{ width:185px; height:175px; display:block; margin-bottom:20px;}
+.ib-bpd-left-img-bg img{ margin:25px 5px 15px 10px;}
+
+.ib-bpd-heading{ padding: 5px 5px 5px 0px;
+                 height:auto!important;
+                 border:1px solid #fbfbfb;
+                 background: #e3e3e3;
+                 background: -moz-linear-gradient(top, #e3e3e3 0%, #f6f6f6 100%) ;
+                 background: -webkit-gradient(linear, left top, left bottom,
+                   color-stop(0%,#e3e3e3), color-stop(100%,#f6f6f6));
+                 background: -webkit-linear-gradient(top, #e3e3e3 0%,#f6f6f6 100%);
+                 background: -o-linear-gradient(top, #e3e3e3 0%,#f6f6f6 100%);
+                 background: -ms-linear-gradient(top, #e3e3e3 0%,#f6f6f6 100%);
+                 background: linear-gradient(top, #e3e3e3 0%,#f6f6f6 100%);
+                 filter: progid:DXImageTransform.Microsoft.gradient(
+                   startColorstr='#e3e3e3', endColorstr='#f6f6f6',GradientType=0 );
+                 box-shadow:0 0 5px #bfbfbf;
+                 -moz-box-shadow:0 0 5px #bfbfbf;
+                 -webkit-box-shadow:0 0 5px #bfbfbf;
+                 border-radius:10px;
+                 -moz-border-radius:10px;
+                 -webkit-border-radius:10px;
+                 -ms-border-radius:10px;
+                 width: 98.5%;
+                 margin-bottom: 20px;
+}
+.ib-bpd-heading table{ width:100%;}
+.ib-bpd-heading table tr td{ margin: 0;padding: 0 7px;vertical-align: middle; border-right:3px double #ACACAC;}
+.ib-bpd-heading table tr td h2{ color:#0e558f; font-family:Arial, Helvetica, sans-serif; font-size:20px; font-weight:bold; float:left; line-height:1.25em; padding-top:5px;}
+.ib-bpd-heading table tr td div span.ib-price{ display:inline-block; color:#0e558f; font-family:Arial, Helvetica, sans-serif; font-size:24px; font-weight:bold;}
+.ib-bpd-heading table tr td div span.ib-details{ display:inline-block; color:#000000; font-family:Arial, Helvetica, sans-serif; font-size:15px; font-weight:bold; padding-top:5px;}
+.ib-bpd-heading table tr td a { display: inline-block;  margin: 5px 0 0 0px;}
+.ib-bpd-below-heading{ padding:0px 10px 20px 10px;}
+.ib-bpd-below-heading p{ color:#000000; font-family:Arial, Helvetica, sans-serif; font-size:16px; line-height:1.25em;}
+.ib-bpd-rhs-content{ overflow:hidden; border:1px solid #a8a8a8; padding:10px 5px 25px 12px; box-shadow:0px 3px 3px #A8A8A8;font-size: 12px; line-height: 18px; text-align: justify;}
+.ib-bpd-rhs-content h2.ib-bpd-content-heading{ background:url(/assets/ib_bpd_heading_bg.png) top left no-repeat; width:100%; height:39px; display:inline-block; padding:5px; color:#3a3939; font-family:Arial, Helvetica, sans-serif; font-size:20px; font-weight:bold;}
+.ib-bpd-rhs-content p{ padding-right: 5px; margin-bottom:1em; color:#000000; font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:1.25em; }
+
+/* css for buyer account information*/
+.ib-buyer-account-form {  background-color:#e6e6e6; border-radius:5px; box-shadow: 2px 2px 3px #000000; overflow:hidden; width:729px; padding:30px 35px 30px 45px; margin-left:5px; margin-bottom:0px;}
+.ib-buyer-account-form p{text-align:right; color:#000000; font-family:Arial, Helvetica, sans-serif; font-weight:normal; font-size:12px;margin-right:24px;}
+.ib-buyer-account-form a{text-align:right; color:#000000; font-family:Arial, Helvetica, sans-serif; font-weight:bold; font-size:14px;}
+
+.ib-buyer-account-form div{margin-bottom:8px; float:left;}
+.ib-buyer-account-form label{ text-align:left;  color:#000000; font-family:Arial, Helvetica, sans-serif; font-weight:normal; font-size:18px; line-height:30px;  }
+
+.ib-buyer-account-form input[type="text"]{ border:1px solid #2b4980;  border-radius:5px; padding:8px; float:left; font-size:20px; color:#bebebe; font-weight:bold; }
+.ib-buyer-account-form select{ border:1px solid #2b4980;  border-radius:5px; padding:8px; float:left; font-weight:bold; font-size:20px; color:#bebebe; }
+.ib-buyer-account-form input[type="checkbox"]{ border:1px solid #2b4980;width:22px;  border-radius:5px; padding:11px; float:left;
+                                               height: 22px; padding: 0 5px 0 0; clear: left; float: left;}
+.ib-buyer-account-form input[ type="submit"]{ height:60px;  text-indent:-99999px; cursor:pointer;  top left no-repeat; border:none;}
+.ib-seller-next {background:url(/assets/ib-seller-next.png)}
+.ib-buyer-register {background:url(/assets/ib-buyer-submit.png)}
+.ib-content-form input[ type="submit"]:hover{ }
+.ib-bacc-name-label {width:346px; }
+.ib-bacc-name-label-l {width:351px; left:365px; }
+.ib-bacc-small-input {width:315px;margin-left:18px;}
+.ib-bacc-big-input {width:668px; margin-left:18px;}
+.ib-bacc-city-label {width:363px; margin-left:18px;}
+.ib-bacc-city-input{width:363px; margin-left:18px;}
+.ib-bacc-zip-label {width:261px;}
+.ib-bac-zip-input {width:225px;margin-left:62px;}
+.ib-bacc-search-label{width:316px; font-size:16px!important;}
+.ib-bacc-state-select{width:265px; margin-left:18px; }
+.ib-bacc-search-select{width:134px; margin-left:285px;}
+.ib-bacc-phone-input{width:65px;margin-left:18px;}
+.ib-bacc-phone-input1{width:65px;margin-left:3px;}
+.ib-bacc-phone-input2{width:88px;margin-left:2px;}
+.ib-bacc-seperator{ background-color:#000000; width:10px; height:2px; margin:19px 5px 10px; display:inline-block; float:left; }
+.ib-bacc-miles-label{width:157px;margin-left:138px; font-size:16px!important;}
+.ib-bacc-cat {width:236px; margin-left:580px; margin-top: -30px; padding-left:10px; padding-bottom:10px;}
+.ib-bacc-terms-label{width:236px;margin-left:63px;}
+.ib-bacc-terms {margin-left:400px;}
+.ib-bacc-button{padding-left:10px; padding-bottom:10px;}
+.ib-bacc-submit{background:url(/assets/ib-buyer-submit.png);}
+.ib-bacc-next{background:url(/assets/ib-seller-next.png);}
+.ib-bacc-left{float:left;margin-left:18px;}
+.ib-bacc-right{float:right; margin-right:06px}
+.ib-buyer-account-form input[type="text"]:focus{ color:#000000!important;}
+.ib-buyer-update{background:url(/assets/ib-buyer-update.gif);}
+.ib-buyer-account-form .submit-update-button {float:right;}
+/* Buyer and Seller registration pages */
+.ib-bs-registration{ overflow:hidden; padding:10px 10px 0px 10px; }
+.ib-bs-registration ul{ list-style-type:none; padding:0px; margin:0px; }
+.ib-bs-registration ul li{ padding:0px; margin:0px; float:left; display:inline; }
+.ib-bs-registration ul li a{ padding:15px 20px; margin:0px 5px; float:left; display:inline-block;  font-family:Arial, Helvetica, sans-serif; font-weight:bold; font-size:18px; font-weight:bold; text-decoration:none; border-radius:5px 5px 0px 0px; box-shadow:0px -1px 3px #000000; height:20px;width:141px; text-align:center;}
+.ib-bs-registration ul li a:hover,.ib-bs-registration ul li a.active{ background-color: #E6E6E6; box-shadow: 0 -2px 3px #000000;
+                                                                      color: #144E8D; height:20px;width:141px;}
+
+/* css for buyer account information*/
+
+/* Seller My Offers Current Starts */
+.ib-myoffer-tab table tr.ib_smo_bg{ background:url(/assets/ib_smo_bg.png) top left no-repeat; width:100%; height:63px; }
+.ib-smo-current{ overflow:hidden; padding:10px; }
+.ib-smo-current ul{ list-style-type:none; padding:0px; margin:0px; }
+.ib-smo-current ul li{ padding:0px; margin:0px; float:left; display:inline; }
+.ib-smo-current ul li a{ padding:15px 20px; margin:0px 5px; float:left; display:inline-block; color:#464646; font-family:Arial, Helvetica, sans-serif; font-weight:bold; font-weight:bold; text-decoration:none; border-radius:5px 5px 0px 0px; box-shadow:0px -1px 3px #000000; }
+.ib-smo-current ul li a:hover,.ib-smo-current ul li a.active{ background-color:#e6e6e6; color:#144e8d; box-shadow:0px -2px 3px #000000; }
+.ib-smo-current ul.submenu{ }
+.ib-smo-current ul.submenu{ display:block; width:936px; float:left; overflow:hidden; background-color:#e6e6e6; position:absolute; border-radius:5px; margin:48px 0 0 -5px; box-shadow:0 3px 4px #000000; padding:7px 3px 2px 10px; }
+.ib-smo-current ul.submenu li{ float:left; display:inline-block;}
+.ib-smo-current ul.submenu li a{ border-radius:none; box-shadow:none; color:#565555; font-size:15px; padding:0px;}
+.ib-smo-current ul.submenu li a:hover{ border-radius:none; box-shadow:none; color:#565555;}
+.ib-smo-current ul.submenu li.desc{ float:left; display:inline-block; border-right:3px double #acacac; padding:0 5px;}
+.ib-smo-current ul.submenu li a.buyer{ border-right: 3px double #ACACAC;
+                                       display: inline-block;
+                                       float: left;
+                                       line-height: 20px;
+                                       padding: 0 0 0 35px;
+                                       width: 92px;}
+.ib-smo-current ul.submenu li.sort{ float:right; width: 190px; }
+.ib-smo-current ul.submenu li.sort label{ color: #838282; float: left; font-family: Arial,Helvetica,sans-serif; font-size: 14px; line-height: 2em; }
+.ib-smo-current ul.submenu li.sort select{  border: 1px solid #c2c2c2; color: #666666; float: right;  margin: 3px 3px 0 0;    width:130px; border-radius:3px;
+                                            box-shadow:1px 2px 4px #333333;}
+.ib-myoffer-tab table tr.ib-smo-tab-bg{
+  height:auto!important;
+  border:1px solid #fbfbfb;
+  background: #e3e3e3;
+  background: -moz-linear-gradient(top, #e3e3e3 0%, #f6f6f6 100%) ;
+  background: -webkit-gradient(linear, left top, left bottom,
+    color-stop(0%,#e3e3e3), color-stop(100%,#f6f6f6));
+  background: -webkit-linear-gradient(top, #e3e3e3 0%,#f6f6f6 100%);
+  background: -o-linear-gradient(top, #e3e3e3 0%,#f6f6f6 100%);
+  background: -ms-linear-gradient(top, #e3e3e3 0%,#f6f6f6 100%);
+  background: linear-gradient(top, #e3e3e3 0%,#f6f6f6 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(
+    startColorstr='#e3e3e3', endColorstr='#f6f6f6',GradientType=0 );
+  box-shadow:0 0 5px #bfbfbf;
+  -moz-box-shadow:0 0 5px #bfbfbf;
+  -webkit-box-shadow:0 0 5px #bfbfbf;
+  border-radius:10px;
+  -moz-border-radius:10px;
+  -webkit-border-radius:10px;
+  -ms-border-radius:10px; }
+.ib-myoffer-tab table tr.ib-smo-tab-bg td{ vertical-align:middle; line-height: 18px; }
+
+.ib-smo-accepted{ overflow:hidden; padding:10px; }
+.ib-smo-accepted ul{ list-style-type:none; padding:0px; margin:0px; }
+.ib-smo-current ul li{ padding:0px; margin:0px; float:left; display:inline; }
+.ib-smo-accepted ul li a{ padding:15px 20px; margin:0px 5px; float:left; display:inline-block; color:#464646; font-family:Arial, Helvetica, sans-serif; font-weight:bold; font-weight:bold; text-decoration:none; border-radius:5px 5px 0px 0px; box-shadow:0px -1px 3px #000000; }
+.ib-smo-accepted ul li a:hover,.ib-smo-accepted ul li a.active{ background-color:#e6e6e6; color:#144e8d; box-shadow:0px -2px 3px #000000; }
+.ib-smo-accepted ul.submenu{ }
+.ib-smo-accepted ul.submenu{ display:block; width:936px; float:left; overflow:hidden; background-color:#e6e6e6; position:absolute; border-radius:5px; margin:48px 0 0 -5px; box-shadow:0 3px 4px #000000; padding:7px 3px 2px 10px; }
+.ib-smo-accepted ul.submenu li{ float:left; display:inline-block;}
+.ib-smo-accepted ul.submenu li a{ border-radius:none; box-shadow:none; color:#565555; font-size:15px; padding:0px;}
+.ib-smo-accepted ul.submenu li a:hover{ border-radius:none; box-shadow:none; color:#565555;}
+.ib-smo-accepted ul.submenu li a.desc{ width:196px; float:left; display:inline-block; border-right:3px double #acacac; padding:10px 0 17px 0;}
+.ib-smo-accepted ul.submenu li.buyer{ float:left; display:inline-block; border-right:3px double #acacac; padding:0 5px; line-height:20px; height:42px;}
+.ib-smo-accepted ul.submenu li.sort{ float:right; padding-top:5px; width: 168px; }
+.ib-smo-accepted ul.submenu li.sort label{ color: #565555; float: left; font-family: Arial,Helvetica,sans-serif; font-size: 14px; line-height: 2em; padding:2px 7px 0 3px;}
+.ib-smo-accepted ul.submenu li.sort select{  border: 1px solid #c2c2c2; color: #666666; float: right;  margin: 4px 3px 0 0; width:105px; border-radius:3px;
+                                             box-shadow:1px 2px 4px #333333; padding:2px 2px 2px 5px;}
+/* Seller My Offers accepted Ends */
+
+/*Seller match counter product and services starts */
+.ib-match-content{ padding:4px 0 350px 0px; overflow:hidden;}
+.ib-smo-accepted ul.submenu2{ }
+.ib-smo-accepted ul.submenu2{ display:block; width:936px; float:left; overflow:hidden; background-color:#e6e6e6; position:absolute; border-radius:5px; margin:46px 0 0 -5px; box-shadow:0 3px 4px #000000; padding:0px 3px 0px 10px; }
+.ib-smo-accepted ul.submenu2 li{ float:left; display:inline-block;}
+.ib-smo-accepted ul.submenu2 li a{ border-radius:none; box-shadow:none; color:#565555; font-size:15px; padding:0px;}
+.ib-smo-accepted ul.submenu2 li a:hover{ border-radius:none; box-shadow:none; color:#565555;}
+.ib-smo-accepted ul.submenu2 li a.desc{ width:290px; float:left; display:inline-block; border-right:3px double #acacac;border-radius:none;  padding:10px 0 17px 0;}
+
+.ib-smo-accepted ul.submenu2 li a.buyer{ width:170px; float:left; display:inline-block; border-right:3px double #acacac; border-radius:none; padding:0px 0 0px 25px; line-height:20px; height:85px;}
+.ib-smo-accepted ul.submenu2 li.sort{ float:right; padding-top:5px; }
+.ib-smo-accepted ul.submenu2 li.sort label{ color: #565555; float: left; font-family: Arial,Helvetica,sans-serif; font-size: 14px; line-height: 2em; padding:2px 7px 0 0;}
+.ib-smo-accepted ul.submenu2 li.sort select{  border: 1px solid #c2c2c2; color: #666666; float: right;  margin: 4px 3px 0 0;    width:130px; border-radius:3px;
+                                              box-shadow:1px 2px 4px #333333; padding:2px 2px 2px 5px;}
+.ib-p-desc{font-family:Arial, Helvetica, sans-serif; font-size:15px; font-weight:bold; color:#585858; padding-top:5px; display:inline-block; }
+.ib-p-name{font-family:Arial, Helvetica, sans-serif; font-size:18px; font-weight:bold; color:#012043; display:inline-block;padding-top:7px;}
+
+.ib-seller-counter-form {  background-color:#f3f3f4; border-radius:5px; overflow:hidden; box-shadow:3px 2px 4px #000000; width:673px; padding:4px 0 20px 14px; margin-top:31px; float:left;}
+.ib-seller-counter-form p{text-align:left; color:#000000; font-family:Arial, Helvetica, sans-serif; font-weight:normal; font-size:12px;}
+.ib-seller-counter-form a{text-align:right; color:#000000; font-family:Arial, Helvetica, sans-serif; font-weight:bold; font-size:14px;}
+
+.ib-seller-counter-form div{ clear:both; margin-bottom:3px; float:left;}
+.ib-seller-counter-form label{ text-align:left; color:#3a3939; font-family:Arial, Helvetica, sans-serif;   font-weight:bold;  }
+.ib-seller-counter-form textarea{ border:1px solid ;  border-radius:5px; padding:8px; float:right; font-size:20px; color:#bebebe; font-weight:bold;margin:17px 9px -4px 15px; width:544px; box-shadow:0px 1px 4px #000000; }
+.ib-seller-counter-form input[type="text"]{ border:1px solid ;  border-radius:5px; padding:3px; float:right; font-size:20px; color:#bebebe; font-weight:bold;box-shadow:0px 1px 4px #000000;  }
+
+.ib-seller-counter-form input[type="checkbox"]{ border:2px solid ;width:13px;  border-radius:5px; padding:11px;
+                                                height: 13px; padding: 0 5px 0 0; clear: left;  box-shadow:0px 1px 4px #000000;}
+.ib-seller-counter-form input[ type="submit"]{ height:58px;  text-indent:-99999px; cursor:pointer;  top left no-repeat; border:none; margin-left:600px;}
+.ib-scp-left{font-size:15px; }
+.ib-scp-input{margin:14px 9px -8px 52px;  }
+.ib-seller-offer-price {background-color:#f3f3f4; border-radius:5px; margin-right:6px; overflow:hidden; box-shadow:0px 1px 4px #000000; width:237px; padding:4px 0 20px 14px; margin-top:31px; float:right;}
+.ib-seller-offer-price p{text-align:left; color:#000000; font-family:Arial, Helvetica, sans-serif; font-weight:normal; font-size:12px;}
+.ib-seller-offer-price a{text-align:right; color:#000000; font-family:Arial, Helvetica, sans-serif; font-weight:bold; font-size:14px;}
+
+.ib-seller-offer-price div{ clear:both; float:left;}
+.ib-seller-offer-price label{ text-align:left; color:#3a3939; font-family:Arial, Helvetica, sans-serif;   font-weight:bold;  }
+.ib-sop-left{ font-size:14px; color:#585858;}
+.ib-seller-offer-price input[type="text"]{ border:1px solid ;  border-radius:5px; padding:3px; float:right; font-size:20px; color:#bebebe; font-weight:bold;box-shadow:0px 1px 4px #000000;  }
+.ib-seller-offer-price input[ type="submit"]{ height:58px;  text-indent:-99999px; cursor:pointer;  top left no-repeat; border:none; margin-left:600px;}
+.ib-scp-left{font-size:15px; }
+.ib-sop-input{margin:14px 9px -8px 52px;  }
+.ib-sop-greyinput1 {width:112px; float:right; height:30px; margin:7px 5px 10px 20px}
+.ib-sop-accept{background:url(/assets/ib_smo_accept.png);}
+.ib-star{ background: url("/assets/ib_star.png") no-repeat scroll left top transparent; clear: left;  display: inline-block;  height: 14px; width:73px; margin-top:5px; }
+a.ib-add-more-photo { background: url("/assets/ib_plus.png") no-repeat scroll left top transparent;
+                      color: #3A3939;
+                      cursor: pointer;
+                      display: inline-block;
+                      float: right !important;
+                      font-family: Arial,Helvetica,sans-serif;
+                      font-size: 13px;
+                      font-weight: bold;
+                      height: 35px;
+                      left: -90px;
+                      padding-left: 51px;
+                      padding-top: 10px;
+                      position: relative;
+                      text-align: left;
+                      top: -55px;
+                      text-decoration:none;
+}
+a.ib-add-more-photo:hover{ color:#012043; }
+.ib-calender{ display: inline-block;    float: left;    margin: 3px 0 0 1px; }
+
+.ib-sm-service {  background-color:#f3f3f4; border-radius:5px; overflow:hidden; box-shadow:3px 2px 4px #000000; width:673px; padding:4px 0 20px 14px; margin-top:31px; float:left;}
+.ib-sm-service div{ clear:both; margin-bottom:3px; float:left;}
+.ib-sm-service label{ text-align:left; color:#3a3939; line-height:17px; margin-top:10px; font-family:Arial, Helvetica, sans-serif;   font-weight:bold; font-size:15px; width:105px; float:left;  }
+.ib-sm-service textarea{ border:1px solid ; margin-top:10px;  border-radius:5px; padding:8px; float:right; font-size:20px; color:#bebebe; font-weight:bold; box-shadow:0px 1px 4px #000000; width:535px; }
+.ib-sm-service input[type="text"]{ border:1px solid ; width:545px; margin-top:10px;  border-radius:5px; padding:3px; float:right; font-size:20px; color:#bebebe; font-weight:bold;box-shadow:0px 1px 4px #000000;  }
+.ib-seller-offer-price label{ width:99px; float:left; line-height:17px; }
+
+.ib-sm-product {  background-color:#f3f3f4; border-radius:5px; overflow:hidden; box-shadow:3px 2px 4px #000000; width:673px; padding:4px 0 20px 14px; margin-top:31px; float:left;}
+.ib-sm-product div{ margin-bottom:3px; float:left;}
+.ib-sm-product label{ text-align:left; color:#3a3939; line-height:17px; margin-top:10px; font-family:Arial, Helvetica, sans-serif;   font-weight:bold; font-size:15px; width:105px; float:left;  }
+.ib-sm-product textarea{ border:1px solid ; margin-top:10px;  border-radius:5px; padding:8px; float:right; font-size:20px; color:black; font-weight:bold; box-shadow:0px 1px 4px #000000; width:535px; }
+.ib-sm-product input[type="text"]{ border:1px solid ; width:545px; margin-top:10px;  border-radius:5px; padding:3px; float:right; font-size:20px; color:black; font-weight:bold;box-shadow:0px 1px 4px #000000;  }
+.ib-sm-product input[type="file"]{ border:1px solid ; width:545px; margin-top:10px;  border-radius:5px; padding:3px; font-size:15px; color:#bebebe; font-weight:bold; }
+
+/* Seller match counter product and services Ends */
+
+/* IB-seller-category*/
+#ib-seller-wrapper { width:100%;}
+.ib-seller-content {width:958px; overflow:hidden; background-color:#FFFFFF; border-radius:18px; overflow:hidden; width:920px; padding:10px; margin-top:1px; border: 10px solid #e6e6e6; box-shadow: 0 5px 5px #A8A8A8; overflow: hidden; height:inherit; azimuth:center }
+.ib-seller-content p{ padding-top:10px; text-align:justify; color:#000000; font-family:Arial, Helvetica, sans-serif; font-weight:normal; font-size:12px;}
+.ib-seller-content-key { position:relative; width:300px; margin-right:16px;	float:right; text-align: justify; padding: 5px; }
+.ib-seller-content-span a{ display:inline-block; color:#828385; font-family:Arial, Helvetica, sans-serif; font-weight:normal; font-size:11px; padding:10px 0px 10px 0px; text-decoration:none; margin-right:16x; float:right; }
+.ib-seller-content-span a:hover{ text-decoration:underline;}
+.ib-seller-content-input {width:300px; height:100px; margin-right:16px; text-align:inherit;}
+.ib-seller-button { width:300px; height:20px; padding:70px 0px 0px 0px;}
+.ib-seller-button a:hover{ }
+.ib-seller-button a.ib-seller-cancel{ float:right;}
+.ib-seller-cancel{ background: url("/assets/ib_sc_cancel.png") repeat scroll 0 0 transparent;
+                   cursor: pointer;
+                   display: inline-block;
+                   line-height: 27px;
+                   text-indent: -99999px;
+                   width: 83px;}
+.ib-seller-submit{ background:url(/assets/ib_sc_submit.png); top left no-repeat; text-indent:-99999px; width:83px; height:28px; display:inline-block; cursor:pointer;border: 0 none;}
+.ib-seller-input[ type="submit"]:hover{ }
+
+/* nav menu */
+
+#navcontainer { float: left; margin-left: 1px; }
+#navcontainer ul { margin: 0; padding: 5px 0px 5px 0px; list-style-type: none;font-family:Arial, Helvetica, sans-serif; font-weight:bold;  text-decoration: none; border:thin; font-size:15px; background-color: #FFFFFF; }
+#navcontainer li { margin: 0 0 8px 1px; }
+#navcontainer a { display: block; margin-top: 2px; padding: 8px 10px; width: 140px; height: 18px; color: #999999; background-color: #FFFFFF; text-decoration: none; -webkit-border-radius: 10px 30px 30px 100px;-moz-border-radius: 10px 30px 30px 10px; border-radius: 10px 30px 30px 10px; border:ridge black; border-colour: #d2d2d2; }
+#navcontainer a:hover { background-color:#e6e6e6; color:#144e8d; text-decoration: none; }
+#navcontainer a:active { background-color:#e6e6e6; color:#144e8d; text-decoration: none; }
+
+/* admin panel */
+
+.ib-admin-panel{ background-color:#f3f3f4; border-radius:5px; overflow:hidden; width:480px; padding:30px 35px 10px 35px; margin-top:20px;}
+.ib-admin-panel p{ text-align:right; color:#000000; font-family:Arial, Helvetica, sans-serif; font-weight:normal; font-size:12px;}
+.ib-admin-panel div{ clear:both; margin-bottom:16px; float:left;}
+.ib-admin-panel label{ text-align:justified; width:400px; color:#000000; font-family:Arial, Helvetica, sans-serif; font-weight:normal; font-size:16px; line-height:30px; float:left; }
+.ib-admin-panel input[type="text"]{ border:2px solid #2b4980; width:335px; border-radius:5px; padding:11px; float:left; font-size:16px; color:#000000;  }
+.ib-admin-panel input[type="text"]:focus{ color:#000000!important;}
+.ib-admin-panel span a{ display:inline-block; color:#828385; font-family:Arial, Helvetica, sans-serif; font-weight:normal; font-size:11px; padding:16px 0 0 10px; text-decoration:none; }
+.ib-admin-panel span a:hover{ text-decoration:underline;}
+.ib-admin-panel input[type="submit"]{ float:right; margin-top:56px; background:url(/assets/ib-buyer-submit.png) top left no-repeat; width:171px; height:66px; cursor:pointer; border:none; text-indent:-99999px; }
+.error{color:#ff0000!important;}
+
+/* Seller Category */
+
+.ib-sc-tab table tr.ib_smo_bg{ background:url(/assets/ib_smo_bg.png) top left no-repeat; width:100%; height:63px; }
+.ib-sc-current{ overflow:hidden; padding:10px; }
+.ib-sc-current ul{ list-style-type:none; padding:0px; margin:0px; }
+.ib-sc-current ul li{ padding:0px; margin:0px; float:left; display:inline; }
+.ib-sc-current ul li a{ padding:15px 20px; margin:0px 5px; float:left; display:inline-block; color:#464646; font-family:Arial, Helvetica, sans-serif; font-weight:bold; font-weight:bold; text-decoration:none; border-radius:5px 5px 0px 0px; box-shadow:0px -1px 3px #000000; }
+.ib-sc-current ul li a:hover,.ib-smo-current ul li a.active{ background-color:#e6e6e6; color:#144e8d; box-shadow:0px -2px 3px #000000; }
+.ib-sc-current ul.submenu{ }
+.ib-sc-current ul.submenu{ display:block; width:936px; float:left; overflow:hidden; background-color:#e6e6e6; position:absolute; border-radius:5px; margin:48px 0 0 -5px; box-shadow:0 3px 4px #000000; padding:7px 3px 2px 10px; }
+.ib-sc-current ul.submenu li{ float:left; display:inline-block;}
+.ib-sc-current ul.submenu li a{ border-radius:none; box-shadow:none; color:#565555; font-size:15px; padding:0px;}
+.ib-sc-current ul.submenu li a:hover{ border-radius:none; box-shadow:none; color:#565555;}
+.ib-sc-current ul.submenu li a.desc{ width:290px; float:left; display:inline-block; border-right:3px double #acacac; padding:10px 0 17px 0;}
+.ib-sc-current ul.submenu li a.buyer{ width:80px; float:left; display:inline-block; border-right:3px double #acacac; padding:0px 0 0px 5px; line-height:20px;}
+.ib-sc-current ul.submenu li.sort{ float:right; padding-top:5px; }
+.ib-sc-current ul.submenu li.sort label{ color: #838282; float: left; font-family: Arial,Helvetica,sans-serif; font-size: 14px; line-height: 2em; padding:2px 7px 0 0;}
+.ib-sc-current ul.submenu li.sort select{  border: 1px solid #c2c2c2; color: #666666; float: right;  margin: 4px 3px 0 0;    width:130px; border-radius:3px; box-shadow:1px 2px 4px #333333; padding:2px 2px 2px 5px;}
+.ib-sc-tab table tr.ib-smo-tab-bg{ background:url(/assets/ib_smo_bg.png) top left no-repeat; width:100%; height:9px; }
+.ib-sc-tab table tr.ib-smo-tab-bg td{ vertical-align:top; }
+.ib-sc-accepted{ overflow:hidden; padding:10px 0px 0px 30px; }
+.ib-sc-accepted ul{ list-style-type:none; padding:0px; margin:0px; }
+.ib-sc-current ul li{ padding:0px; margin-bottom:0px; float:left; display:inline; }
+.ib-sc-accepted ul li a{  border-radius: 5px 5px 0 0;
+                          box-shadow: 0 -1px 3px #000000;
+                          color: #464646;
+                          display: inline-block;
+                          float: left;
+                          font-family: Arial,Helvetica,sans-serif;
+                          font-weight: bold;
+                          margin: 0 5px;
+                          padding: 15px 20px;
+                          text-decoration: none;
+}
+.ib-sc-accepted ul li a:hover, .ib-sc-accepted ul li a.active {background-color: #E6E6E6; box-shadow: 0 -2px 3px #000000;  color: #144E8D;}
+
+
+
+
+
+
+.ib-smo-accepted ul li a.active{ background-color:#e6e6e6; color:#144e8d; box-shadow:0px -2px 3px #000000; }
+.ib-sc-accepted ul.submenu{ }
+.ib-sc-accepted ul.submenu{ display:block; width:936px; float:left; overflow:hidden; background-color:#e6e6e6; position:absolute; border-radius:5px; margin:48px 0 0 -5px; box-shadow:0 3px 4px #000000; padding:7px 3px 2px 10px; }
+.ib-sc-accepted ul.submenu li{ float:left; display:inline-block;}
+.ib-sc-accepted ul.submenu li a{ border-radius:none; box-shadow:none; color:#565555; font-size:15px; padding:0px;}
+.ib-sc-accepted ul.submenu li a:hover{ border-radius:none; box-shadow:none; color:#565555;}
+.ib-sc-accepted ul.submenu li a.desc{ width:290px; float:left; display:inline-block; border-right:3px double #acacac; padding:10px 0 17px 0;}
+.ib-sc-accepted ul.submenu li a.buyer{ width:75px; float:left; display:inline-block; border-right:3px double #acacac; padding:0px 0 0px 0px; line-height:20px; height:42px;}
+.ib-sc-accepted ul.submenu li.sort{ float:right; padding-top:5px; }
+.ib-sc-accepted ul.submenu li.sort label{ color: #565555; float: left; font-family: Arial,Helvetica,sans-serif; font-size: 14px; line-height: 2em; padding:2px 7px 0 0;}
+.ib-sc-accepted ul.submenu li.sort select{  border: 1px solid #c2c2c2; color: #666666; float: right;  margin: 4px 3px 0 0;    width:130px; border-radius:3px; box-shadow:1px 2px 4px #333333; padding:2px 2px 2px 5px;}
+
+/* Seller Caegory accepted Ends */
+
+
+
+.twitter-provider {
+  margin-top:50px;
+}
+/* Media Query CSS Starts Here*/
+@media screen and (max-width: 980px) {
+
+}
+@media screen and (max-width: 758px) {
+
+}
+@media screen and (max-width:480px) {
+
+}
+/* Media Query CSS Starts Here*/
+
+.clear {
+  clear:both;
+}
+
+.float_r {
+  float: right!important;
+}
+.float_l {
+  float:left!important;
+}
+
+.main-form {
+  margin: auto;
+  width: 89%;
+  padding-top: 150px;
+}
+
+.status-green {
+  color: green;
+}
+
+.status-yellow {
+  color: yellow;
+}
+
+.status-red {
+  color: red;
+}
+
+/* By Raghu Joshi */
+#account-names{margin-left: 18px;font-size: 11px;color: red;}
+div.last-name {float:left;clear: none;width:200px;}
+div.first-name {float:left; clear: none;width:332px;margin-right: 20px;}
+div.zip-name{float:left; clear: none;width: 242px;}
+div.city-name{float:left; clear: none;width:381px;margin-right: 62px;}
+div.phone-name1 {float:left; clear: none;width:100px;margin-right: 6px;}
+div.phone-name2 {float:left; clear: none;width:100px;margin-right: 3px;}
+div.phone-name3 {float:left; clear: none;width:100px;margin-right: 6px;}
+div.errors {color:red;font-size: 11px;}
+div.offer-item-errors {float:left;width: 382px;}
+div.offer-price-errors {float: left; margin-left: 53px; width: 157px;}
+div.new-offer-form-errors {margin-left: 175px;width: 600px;}
+div.reg-email-username-error {margin-top: 3px;width: 359px;}
+div.nested-messages {margin-left: 20px; position: relative; width: 318px; margin-top:5px; margin-bottom: 8px;}
+label.nested-label-class {margin-left:5px;}
+div.add-photos-path {width: 546px; clear:none}
+div.remove-photos-path {}
+div.bid-photo-container{width: 546px; clear:none;}
+a.link-to-remove {margin-left: 25px;}
+.ib-buyer-account-form label.ib-i-agree-buyer {line-height: 15px;}
+.ib-buyer-account-form div.ib-terms-and-conds {margin-bottom: 8px;}
+.ib-buyer-account-form .ib-acc-info-error {float: left;
+                                           margin-left: 18px;
+                                           margin-top: -3px;
+                                           text-align: left;
+                                           width: 309px;}
+.ib-buyer-account-form .ib-zip-margin {margin-left:461px;}
+.ib-buyer-account-form .ib-myaccount-buttons {margin-top:10px;}
+
+#BuyerFnameError, #BuyerLnameError, #BSNameError, #BEmailError, #BuyerZipError, #BuyerPhoneError,
+#SellerFnameError, #SellerLnameError, #SellerZipError, #SellerCityError,#SellerPhone1Error, #SellerPhone2Error, #SellerPhone3Error, #CompanyError,
+#SellerUsernameError, #SellerEmailError, #BuyerEmailError, #BuyerUsernameError,#BuyerAddressError,#BuyerAptError,#BuyerCityError,#OfferItemError,
+#OfferPriceError, #BuyerPhone1Error,#BuyerPhone2Error,#BuyerPhone3Error, #IBUsernameError,
+#IBEmailError,#IBPasswordError,#IBPasswordConfirmError,#acceptDateError, #counterDateError, #SellerPaypalEmailError {display: none;}
+
+div.edit-category {float: right; margin-right: 21px; }
+
+#SellerFnameError {float:left;}
+#SellerLnameError {float: right; margin-right: 50px;}
+.float-none {float:none!important;}
+#SellerPhone1Error, #SellerPhone2Error, #BuyerPhone1Error, #BuyerPhone2Error {margin-bottom: 5px;}
+.ib-registration-form .ib-reg-error {margin-bottom: 16px;margin-top: -11px;}
+.no-decoration {text-decoration: none;}
+.indigo-color {color:#144e8d;}
+.text-left-align {text-align: left!important;}
+.text-right-align {text-align: right!important;}
+.text-center-align {text-align: center;}
+.active {background-color: #E6E6E6 !important; box-shadow: 0 -2px 3px #000000 !important;  color: #144E8D !important; }
+div.ibUpdateKeywords{margin-top: 7px;}
+/* Ends here */
+
+/* Latest css by Narsh*/
+
+.ib-sai-terms{ font-size:16px!important;}
+.ib-sai-submit{float:right!important;padding-right:20px!important;}
+.ib-sai-next {width:125px!important;}
+.ib-sai-mar20 {margin-top:20px!important;}
+.ib-bai-submit { background:url(/assets/ib-buyer-submit.png)!important;width:131px!important;}
+
+.edit-category a:hover{ text-decoration:none; }
+.ib-buyer-account-form input[type="text"],.ib-buyer-account-form select{ color:#222222!important; }
+.ib-content-form input.price[type="text"]{ text-align:right; color:#BEBEBE; width:122px; margin-right:20px; padding-right:10px; }
+.ib-content-form input[ type="text"].price1{ background:url(/assets/ib_for.png) top left no-repeat; float:left; text-align:right; width:154px; margin-right:20px; padding-right:10px;}
+.price1{ color:#222222;  }
+.ib-content-form input.price[type="text"]:visited,.ib-content-form input.price[type="text"]:focus,.ib-content-form input.price[type="text"]:active,.ib-content-form input.price[type="text"]:link{ color:#222222;}
+.ib-myoffer-tab table tr td{ vertical-align:middle;}
+.ib-bmo-open { top: 0px !important;}
+.ib-bmo-extend { top: 6px !important; }
+
+.ib-myoffer-tab table tr.ib-myoffer-dark{ height:auto!important; border:1px solid #fbfbfb;
+                                          background: #c5d5e5;
+                                          background: -moz-linear-gradient(top, #f3f5f9 0%, #9db7d4 100%) ;
+                                          background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f3f5f9), color-stop(100%,#9db7d4));
+                                          background: -webkit-linear-gradient(top, #f3f5f9 0%,#9db7d4 100%);
+                                          background: -o-linear-gradient(top, #f3f5f9 0%,#9db7d4 100%);
+                                          background: -ms-linear-gradient(top, #f3f5f9 0%,#9db7d4 100%);
+                                          background: linear-gradient(top, #f3f5f9 0%,#9db7d4 100%);
+                                          filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f3f5f9', endColorstr='#9db7d4',GradientType=0 );
+                                          box-shadow:0 0 5px #9db7d4;
+                                          -moz-box-shadow:0 0 5px #9db7d4;
+                                          -webkit-box-shadow:0 0 5px #9db7d4;
+                                          border-radius:5px;
+                                          -moz-border-radius:5px;
+                                          -webkit-border-radius:5px;
+                                          -ms-border-radius:5px;
+}
+.ib-myoffer-tab table tr.ib-myoffer-dark td{ padding-bottom:10px;}
+.ib-myoffer-heading{ margin-top:15px; }
+.ib-myoffer-tab table tr.ib-myoffer-title td{ padding-left:0px; }
+.ib-myoffer-tab{ margin-left:5px; width:98%;}
+/* Latest css by Narsh*/
+
+/* Seller category alert message */
+.seller-alert-block {
+  padding:0px;
+  position:absolute;
+  widows:350px;
+  float:right;
+  margin-left:610px;
+  margin-top:-60px;
+  width: 290px;
+  height: auto;
+}
+.seller-alert-danger{
+  background-color: #F2DEDE;
+  border-color: #EED3D7;
+  font:Arial, Helvetica, sans-serif!important;
+  font-weight:bold;
+  color: #144E8D;
+}
+.seller-alert {
+  background-color: #f5f8fc;
+  border: 1px solid #b4b4b4;
+  border-radius: 4px 4px 4px 4px;
+  color: #144E8D;
+  margin-bottom: 18px;
+  padding: 8px 35px 8px 14px;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+  font-size:15px;
+  font-style :Arial, Helvetica, sans-serif!important;
+  font-weight:bold;
+}
+
+.ib-seller-content p.bold {
+  font:Arial, Helvetica, sans-serif;
+  font-weight:bold; font-size:14px;
+  color: #000000;
+
+}
+/* Ends here */
+
+/* Privacy Policy */
+
+/* Privacy Policy */
+
+.ib-policy {
+  font-family:Arial;
+  text-align:justify;
+  line-height:14px;
+  color: #444444 !important;
+  margin:30px;
+  padding: 0 20px 0 20px;
+}
+
+.ib-policy p.less { margin:10px 50px 0 50px; margin-top:10px; line-height:17px;}
+
+.ib-policy p{
+  margin-top:5px;
+  font-size:13px;
+  line-height:17px;
+}
+
+.ib-policy ul {
+  margin-top:15px;
+  margin-left:20px;
+}
+
+.ib-policy ul.b {     font-weight: bold; font-size : 16px; padding-top:10px; text-indent:10px;}
+
+.ib-policy li {
+  margin-top:10px;
+  margin-left:50px;
+  list-style:disc;
+  font-weight: normal;
+  font-size : 13px;
+  padding-left:10px;
+  text-indent:0px;
+  font-style: normal;
+  line-height: 16px;
+}
+
+.ib-policy ol {
+  color:#333333;
+  font-family: Arial;
+  font-weight: bold;
+  font-size : 16px;
+  margin-top:25px;
+}
+
+p.bold { font-style:oblique; color:#144E8D;
+}
+
+.ib-policy h1 {
+  color:#144E8D;
+  font-family: Arial;
+  font-weight: bold;
+  font-size : 16px;
+  margin-top:25px;
+}
+
+
+.ib-policy a{
+  color:#144E8D;
+  font-weight: bold;
+}
+
+.ib-policy hover{
+  color:#666666;
+  font-weight: bold;
+}
+
+
+/* end privacy policy */ 
+
+.fcontainer{width: 500px !important; height: 60px !important;}
+
+.ib-content-form .i-want-to-buy {margin-top :35px;}
+.ib-empty-messages {width:500px;margin:auto;text-align: center;font-size: 17px; padding:8px; line-height: 20px;}
+.ib-content .facebook-comments {margin-left: 181px;}
+
+/* how i works table */
+
+.tabrow-container { margin:00px; padding: 0 20px 0 20px; }
+
+.tabrow {
+  text-align: left;
+  list-style: none;
+  margin: 20px 0 20px;
+  padding: 0 0 0 30px;
+  line-height: 34px;
+  height: 36px;
+  overflow: hidden;
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  position: relative;
+}
+.tabrow li {
+  border: 1px solid #AAA;
+  background: #66FFFF;
+  background: -o-linear-gradient(top, #c5d5e5 50%, #4ba1cc 100%);
+  background: -ms-linear-gradient(top, #c5d5e5 50%, #4ba1cc 100%);
+  background: -moz-linear-gradient(top, #c5d5e5 50%, #4ba1cc 100%);
+  background: -webkit-linear-gradient(top, #c5d5e5 50%, #4ba1cc 100%);
+  background: linear-gradient(top, #c5d5e5 50%, #4ba1cc 100%);
+  display: inline-block;
+  position: relative;
+  z-index: 0;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.4), inset 0 1px 0 #FFF;
+  text-shadow: 0 1px #FFF;
+  margin: 0 -5px;
+  padding: 0 20px;
+}
+.tabrow a {
+  color: #555;
+  text-decoration: none;
+}
+.tabrow li.selected {
+  background: #FFF;
+  color: #333;
+  z-index: 2;
+  border-bottom-color: #FFF;
+}
+.tabrow:before {
+  position: absolute;
+  content: " ";
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  border-bottom: 1px solid #AAA;
+  z-index: 1;
+}
+.tabrow li:before,
+.tabrow li:after {
+  border: 1px solid #AAA;
+  position: absolute;
+  bottom: -1px;
+  width: 5px;
+  height: 5px;
+  content: " ";
+}
+.tabrow li:before {
+  left: -6px;
+  border-bottom-right-radius: 6px;
+  border-width: 0 1px 1px 0;
+  box-shadow: 2px 2px 0 #D1D1D1;
+}
+.tabrow li:after {
+  right: -6px;
+  border-bottom-left-radius: 6px;
+  border-width: 0 0 1px 1px;
+  box-shadow: -2px 2px 0 #D1D1D1;
+}
+.tabrow li.selected:before {
+  box-shadow: 2px 2px 0 #FFF;
+}
+.tabrow li.selected:after {
+  box-shadow: -2px 2px 0 #FFF;
+}
+
+.ib-content-form .offer-item-small {background: url("/assets/ib_buy_small.png") no-repeat scroll left top transparent;
+                                    float: left;
+                                    height: 40px;
+                                    padding: 3px 0 0 5px;
+                                    width: 354px;}
+.ib-content-form .offer-item-small input[ type="text"] { border: 0 none;
+                                                         height: 27px;
+                                                         padding-left: 9px;
+                                                         padding-right: 3px;
+                                                         width: 328px; }
+.ib-content-form .offer-price-small {background: url("/assets/ib_price_small.png") no-repeat scroll left top transparent;
+                                     float: left;
+                                     height: 39px;
+                                     margin-right: 15px;
+                                     padding: 5px 3px 2px 30px;
+                                     width: 101px;}
+.ib-content-form .offer-price-small input[ type="text"] { border: medium none;
+                                                          height: 22px;
+                                                          padding: 5px 3px 2px 1px;
+                                                          text-align: right;
+                                                          width: 89px;
+}
+.ib-content-form input[ type="submit"].make-offer-small{ background: url("/assets/ib_make_offer_small.png") no-repeat scroll left top transparent;
+                                                         border: medium none;
+                                                         cursor: pointer;
+                                                         height: 41px;
+                                                         text-indent: -99999px;
+                                                         width: 131px;}
+.ib-content-form label.ib-buy-small {font-size: 20px; padding: 9px 6px 0; }
+.ib-content-form .ib-myoffers { margin-left: 71px;}
+
+.ib-policy p.left { padding:10px 0px 0px 200px; }
+.ib-logo_ci{ float:left; margin-top:2.77em;}
+
+
+
+/* Seller Promotional Banner */
+
+.ib-sell-free-container { padding:0px 0px 10px 0px; height:54px; width:954px;
+                          background-image: url(/assets/seller_offer.png); background-repeat: no-repeat;
+}
+
+/* Seller Promotional Banner */
+
+
+/*  IB Sign in Form */
+
+.ib-registration-form1{ border-radius:5px; overflow:hidden; width:294px; margin: 20px 0 0 179px; float:left}
+.ib-registration-form1 p{ text-align:right; color:#000000; font-family:Arial, Helvetica, sans-serif; font-weight:normal; font-size:12px;}
+.ib-registration-form1 label{ text-align:left; width: 250px; color:#000000; font-family:Arial, Helvetica, sans-serif; font-weight:normal; font-size:16px; }
+
+.ib-registration-form1 input[type="text"] { border:1px solid #2b4980; width:267px; border-radius:5px; padding:8px; color:#000000;  }
+.ib-registration-form1 input[type="password"]{ border:1px solid #2b4980; width:267px; border-radius:5px; padding:8px; color:#000000;  }
+.ib-registration-form1 input[type="text"]:focus { color:#000000!important;}
+.ib-registration-form1 input[type="password"]:focus { color:#000000!important;}
+
+.ib-registration-form1 span a{ display:inline-block; color:#828385; font-family:Arial, Helvetica, sans-serif; font-weight:normal; font-size:12px; padding:16px 0 0 ; text-decoration:none; }
+.ib-registration-form1 span a:hover{ text-decoration:underline;}
+.ib-registration-form1 input[type="submit"]{ float:right;margin-left: 10px; background:url(/assets/sign_in_btn.png) top right no-repeat; width:130px; height:66px; cursor:pointer; border:none; text-indent:-99999px; }
+.ib-registration-form1 .bottom-margin { margin-bottom: 4px;}
+.ib-registration-form1 .top-margin { margin-top: 24px;}
+.ibPassword {padding-top:2px !important;}
+.newAccount {float:left; width:123px;margin: 14px 8px 0 0;}
+.signinSubmit {width:124px; float:left}
+
+
+.major-category {margin-bottom: 8px;}
+.expand-collapse {font-size:15px;color:#144E8D;font-weight: bold}
+.sub-category {
+  width: 750px;
+}
+.sub-category input[type="text"] {display: none; border:1px solid #2b4980; width:250px; border-radius:5px; padding:3px; color:grey;margin-left: 10px;}
+.sub {color:#144E8D;}
+
+::-webkit-input-placeholder {
+  color:lightgrey;
+}
+
+input:-moz-placeholder { color:lightgrey; }
+
+.ib-save-btn {
+  background: url("/assets/save.png") repeat scroll 0 0 transparent;
+  border: 0 none;
+  cursor: pointer;
+  display: inline-block;
+  height: 31px;
+  text-indent: -99999px;
+  width: 83px;
+}
+.ib-cancel-button {
+  background: url("/assets/cancel.png") repeat scroll 0 0 transparent;
+  border: 0 none;
+  cursor: pointer;
+  display: inline-block;
+  height: 31px;
+  text-indent: -99999px;
+  width: 83px;
+}
+
+.ib-category-btns {
+  width: 300px;
+  margin-left: 27px;
+  margin-bottom:15px;
+}

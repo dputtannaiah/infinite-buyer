@@ -1,0 +1,26 @@
+<h2>Offer</h2>
+
+<p>
+  <b>Text</b><br>
+  <%= @offer.text %>
+</p>
+
+<p>
+  <b>Status</b><br>
+  <%= @offer.get_offer_status %>
+</p>
+
+
+<p>
+  <b>Updated at</b><br>
+  <%= @offer.updated_at %>
+</p>
+
+<p>
+  <b>Created at</b><br>
+  <%= @offer.created_at %>
+</p>
+
+<div class="form-actions">
+  <%= link_to 'Back', super_admins_offers_path, :class => 'btn'  %>
+</div>

@@ -1,0 +1,33 @@
+<h2>Blog Posts</h2>
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>id</th>
+    <th>Title</th>
+    <th>Status</th>
+    <th>Created at</th>
+    <th>Actions</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @blog_posts.each do |blog_post| %>
+      <tr>
+        <td><%= blog_post.id %></td>
+        <td><%= link_to truncate(blog_post.title), blog_post_path(blog_post), :target => "_blank" %></td>
+        <td><%= raw blog_post.status %></td>
+        <td><%= blog_post.created_at %></td>
+        <td>
+          <%= link_to 'Edit', edit_blog_post_path(blog_post), :class => 'btn btn-mini' %>
+          <% if blog_post.active? %>
+              <%= link_to 'Deactivate', deactivate_blog_post_path(blog_post), :class => 'btn btn-mini span2' %>
+          <% else %>
+              <%= link_to 'Activate', activate_blog_post_path(blog_post), :class => 'btn btn-mini span2' %>
+          <% end %>
+          <%= link_to 'Destroy', blog_post_path(blog_post), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+<%= administration_menu %>
+<%= link_to 'New', new_blog_post_path, :class => 'btn btn-primary' %>

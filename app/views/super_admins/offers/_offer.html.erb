@@ -1,0 +1,8 @@
+<tr>
+  <td>
+    <%= link_to truncate(offer.text), '#', :id => "offer_#{offer.id}" %>
+    <%= render '/admins/utils/popover/offer', :offer => offer %>
+  </td>
+  <td><%= offer.created_at %></td>
+  <td><%= offer.get_offer_status %></td>
+</tr>

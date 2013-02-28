@@ -1,0 +1,54 @@
+
+<% if Rails.env == "development" %>
+    Session: <%= "Buyer" if buyer?%><%= "Seller" if seller?%><br/>
+    Database: <%= if current_user && current_user.both?
+                      "Both"
+                  elsif current_user && current_user.buyer?
+                      "Buyer"
+                  elsif current_user && current_user.seller?
+                      "Seller"
+                  else
+                      "Unknown"
+                  end %>
+<% end %>
+<div id="ib-header-wrapper">
+  <div class="ib-header-content">
+    <div class="ib-logo">
+      <%= link_to image_tag('ib_logo.png',
+                            :alt => "#{configatron.site_name} Logo",
+                            :title => "#{configatron.site_name} Logo"), root_url %>
+    </div>
+    <div class="ib-header-right">
+      <ul class="ib-header-top">
+        <li>
+          <%= current_user.display_name("Hi ", "!") if user_signed_in? && current_user.display_name %>
+        </li>
+        <li>
+          <%= link_to 'My Account', my_account_url if user_signed_in? %>
+        </li>
+        <li>
+          <% if session[:logged_in_as] == User::LoggedInAs::SELLER %>
+              <%= link_to t('buyer'), buyer_users_url %>
+          <% else %>
+              <%= link_to t('seller'), seller_users_url %>
+          <% end %>
+        </li>
+        <li><%= link_to 'Support', "https://infinitebuyer.uservoice.com", :target => '_blank' %></li>
+        <li>
+          <% if user_signed_in? %>
+              <%= link_to 'Sign Out', destroy_user_session_url, :method => :delete, :id => 'dev_facebook_sign_out' %>
+          <% else %>
+              <%= link_to 'Sign In', buyer_users_url, :id => "dev_sign_in" %>
+          <% end %>
+        </li>
+      </ul>
+      <ul class="ib-social-media">
+        <li><a class="facebook" target="_blank" alt="Connect with us on Facebook" title="Connect with us on Facebook" href="http://www.facebook.com/InfiniteBuyer"></a>
+        </li>
+        <li><a class="twitter" target="_blank" alt="Follow us on Twitter" title="Follow us on Twitter" href="http://twitter.com/#!/InfiniteBuyer"></a></li>
+        <li><a class="linkedin" target="_blank" alt="Connect with us on LinkedIn" title="Connect with us on LinkedIn" href="http://www.linkedin.com/company/infinite-buyer"></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

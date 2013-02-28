@@ -1,0 +1,2 @@
+jQuery('div.other-offers').html('<%= escape_javascript(render :partial => 'my_other_offers') %>');
+jQuery('div#other-paginator').html('<%= escape_javascript(paginate(@other_offers, :remote => true).to_s) %>');

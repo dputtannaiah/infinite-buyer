@@ -1,0 +1,50 @@
+<h2>Blog Comment</h2>
+
+<p>
+  <b>Name:</b>
+  <%= handle_none @blog_comment.name %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @blog_comment.email %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @blog_comment.email %>
+</p>
+
+<p>
+  <b>Updated By:</b>
+  <%= handle_none @blog_comment.admin.try(&:email) %>
+</p>
+
+<p>
+  <b>Created At:</b>
+  <%= @blog_comment.created_at %>
+</p>
+
+<p>
+  <b>Updated At:</b>
+  <%= @blog_comment.updated_at %>
+</p>
+
+<p>
+  <b>Body:</b>
+  <%= @blog_comment.body %>
+</p>
+
+<p>
+  <b>Post:</b>
+  <%= handle_none @blog_comment.post.try(&:title) %>
+</p>
+
+<p>
+  <b>Reviewed By Admin?</b>
+  <%= @blog_comment.reviewed_at? ? 'Yes' : 'No'%>
+</p>
+
+
+<%= link_to 'Edit', edit_blog_comment_path(@blog_comment) %> |
+<%= link_to 'Back', blog_comments_path %>

@@ -1,0 +1,7 @@
+<% if @account.present? %>
+  jQuery('div.ib-bs-registration ul li a').removeClass('active');
+  jQuery('div.ib-bs-registration ul li a').eq(0).addClass('active');
+  jQuery('div.ib-buyer-account-form').html('<%= escape_javascript(render :partial => 'buyer') %>');
+<% else %>
+  jQuery('div.ib-buyer-account-form').html('<%= escape_javascript(render :partial => 'alert_message', :locals => {:type => "buyer"}) %>');
+<% end %>

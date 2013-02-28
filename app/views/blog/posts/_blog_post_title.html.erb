@@ -1,0 +1,2 @@
+<h2><%= link_to blog_post.title, root_url + blog_post.slug.to_s %></h2>
+<p> Posted on <%= blog_post.created_at.strftime("%b %d, %Y") %>. By <%= blog_post.admin.try(&:display_name) %> </p>

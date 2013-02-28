@@ -1,0 +1,5 @@
+<% if @status %>
+  window.location = "<%= new_user_session_url %>"
+<% else %>
+  $('div.passwordResetForm').html('<%= escape_javascript(render :partial => 'form') %>');
+<% end %>

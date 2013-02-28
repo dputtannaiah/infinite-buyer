@@ -1,0 +1,50 @@
+<div id="ib-content-wrapper">
+  <div class="ib-home-content">
+    <%= render :partial => 'make_new_offer' %>
+  </div>
+  
+  <div class="ib-content" style="padding-top: 36px;">
+    <div class="ib-content-title ib-bmo-myoffer">MyOffers</div>
+
+    <div class="ib-myoffer-heading">
+      <h2>Current Offers</h2>
+      <% if @open_offers.present? %>
+        <label>Sort by:</label>
+        <%= form_tag open_offers_path, :method => :get, :id => 'sort-form', :remote => true do %>
+          <%= select_tag 'sort_key', options_for_select([["Recent activity", "created_at"],["Description","text"],["Price","price"],["Offer Date","created_at"],["Status","status"]]) %>
+        <% end %>
+      <% end %>
+    </div>
+
+    <div class="ib-myoffer-tab open-offers">
+      <%= render :partial => 'my_open_offers' %>
+    </div>
+
+    <div id="paginator">
+      <%= paginate @open_offers, :params => { :controller => 'offers', :action => 'my_open_offers' }, :remote => true %>
+    </div>
+    <br /><br /><br /><br />
+
+    <div class="ib-myoffer-heading" style="margin-top:35px;">
+      <h2>Offer History</h2>
+      <% if @other_offers.present? %>
+        <label>Sort By:</label>
+        <%= form_tag other_offers_path, :method => :get, :id => 'canceled-offers-form', :remote => true do %>
+          <%= select_tag 'sort_key_canceled', options_for_select([["Recent activity", "created_at"],["Description","text"],["Price","price"],["Offer Date","created_at"],["Status","status"]]), :name => 'sort_key' %>
+        <% end %>
+      <% end %>
+    </div>
+
+    <div class="ib-myoffer-tab other-offers">
+      <%= render :partial => 'my_other_offers' %>
+    </div>
+
+    <div id="other-paginator">
+      <%= paginate @other_offers, :params => {:controller => 'offers', :action => 'my_other_offers'}, :remote => true %>
+    </div>
+  </div>
+</div>
+
+
+
+

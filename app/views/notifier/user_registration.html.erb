@@ -1,0 +1,59 @@
+<% if @type =~ /buyer/i %>
+  <div>
+    <h2 style=" color:#144E8D; font-family: Arial; font-weight: bold; font-size : 22px; text-align:left; background:#CCCCCC; vertical-align:middle;"><%= @user.buyer_account.first_name %> - Thank You for registering at Infinite Buyer! </h2>
+    <p style="font-family: Arial; font-size: 16px; margin-top:20px;"> As a Buyer, you will now have access to a revolutionary new platform where you can get the absolute best deal on goods and services because YOU are in control of the deal!</p>
+    <p style="font-family: Arial; font-size: 16px; margin-top:20px;">Through Infinite Buyer, you can make an offer to buy ANY item you can think of, and if there is a seller who is willing to sell it to you at your offer price, you can easily and quickly buy it. </p>
+    <p style="font-family: Arial; font-size: 16px; margin-top:20px;">
+      For a complete understanding of Infinite Buyer, please go to our
+      <a style="color:#144E8D; font-weight: bold;" href="<%= how_it_works_url %>">How It Works </a>
+      pages.
+    </p>
+    <h1 style="color:#144E8D; font-family: Arial; font-weight: bold; font-size : 20px;">Benefits to Buyers</h1>
+    <p style="font-family: Arial; font-size: 16px; margin-top:20px;">When YOU are in control of the transaction, you gain many advantages when purchasing through Infinite Buyer: </p>
+    <ul>
+      <li style="margin-top:20px;">Buy
+        <span style="font-style:oblique; color:#144E8D;">What</span>
+        You Want.  Ever go to a store and they are "Out of Stock" of the item you want? No more! YOU decide the inventory, and let sellers in the marketplace self-identify who has the product.
+      </li>
+      <li style="margin-top:20px;">Buy
+        <span style="font-style:oblique; color:#144E8D;">When </span>
+        You Want.  Need a birthday present, but there is no sale price at the time you want to buy it? No more! YOU decide when the sale is, and let sellers participate in YOUR sale time frame.
+      </li>
+      <li style="margin-top:20px;">Buy at The
+        <span style="font-style:oblique; color:#144E8D;">  Price </span>
+        You Want.  Have you ever spent hours driving around town shopping for the best price? No more! YOU decide the price you want to pay for everything you buy.
+      </li>
+      <li style="margin-top:20px;">
+        <span style="font-style:oblique; color:#144E8D;">Free </span>
+        to Join.  As a buyer, there are no registration fees, no membership fees, no offer fees, and no transaction fees.
+      </li>
+    </ul>
+    <h1 style="color:#144E8D; font-family: Arial; font-weight: bold; font-size : 20px;">Raving Fans</h1>
+    <p style="font-family: Arial; font-size: 16px; margin-top:20px;">Please let us know about your best deals by sharing your story on Raves.  The best stories will be selected for free prizes.</p>
+    <h1 style="color:#144E8D; font-family: Arial; font-weight: bold; font-size : 20px;">Support</h1>
+    <p style="font-family: Arial; font-size: 16px; margin-top:20px;"> For any customer service or technical support issues, please go to our Support pages.</p>
+  </div>
+<% else %>
+  <div>
+    <h2><%= @user.seller_account.first_name %> - Thank You for registering at Infinite Buyer! </h2>
+    <p style="font-family: Arial; font-size: 16px; margin-top:20px;"> As a Seller, you will now have access to a revolutionary new E-Commerce platform where you can quickly and easily sell your products or services to Ready-To-Buy buyers! </p>
+    <p style="font-family: Arial; font-size: 16px; margin-top:20px;"> Through Infinite Buyer, you can either accept any 'Buyer Offer' or make a counter offer, and if the buyer selects you, then they will complete the transaction and you made a sale - it's that easy!</p>
+    <p style="font-family: Arial; font-size: 16px; margin-top:20px;"> For a complete understanding of how Infinite Buyer works for Sellers, please go to our <a href="<%= how_it_works_url %>">How It Works </a>for Sellers pages.</p>
+    <h1 >Benefits to Sellers</h1>
+    <p style="font-family: Arial; font-size: 16px; margin-top:20px;">When you participate in our community of Ready-To-Buy buyers, you gain many advantages as a seller: </p>
+    <ul>
+      <li style="margin-top:20px;"><span style="font-style:oblique; color:#144E8D;">Faster Revenue.</span> Don't wait for an auction to finish in 2 weeks, don't wait for traffic to develop on your web sites, don't wait for the decision-approval-sales cycle. Get in front of Ready-to-Buy buyers and select the deals you want to participate in. Need to move your inventory today - accept a lower offer. Need more margin tomorrow, then only accept higher offers, it's your choice. </li>
+      <li style="margin-top:20px;"><span style="font-style:oblique; color:#144E8D;">Fulfill instead of 'Sell'. </span> Not a natural born sales person? Hate negotiating? Don't bother with all that hard work - Infinite Buyer is the platform that takes care of the negotiating for you. You become a fulfillment operation by simply accepting offers online. </li>
+      <li style="margin-top:20px;"><span style="font-style:oblique; color:#144E8D;">Reduce Costs. </span> Why spend so much money figuring out how to generate traffic, visitors and leads only to have 1% convert to a sale? Why not let the buyers come to you when they are ready to buy - near 100% conversion to a sale.</li>
+      <li style="margin-top:20px;"><span style="font-style:oblique; color:#144E8D;">Free to Join. </span> As a Seller, there are no registration fees, no listing fees, and no membership fees. The only fee you pay is a percentage of the sale at the time you make a sale! Please see How It Works for Sellers for current fee structure.</li>
+    </ul>
+    <h1>Raving Fans</h1>
+    <p style="font-family: Arial; font-size: 16px; margin-top:20px;">Please share your testimonials on Raves about how Infinite Buyer has improved your business, made you more income, or moved your inventory faster.</p>
+    <h1>Support</h1>
+    <p style="font-family: Arial; font-size: 16px; margin-top:20px;"> For any customer service or technical support issues, please go to our Support pages.</p>
+  </div>
+<% end %>
+
+<% content_for :email_title do %>
+  <span>Thank you Mail</span>
+<% end %>

@@ -1,0 +1,3 @@
+jQuery('div.ib-policy').html('<%= escape_javascript(render :partial => 'faqs') %>');
+jQuery('ul.tabrow li').removeClass('selected');
+jQuery('ul.tabrow li').eq(2).addClass('selected');

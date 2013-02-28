@@ -1,0 +1,34 @@
+<h2>Leave a Reply</h2>
+<div id="contactUsForm">
+  <%= form_for(@blog_comment) do |f| %>
+      <% if @blog_comment.errors.any? %>
+          <%= error_messages_for 'blog_comment' %>
+      <% end %>
+
+      <%= f.label 'name' %><%= req %>
+
+      <div class="input">
+        <%= f.text_field "name", :class => "{required:true}" %>
+      </div>
+      <%= f.label 'email' %><%= req %>
+
+      <div class="input">
+        <%= f.text_field "email", :class => "{required:true}" %>
+      </div>
+      <%= f.label 'website' %>
+
+      <div class="input">
+        <%= f.text_field "website" %>
+      </div>
+      <%= f.label 'message' %><%= req %>
+
+      <div class="textarea">
+        <%= f.text_area "body", :class => "{required:true}" %>
+      </div>
+      <div class="button small">
+        <input type="submit" value="Send"/>
+      </div>
+
+      <%= f.hidden_field :post_id, :value => @blog_post.id %>
+  <% end %>
+</div>

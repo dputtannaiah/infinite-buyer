@@ -1,0 +1,22 @@
+development: &config
+  environment: "sandbox"
+  username: "dputta_1337407700_biz_api1.gmail.com"
+  password: "1337407724"
+  signature: "AFcWxV21C7fd0v3bYYYRCpSSRl31ATDpEEH7fN4jXrNGK8KBz1ssFDGK"
+  application_id: "APP-80W284485P519543T"
+  ssl_cert_file: "/Applications/Skitch.app/Contents/Resources/curl-ca-bundle.crt"
+
+test:
+  <<: *config
+
+testing:
+  <<: *config
+  ssl_cert_file: "/etc/pki/tls/certs/ca-bundle.crt"
+
+production:
+  environment: "production"
+  username: "dputtannaiah_api1.qwinixtech.com"
+  password: "C2T8GD8WXW37GQT5"
+  signature: "AFcWxV21C7fd0v3bYYYRCpSSRl31APYWVT58at.csYvzsFXkVv3pESBv"
+  application_id: "APP-19R73415NV837451J"
+  ssl_cert_file: "/etc/pki/tls/certs/ca-bundle.crt"

@@ -1,0 +1,24 @@
+<div>
+  <% if @bid.price != @offer.price %>
+    <h2 style="color:#144E8D; font-family: Arial; font-weight: bold; font-size : 22px; text-align:left; background:#CCCCCC; vertical-align: middle;">
+      Hello <%= @offer.user.username if @offer.user.present? %>
+    </h2>
+    <p style=" font-family: Arial; font-size: 16px; margin-top:20px;">
+      <%= @bid.user.username if @bid.user.present?%> has made a 'Counter Offer' to your original 'Buyer Offer' for "<%= @offer.text %>".
+    </p>
+    <p style=" font-family: Arial; font-size: 16px; margin-top:20px;">
+      Please go to your  <a style="color:#144E8D; font-weight: bold;" href="<%= offer_bids_url(@offer)%>">Buyer Dashboard</a> and review the counter offer, then click on the Buy Now button to complete the transaction.
+    </p>
+    <p style=" font-family: Arial; font-size: 16px; margin-top:20px;"><b>Reminder :</b> Your 'Buyer Rating' may be positively or negatively affected based on your transaction behavior. Please review the Buyer Ratings Policy for more details. </p>
+  <% else %>
+    <h2 style="color:#144E8D; font-family: Arial; font-weight: bold; font-size : 22px; text-align:left; background:#CCCCCC; vertical-align: middle;">Congratulations <%= @offer.user.username if @offer.user.present? %> </h2>
+    <p style=" font-family: Arial; font-size: 16px; margin-top:20px;"><%= @bid.user.username if @bid.user.present?%> has accepted your 'Buyer Offer' for "<%= @offer.text %>" at the price you indicated!</p>
+    <p style=" font-family: Arial; font-size: 16px; margin-top:20px;">Please go to your <a style="color:#144E8D; font-weight: bold;" href="<%= offer_bids_url(@offer)%>">Buyer Dashborad </a> , and click on the Buy Now button to complete the transaction.</p>
+    <p style=" font-family: Arial; font-size: 16px; margin-top:20px;"><b>Reminder :</b> Your 'Buyer Rating' may be positively or negatively affected based on your transaction behavior. Please review the Buyer Ratings Policy for more details. </p>
+  <% end %>
+
+</div>
+
+<% content_for :email_title do %>
+  <span>Thank you Mail</span>
+<% end %>

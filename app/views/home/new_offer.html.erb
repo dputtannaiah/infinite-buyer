@@ -1,0 +1,40 @@
+<div id="ib-home-content-wrapper">
+  <div class="ib-home-content">
+    <%= render 'utils/buyer_caption' %>
+    <%= error_messages_for @offer %>
+    <div class="ib-content-form">
+      <div class="i-want-to-buy">
+        <%= form_for @offer, :url => temp_store_offer_path do |f| %>
+            <label>I want to buy</label>
+            <div class="offer-item">
+              <%= f.text_field :text %>
+            </div>
+            <span>for</span>
+            <div class="offer-price">
+              <%= f.text_field :price, :onfocus => "if (this.value=='0.00') {this.value='' };", :value => "0.00" %>
+            </div>
+            <%= submit_tag 'Make Offer', :id => 'make-offer', :class => 'make-offer' %>
+
+            <div class="new-offer-form-errors">
+              <div class="errors offer-item-errors" id="OfferItemError">Please enter your item description.</div>
+              <div class="errors offer-price-errors" id="OfferPriceError">"Offer price must be greater than $0.00</div>
+            </div>
+        <% end %>
+      </div>
+      <div class="ib-form-hints-container">
+        <div class="ib-form-hints"> Please be as specific as possible</div>
+        <div class="ib-form-hints-r">
+          <a class="" href="/example" rel="facebox[.fcontainer]">Examples</a></div>
+        <div class="ib-form-hints-r"><a href="<%= how_it_works_url %>">Need help?</a></div>
+      </div>
+    </div>
+
+    <%= render 'utils/youtube'%>
+    <!--<div align="center" class="ib-buy">What can I buy?</div>
+  </div>-->
+  </div>
+
+<%#= render :partial => 'banner' %>
+
+
+

@@ -1,0 +1,26 @@
+<%= render 'current_and_history_offers_links' %>
+<div class="admin-seller-search row span12">
+  <%= form_tag send_offers_path do %>
+      <% if @sellers.blank? %>
+          <br/>
+          <div class="span8 alert alert-error">
+            <strong>Oh!</strong> There are no Sellers present with your search criteria. Try submitting again.
+          </div>
+      <% else %>
+          <div class="span4">
+            <h4>Offer Name: <%= @offer.text %></h4>
+            <%= hidden_field_tag 'offer_id', @offer.id %>
+          </div>
+          <div class="span4">
+            <% @sellers.each do |seller| %>
+                <p><%= check_box_tag 'seller[]', seller.id, false, :id => "seller-#{seller.id}" %>
+                  <label style="display:inline;margin-left: 8px;" for="seller-<%= seller.id %>"><%= seller.username %></label>
+                </p>
+            <% end %>
+          </div>
+          <div class="span4">
+            <%= submit_tag 'Submit', :class => "btn" %>
+          </div>
+      <% end %>
+  <% end %>
+</div>

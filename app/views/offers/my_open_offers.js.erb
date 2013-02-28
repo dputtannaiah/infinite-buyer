@@ -1,0 +1,14 @@
+jQuery('div.open-offers').html('<%= escape_javascript(render :partial => 'my_open_offers') %>');
+jQuery('#paginator').html('<%= escape_javascript(paginate(@open_offers, :remote => true).to_s) %>');
+jQuery('input.datepicker').datepicker({
+buttonImage: '/assets/ib_myoffer_extend.png',
+buttonImageOnly: true,
+showOn: 'both',
+minDate: +0,
+maxDate: +6,
+onSelect: function(date, instance ) {
+var offer_id = $(this).attr('id').split('-')[1];
+var data = "date="+date+"&offer_id="+offer_id;
+jQuery.get('/extend-offer', data);
+}
+});

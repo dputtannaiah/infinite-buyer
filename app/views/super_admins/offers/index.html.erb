@@ -1,0 +1,16 @@
+<h2>Offers</h2>
+<%= link_to 'Search Offers', search_super_admins_offers_path %>
+<%= paginate @offers, :theme => 'bootstrap' %>
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>Text</th>
+    <th>Created at</th>
+    <th>Status</th>
+  </tr>
+  </thead>
+  <tbody>
+    <%= render @offers %>
+  </tbody>
+</table>
+<%= super_admin_menu %>

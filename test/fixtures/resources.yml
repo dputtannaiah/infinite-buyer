@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  :method => MyString
+  description: MyText
+  sample_request: MyText
+  sample_response: MyText
+  url: MyText
+  api_id: 1
+
+two:
+  :method => MyString
+  description: MyText
+  sample_request: MyText
+  sample_response: MyText
+  url: MyText
+  api_id: 1

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= yield :email_title %></title>
+    <meta name="viewport" content="width=device-width; initial-scale=1.0"></meta>
+  </head>
+  <body style=" font-family:Arial; font-size:16px; text-align:justify; width:90%;margin-left: 50px;">
+    <div style="text-align: justify;line-height: 19px;">
+      <div style="margin:55px; padding:10px; height:100px; text-align:right;">
+        <a href="http://<%= configatron.site_address %>">
+          <img alt="Infinite Buyer" src="http://<%= configatron.site_address %>/assets/ib_logo.png" title="Infinite Buyer"></img>
+        </a>
+      </div>
+      <%= yield %>
+      <div style="font-family: Arial; font-size: 14px; margin-top:14px;">
+        <%= render :partial => 'footer' %>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,42 @@
+<%= render 'current_and_history_offers_links' %>
+<div class="row admin-search-offers">
+  <table class="table table-striped allAdminOffers">
+    <thead>
+    <th>Buyer Offer</th>
+    <th class="text-right-align">Offer Price</th>
+    <th>Buyer User Name</th>
+    <th>Categories</th>
+    <th>Keyword</th>
+    <th class="text-right-align">Miles</th>
+    <th class="text-right-align">Zip Code</th>
+    </thead>
+    <tbody>
+    <% @admin_offers.each do |offer| %>
+        <%= form_tag seller_search_path do %>
+            <%= hidden_field_tag 'offer_id', offer.id %>
+            <tr>
+              <td><%= text_field 'offer', 'text', :value => offer.text, :id => "offer_#{offer.id}", :class => 'offerText', :style => 'width:192px;'  %>
+                <%= render '/admins/utils/popover/offer', :offer => offer %>
+                <div class="adminOfferTextError">Please enter Offer Text and Submit</div>
+              </td>
+              <td class="text-right-align"><%= offer.price %></td>
+              <td>
+                <%= mail_to offer.user.email, offer.user.username,
+                            :subject => "Regarding your recent offer for '#{offer.text}' with #{configatron.site_name}" if offer.user.present? %>
+              </td>
+              <td><%= select_tag 'category_ids', options_for_select(@result), :multiple => true, :style => "height:75px;" %></td>
+              <td><%= text_field_tag 'keyword' %></td>
+              <td class="text-right-align">
+                <%= text_field_tag 'search_radius', offer.search_radius, :style => 'width:80px;text-align:right' %>
+              </td>
+              <td class="text-right-align">
+                <%= text_field_tag 'zip', offer.zip, :style => 'width:80px;text-align:right' %>
+              </td>
+              <td><%= submit_tag 'Submit', :class => "btn jqueryAdminSearch", :style => 'margin-bottom: 10px;' %></td>
+            </tr>
+        <% end %>
+    <% end %>
+    </tbody>
+  </table>
+</div>
+

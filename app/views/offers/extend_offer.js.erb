@@ -1,0 +1,3 @@
+$("#ajax-notice").html("Successfully extended to <%= @offer.expire_at.strftime("%m/%d/%Y") %>");
+$("#ajax-notice").show();
+jQuery('.offer-details').find("#expire-at-<%= @offer.id %>").html('<%= escape_javascript(render :partial => 'expire_date') %>');

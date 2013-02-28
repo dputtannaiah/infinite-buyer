@@ -1,0 +1,10 @@
+<sidebar>
+<h3 class="title"><span>Most Popular</span></h3>
+<ul class="sidebarNav">
+  <% Blog::Post.popular.each do |blog_post| %>
+      <li>
+        <%= link_to blog_post.title, root_url + blog_post.slug.to_s %>
+      </li>
+  <% end %>
+</ul>
+</sidebar>

@@ -1,0 +1,31 @@
+/* 
+    Document   : admin
+    Created on : 9 Sep, 2012, 11:48:01 PM
+    Author     : raghavendra
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+.fcontainer{width: 770px !important; height: 160px !important;}
+.major-category {margin-bottom: 8px;}
+.expand-collapse {font-size:15px;color:#144E8D;font-weight: bold}
+.sub-category {
+  width: 710px;
+}
+.sub-category input[type="text"] {display: none; border:1px solid #2b4980; width:250px; border-radius:5px; padding:3px; color:grey;margin-left: 10px;}
+.sub {color:#144E8D;}
+
+::-webkit-input-placeholder {
+  color:lightgrey;
+}
+
+input:-moz-placeholder { color:lightgrey; }
+div.nested-messages_1 {margin-left: 20px; position: relative; width: 318px; margin-top:5px; margin-bottom: 8px;}
+label.nested-label-class {margin-left:5px;}
+
+

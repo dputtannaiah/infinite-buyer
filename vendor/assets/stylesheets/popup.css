@@ -1,0 +1,41 @@
+/* pop up message */
+
+.pop-up {
+    font-family:Arial;
+    font-size:11px;
+    text-align:justify;
+    color: #444444 !important;
+    padding: 15px;
+}
+
+.pop-up p{
+    margin-top:5px;
+    padding:5px;
+}
+
+.pop-up ul {
+    margin-top:5px;
+}
+
+.pop-up ul.b { font-weight: bold; font-size:11px; padding-top:5px; text-indent:5px;}
+
+.pop-up li {
+    margin-top:3px;
+    margin-left:15px;
+    list-style:disc;
+    font-weight: normal;
+    font-size : 11px;
+    text-indent:3px;
+    font-weight: bold;
+    line-height: 16px;
+}
+
+.pop-up p.bold { font-style:oblique; color:#144E8D; }
+
+.pop-up h1 {
+    color:#144E8D;
+    font-family: Arial;
+    font-weight: bold;
+    font-size: 13px;
+    margin-top:5px;
+}

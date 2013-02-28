@@ -1,0 +1,25 @@
+<tr class="ib-mod-light">
+  <td style="color:#054b05;"><%= bid.get_type.capitalize if bid.get_type.present? %></td>
+  <td align="right" style="color:#144e8d;"><%= bid.expires_at.strftime("%m/%d/%Y") if bid.expires_at.present? %></td>
+  <td><%= bid.user.username if bid.user.present? %></td>
+  <td><%= link_to raw(truncate(bid.get_description, :length => 28)), product_or_service_path(bid), :class => 'no-decoration indigo-color'  if (bid.product.present? || bid.service.present?) %></td>
+  <td align="right" class="price-align"><span><%= number_to_currency bid.offer.price %></span></td>
+  <td align="right" class="price-align"><span><%= (bid.price != bid.offer.price) ? (number_to_currency bid.price) : "NA" %></span></td>
+  <td align="right" class="price-align">
+    <span ><%= number_to_currency bid.shipping %></span>
+  </td>
+  <% if offer_status(@offer) %>
+    <% status = @offer.get_offer_status %>
+    <td align="left" class="price-align"><span class="ib-buyer-<%= status %>">
+        <%= purchase_status(bid, @purchased_bid) if @purchased_bid.present? %></span>
+    </td>
+  <% end %>
+  <td width="10%" align="left">
+    <span style="margin-left:25px; display:inline-block;">
+      <% if (@offer.get_offer_status =~ /open/i || @offer.get_offer_status =~ /expiring/i) %>
+        <%= link_to (image_tag "ib_buy_now.png", :alt=> "Buy Now", :title=> "Buy Now"), buy_purchase_path(bid.id), {:style => "position:relative; top:4px;right: 8px;"} %>
+      <% end %>
+    </span>
+  </td>
+</tr>
+<tr><td></td></tr>

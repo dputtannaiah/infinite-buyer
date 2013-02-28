@@ -1,0 +1,49 @@
+<p class="bold">Included keywords: </p>
+<p>Please include any additional key words such as brands, products, services, model number, or any other keywords for
+  which you would be like to receive offers.</p>
+<span class="ib-seller-content-span"> <a href="#included-keywords" rel="facebox">Examples</a> </span><!-- Fashion Keyword-->
+<textarea id="FashionKeywords" name="keywords[fashion_text]" rows="5" cols="50" style="width:300px; height: 128px;" class="text-category-<%= @category_ids[:fashion] %>"><%= @keywords[:text][:fashion] %></textarea><%= hidden_field_tag 'category[fashion_id]', @category_ids[:fashion] %><!-- Eelectronics Keyword -->
+<textarea id="ElectronicsKeywords" name="keywords[electronics_text]" rows="5" cols="50" style="width:300px; height: 128px;display: none;" class="text-category-<%= @category_ids[:electronics] %>"><%= @keywords[:text][:electronics] %></textarea><%= hidden_field_tag 'category[electronics_id]', @category_ids[:electronics] %><!-- Cooking Keyword -->
+<textarea id="CookingKeywords" name="keywords[cooking_text]" rows="5" cols="50" style="width:300px; height: 128px;display: none;" class="text-category-<%= @category_ids[:cooking] %>"><%= @keywords[:text][:cooking] %></textarea><%= hidden_field_tag 'category[cooking_id]', @category_ids[:cooking] %><!-- Home Keyword -->
+<textarea id="HomeKeywords" name="keywords[product_home_text]" rows="5" cols="50" style="width:300px; height: 128px;display: none;" class="text-category-<%= @category_ids[:product_home] %>"><%= @keywords[:text][:product_home] %></textarea><%= hidden_field_tag 'category[product_home_id]', @category_ids[:product_home] %><!-- Sporting goods Keyword -->
+<textarea id="HomeKeywords" name="keywords[sporting_goods_text]" rows="5" cols="50" style="width:300px; height: 128px;display: none;" class="text-category-<%= @category_ids[:sporting_goods] %>"><%= @keywords[:text][:sporting_goods] %></textarea><%= hidden_field_tag 'category[sporting_goods_id]', @category_ids[:sporting_goods] %><!-- Automotive Keyword -->
+<textarea id="AutomotiveKeywords" name="keywords[automotive_text]" rows="5" cols="50" style="width:300px; height: 128px;display: none;" class="text-category-<%= @category_ids[:automotive] %>"><%= @keywords[:text][:automotive] %></textarea><%= hidden_field_tag 'category[automotive_id]', @category_ids[:automotive] %><!-- Service Home Keyword -->
+<textarea id="ServiceHomeKeywords" name="keywords[service_home_text]" rows="5" cols="50" style="width:300px; height: 128px;display: none;" class="text-category-<%= @category_ids[:service_home] %>"><%= @keywords[:text][:service_home] %></textarea><%= hidden_field_tag 'category[service_home_id]', @category_ids[:service_home] %><!-- Personal Keyword -->
+<textarea id="PersonalKeywords" name="keywords[personal_text]" rows="5" cols="50" style="width:300px; height: 128px;display: none;" class="text-category-<%= @category_ids[:personal] %>"><%= @keywords[:text][:personal] %></textarea><%= hidden_field_tag 'category[personal_id]', @category_ids[:personal] %><!-- Professional Keyword -->
+<textarea id="ProfessionalKeywords" name="keywords[professional_text]" rows="5" cols="50" style="width:300px; height: 128px;display: none;" class="text-category-<%= @category_ids[:professional] %>"><%= @keywords[:text][:professional] %></textarea><%= hidden_field_tag 'category[professional_id]', @category_ids[:professional] %>
+<textarea id="" name="keywords[collectibiles_text]" rows="5" cols="50" style="width:300px; height: 128px;display: none;" class="text-category-<%= @category_ids[:collectibiles] %>"><%= @keywords[:text][:collectibiles] %></textarea><%= hidden_field_tag 'category[collectibiles_id]', @category_ids[:collectibiles] %>
+<textarea id="" name="keywords[jewellery_text]" rows="5" cols="50" style="width:300px; height: 128px;display: none;" class="text-category-<%= @category_ids[:jewellery] %>"><%= @keywords[:text][:jewellery] %></textarea><%= hidden_field_tag 'category[jewellery_id]', @category_ids[:jewellery] %>
+
+<p class="bold">Excluded Keywords:</p>
+<p>Please list any keywords that you would NOT want to receive offers for.</p>
+<span class="ib-seller-content-span"> <a href="#excluded-keywords" rel="facebox">Examples</a> </span><!-- Fashion Keyword-->
+<textarea id="FashionNegKeywords" name="keywords[negative_fashion_text]" rows="5" cols="50" style="width:300px; height: 128px;" class="neg-text-category-<%= @category_ids[:fashion] %>"><%= @keywords[:negative_text][:fashion] %></textarea><!-- Electronics Keyword -->
+<textarea id="ElectronicsNegKeywords" name="keywords[negative_electronics_text]" rows="5" cols="50" style="width:300px; height: 128px;display: none;" class="neg-text-category-<%= @category_ids[:electronics] %>"><%= @keywords[:negative_text][:electronics] %></textarea><!-- Cooking Keyword -->
+<textarea id="CookingNegKeywords" name="keywords[negative_cooking_text]" rows="5" cols="50" style="width:300px; height: 128px;display: none;" class="neg-text-category-<%= @category_ids[:cooking] %>"><%= @keywords[:negative_text][:cooking] %></textarea><!-- Home Keyword -->
+<textarea id="HomeKeywords" name="keywords[negative_product_home_text]" rows="5" cols="50" style="width:300px; height: 128px;display: none;" class="text-category-<%= @category_ids[:product_home] %>"><%= @keywords[:negative_text][:product_home] %></textarea><!-- Sporting goods Keyword -->
+<textarea id="HomeKeywords" name="keywords[negative_sporting_goods_text]" rows="5" cols="50" style="width:300px; height: 128px;display: none;" class="text-category-<%= @category_ids[:sporting_goods] %>"><%= @keywords[:negative_text][:sporting_goods] %></textarea><!-- Automotive Keyword -->
+<textarea id="AutomotiveNegKeywords" name="keywords[negative_automotive_text]" rows="5" cols="50" style="width:300px; height: 128px;display: none;" class="neg-text-category-<%= @category_ids[:automotive] %>"><%= @keywords[:negative_text][:automotive] %></textarea><!-- Home Keyword -->
+<textarea id="ServiceHomeNegKeywords" name="keywords[negative_service_home_text]" rows="5" cols="50" style="width:300px; height: 128px;display: none;" class="neg-text-category-<%= @category_ids[:service_home] %>"><%= @keywords[:negative_text][:service_home] %></textarea><!-- Personal Keyword -->
+<textarea id="PersonalNegKeywords" name="keywords[negative_personal_text]" rows="5" cols="50" style="width:300px; height: 128px;display: none;" class="neg-text-category-<%= @category_ids[:personal] %>"><%= @keywords[:negative_text][:personal] %></textarea><!-- Professional Keyword -->
+<textarea id="ProfessionalNegKeywords" name="keywords[negative_professional_text]" rows="5" cols="50" style="width:300px; height: 128px;display: none;" class="neg-text-category-<%= @category_ids[:professional] %>"><%= @keywords[:negative_text][:professional] %></textarea>
+
+<textarea id="" name="keywords[negative_collectibiles_text]" rows="5" cols="50" style="width:300px; height: 128px;display: none;" class="neg-text-category-<%= @category_ids[:collectibiles] %>"><%= @keywords[:negative_text][:collectibiles] %></textarea><!-- Professional Keyword -->
+<textarea id="" name="keywords[negative_jewellery_text]" rows="5" cols="50" style="width:300px; height: 128px;display: none;" class="neg-text-category-<%= @category_ids[:jewellery] %>"><%= @keywords[:negative_text][:jewellery] %></textarea>
+
+<!-- Seller categories Included keywords -->
+
+<div id="included-keywords" style="display:none;">
+  <div class="pop-up"><p style="font-size:16px">Examples for Included Keywords</p>  <br/>
+
+    <p style="font-size:13px">Include keywords that describe your products and models: Nikon, D800, D5100, Coolpix. </p>
+
+    <p style="font-size:13px">Also include products or features such as: SLR, digital video, audio port, 12 megapixel,
+      SD card, 30x zoom. </p></div>
+</div><!-- Seller categories excluded keywords -->
+<div id="excluded-keywords" style="display:none;">
+  <div class="pop-up"><p style="font-size:16px">Examples for Excluded Keywords</p>  <br/>
+
+    <p style="font-size:13px; line-height: 17px;"> Exclude keywords that may be confusing or that describe brands,
+      products, or features you do NOT provide within the categories selected: video cameras, tripod, film, film
+      cameras, Kodak, Casio. </p></div>
+</div>

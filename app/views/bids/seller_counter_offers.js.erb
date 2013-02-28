@@ -1,0 +1,5 @@
+jQuery('div.ib-smo-accepted ul.submenu').html('<%= escape_javascript(render :partial => 'counter_submenu') %>');
+jQuery('div.ib-myoffer-tab').html('<%= escape_javascript( render :partial => 'counter_bids_detail') %>');
+jQuery('div#bids-paginate').html('<%= escape_javascript(paginate @bids, :remote => true).to_s %>');
+jQuery('ul.tab-ref a').removeClass('active');
+jQuery('ul.tab-ref a').eq(2).addClass('active');

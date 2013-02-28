@@ -1,0 +1,12 @@
+<div class="alert alert-block fade in" id="ajax-notice" style="display:none;">
+</div>
+<% if flash[:notice] %>
+    <div class="alert alert-block fade in">
+      <%= flash[:notice] %>
+    </div>
+<% end %>
+<% if flash[:alert] %>
+    <div class="alert alert-block alert-error fade in">
+      <%= flash[:alert] %>
+    </div>
+<% end %>

@@ -1,0 +1,123 @@
+<% type = seller? ? "Seller" : "Buyer" %>
+<div id="ib-content-wrapper">
+  <div class="ib-content">
+    <div class="ib-content-title"><%= @account.new_record? ? display_user_type : "My" %> Account information</div>
+    <%= error_messages_for @account %>
+    <div class="ib-buyer-account-form ib-sai-mar20">
+      <p class="ib-sai-req">* Required fields</p>
+      <%= form_for @account, :url => user_account_url(current_user) do |f| %>
+        <% if seller? %>
+          <div>
+            <label class="ib-bacc-left">Company</label>
+            <%= f.text_field :company, :id => "SellerCompany", :class => "ib-bacc-big-input" %>
+          </div>
+
+          <div>
+            <p id="SellerCompanyError" class="ib-acc-info-error error" style="display:none;">&nbsp;</p>
+          </div>
+        <% end %>
+
+        <div>
+          <label class="ib-bacc-left ib-bacc-name-label ">First Name*</label>
+          <label class="ib-bacc-right ib-bacc-name-label ">Last Name*</label>
+          <%= f.text_field :first_name, :id => "#{type}FName", :class => "ib-bacc-small-input", :value => my_account(:first_name) %>
+          <%= f.text_field :last_name, :id => "#{type}LName", :class => "ib-bacc-small-input", :value => my_account(:last_name) %>
+        </div>
+
+        <div>
+          <p id="<%= type %>FnameError" class="ib-acc-info-error error">First Name cannot be blank.</p>
+
+          <p id="<%= type %>LnameError" class="ib-acc-info-error error">Last Name cannot be blank.</p>
+        </div>
+
+        <% if (seller?) %>
+          <div>
+            <label class="ib-bacc-left">PayPal Email ID*</label>
+            <%= f.text_field :paypal_email, :id => 'PaypadEmailID', :class => 'ib-bacc-big-input' %>
+          </div>
+
+          <div>
+            <p id="SellerPaypalEmailError" class="ib-acc-info-error error">Paypal Email is required field.</p>
+          </div>
+
+        <% end %>
+
+        <div>
+          <label class="ib-bacc-left">Address</label>
+          <%= f.text_field :address, :id => "#{type}Address", :class => "ib-bacc-big-input", :value => my_account(:address) %>
+        </div>
+
+        <div>
+          <p class="ib-acc-info-error error" id="<%= type %>AddressError" style="display: none;width:400px;">Address does not accept only     special characters or numbers.</p>
+        </div>
+
+        <div>
+          <label class="ib-bacc-left">Apt/Suite/Other</label>
+          <%= f.text_field :apt_suite_others, :id => "BuyerApt", :class => "ib-bacc-big-input", :value => my_account(:apt_suite_others) %>
+        </div>
+        <div>
+          <p class="ib-acc-info-error error" id="BuyerAptError" style="display: none;width:400px;"></p>
+        </div>
+       <div>
+          <p class="ib-acc-info-error error" id="BuyerAptError" style="display: none;width:400px;"></p>
+        </div>
+        <div>
+          <label class="ib-bacc-left ib-bacc-city-label">City</label>
+          <label class="ib-bacc-right ib-bacc-zip-label ib-pr28">Zip Code*</label>
+          <%= f.text_field :city, :id => "#{type}City", :class => "ib-bacc-city-input", :value => my_account(:city) %>
+          <%= f.text_field :zip, :id => "#{type}Zip", :class => "ib-bac-zip-input", :value => my_account(:zip), :maxlength => 5  %>
+        </div>
+        <div>
+          <p class="ib-acc-info-error error" id="<%= type %>CityError" style="display: none;width:400px;"></p>
+        </div>
+        <div>
+          <p id="<%= type %>ZipError" class="ib-acc-info-error ib-zip-margin error">Zip cannot be blank.</p>
+        </div>
+
+        <div>
+          <label class="ib-bacc-left ib-bacc-city-label">State</label>
+          <label class="ib-bacc-right ib-bacc-search-label ib-sr">Search radius for location based services*</label>
+          <%= select_tag "#{account_type}_account[state]", options_for_select(Account.all_states.collect { |state| [state, state] }, :selected => my_account(:state)), {:class => "ib-bacc-state-select"} %>
+          <%= select_tag "#{account_type}_account[search_radius]", options_for_select(Account.radii.collect { |radius| [radius, radius] }, :selected => my_account(:search_radius)), {:class => "ib-bacc-search-select"} %>
+        </div>
+
+        <div>
+          <label class="ib-bacc-left ib-bacc-city-label">Phone<%= seller? ? "*" : "" %></label>
+          <label class="ib-bacc-right ib-bacc-miles-label ib-mz">miles from zip code</label>
+          <%= f.text_field :phone1, :id => "Phone1", :class => "ib-fl ib-ml18 ib-bacc-phone-input", :maxlength => "3", :value => my_seller_account(:phone1) %>
+          <span class="ib-bacc-seperator"></span>
+          <%= f.text_field :phone2, :id => "Phone2", :class => "ib-bacc-phone-input1", :maxlength => "3", :value => my_seller_account(:phone2) %>
+          <span class="ib-bacc-seperator"></span>
+          <%= f.text_field :phone3, :id => "Phone3", :class => "ib-bacc-phone-input2", :maxlength => "4", :value => my_seller_account(:phone3) %>
+          <%= f.hidden_field :user_id, :value => current_user.id %>
+        </div>
+
+        <div>
+          <p id="<%= type %>Phone1Error" class="ib-acc-info-error error float-none">Phone Number Area code is
+            required.</p>
+
+          <p id="<%= type %>Phone2Error" class="ib-acc-info-error error float-none">Phone Number Prefix is
+            required.</p>
+
+          <p id="<%= type %>Phone3Error" class="ib-acc-info-error error float-none">Phone Number Suffix is
+            required.</p>
+        </div>
+
+        <% if @account.new_record? %>
+          <div class="ib-terms-and-conds">
+            <%= f.check_box :terms_of_service, :id => "#{type}Terms", :class => "ib-bacc-terms ib-buyer-seller-account-chk" %>
+            <label for="<%= type %>Terms" class="ib-bacc-right ib-bacc-button ib-sai-terms ib-i-agree-buyer">I
+              agree with the
+              <a href="/home/terms_of_use_popup" rel="facebox[.fcontainer]"><u>Terms and Conditions</u></a></label>
+          </div>
+        <% end %>
+
+        <div class="ib-sai-submit">
+          <%= f.submit '', :class => "ib-bai-submit ib-buyer-seller-account-submit", :id => "#{type}Submit" if buyer? %>
+          <%= image_submit_tag 'ib-seller-next.png', :class => "ib-buyer-seller-account-submit", :id => "#{type}Submit" if seller? %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+

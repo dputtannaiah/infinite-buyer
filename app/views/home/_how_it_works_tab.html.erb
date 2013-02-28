@@ -1,0 +1,14 @@
+<div class="tabrow-container">
+<ul class="tabrow">
+  <li><%= link_to "For Buyers", how_it_works_buyer_url , :remote => true %></li>
+  <li><a href="<%= how_it_works_seller_url %>" data-remote="true">For Sellers</a></li>
+  <li><a href="<%= faqs_url %>" data-remote="true" >FAQ</a></li>
+</ul>
+</div>
+
+<script type="text/javascript">
+<% if controller.action_name == 'how_it_works' %>
+    jQuery('ul.tabrow li').eq(0).addClass('selected');
+<% end %>
+</script>
+

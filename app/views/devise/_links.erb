@@ -1,0 +1,27 @@
+<div class="ib-content" style="padding:45px 0 0 0 !important;">
+  <% if seller? %>
+      <%= render 'utils/seller_caption' %>
+  <% elsif buyer? %>
+      <%= render 'utils/buyer_caption' %>
+  <% end %>
+  <div class="ib-bs-right">
+    <div class="ib-bs-right-bg">
+      <div class="ib-bs-sign-in-content">
+        <div style="width: 226px; float: left; height: 234px;">
+          <h3 class="ib-sm-title" style="padding:0 0 10px 0px;margin-top: 13px;">Sign in</h3>
+          <%- if devise_mapping.omniauthable? %>
+              <%- resource_class.omniauth_providers.sort.each do |provider| %>
+                  <div class="<%= provider.to_s == "twitter" ? "twitter-provider" : "" %>" style="height: 47px;">
+                    <%= link_to image_tag("ib_#{provider.to_s}_signin.png"), omniauth_authorize_path(resource_name, provider) %>
+                  </div>
+                  <p class="ibTextAlign"><%= link_to "Don't have a #{provider.to_s.capitalize} Account?", "http://www.#{provider.to_s}.com/" %></p>
+              <% end -%>
+          <% end -%>
+        </div>
+        <%= render :partial => 'sign_in' %>
+      </div>
+    </div>
+  </div>
+  <%= render 'utils/youtube'%>
+</div>
+

@@ -1,0 +1,29 @@
+<table width="100%" class="mBottom40 mTop0">
+  <% if buyer? %>
+      <tr>
+        <td align="center">
+          <p class='cSite f17 pBottom5'>Why Buy on Infinite Buyer?</p>
+          <%= link_to image_tag('youtube/buyer.png', :class => 'youtube-image'), "http://www.youtube.com/watch?v=8DoidNngz2I&amp;feature=player_embedded#at=41",
+                      :data => {:youtube => true} %>
+        </td>
+        <td align="center">
+          <p class='cSite f17 pBottom5'>Why Sell on Infinite Buyer?</p>
+          <%= link_to image_tag('youtube/seller.png', :class => 'youtube-image'), "http://www.youtube.com/watch?v=ckXgGnkysHk&amp;feature=player_embedded#at=41",
+                      :data => {:youtube => true} %>
+        </td>
+      </tr>
+  <% else %>
+      <tr>
+        <td align="center">
+          <p class='cSite f17 pBottom5'>Why Sell on Infinite Buyer?</p>
+          <%= link_to image_tag('youtube/seller.png', :class => 'youtube-image'), "http://www.youtube.com/watch?v=ckXgGnkysHk&amp;feature=player_embedded#at=41",
+                      :data => {:youtube => true} %>
+        </td>
+        <td align="center">
+          <p class='cSite f17 pBottom5'>Why Buy on Infinite Buyer?</p>
+          <%= link_to image_tag('youtube/buyer.png', :class => 'youtube-image'), "http://www.youtube.com/watch?v=8DoidNngz2I&amp;feature=player_embedded#at=41",
+                      :data => {:youtube => true} %>
+        </td>
+      </tr>
+  <% end %>
+</table>

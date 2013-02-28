@@ -1,0 +1,6 @@
+<h2>Super Admin Portal</h2>
+<br/>
+<br/>
+<% if super_admin_signed_in? %>
+    <p><%= link_to "Offers", super_admins_offers_url %></p>
+<% end %>

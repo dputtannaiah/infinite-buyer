@@ -1,0 +1,21 @@
+<ul class="tab-ref">
+  <li><%= link_to "Current Offers", my_offers_path, :remote => true, :title => 'New Buyer Offers for you to review and then Accept, Counter or Decline.' %></li>
+  <li><a href="<%= accepted_offers_path %>" data-remote="true" title="Buyer Offers that you have Accepted.">Accepted Offers</a></li>
+  <li><a href="<%= counter_offers_path %>" data-remote="true" title="Buyer Offers that you Counter Offered.">Counter Offers</a></li>
+  <li><a href="<%= declined_offers_path %>" data-remote="true" title="Buyer Offers that you have declined to Accept or Counter.">Declined Offers</a></li>
+</ul>
+
+<script type="text/javascript">
+<% if controller.action_name == 'myoffers' %>
+    jQuery('ul.tab-ref a').eq(0).addClass('active');
+<% elsif controller.action_name == 'seller_accepted_offers' %>
+    jQuery('ul.tab-ref a').eq(1).addClass('active');
+<% elsif controller.action_name == 'seller_counter_offers' %>
+    jQuery('ul.tab-ref a').eq(2).addClass('active');
+<% elsif controller.action_name == 'my_declined_offers' %>
+    jQuery('ul.tab-ref a').eq(3).addClass('active');
+<% end %>
+</script>
+
+
+

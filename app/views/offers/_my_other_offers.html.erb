@@ -1,0 +1,35 @@
+<% if @other_offers.present? %>
+  <table class="offer-details" cellpadding="5">
+
+    <tr class="ib-myoffer-title">
+      <td width="37%" align="center">Description</td>
+      <td width="10%" align="center">Price</td>
+      <td width="10%" align="center">Accepted Offers</td>
+      <td width="10%" align="center">Counter Offers</td>
+      <td width="10%" align="center">Offer Date</td>
+      <td width="28%" align="center" style="border-right: none;">Status</td>
+    </tr>
+    <tr><td></td></tr>
+    <% @other_offers.each do |offer| %>
+      <tr class="ib-myoffer-light">
+        <td align="left" style="color:#144e8d; padding-top:9px;"><%= link_to (offer.text), offer_bids_path(offer), :class => 'no-decoration indigo-color' %></td>
+        <td align="right" style="color:#144e8d; padding-top:9px;padding-right:7px;"><%= number_to_currency offer.price %></td>
+        <td align="right" style="padding-top:9px;padding-right:7px;"><%= offer.accepted_offers_count %></td>
+        <td align="right" style="padding-top:9px;padding-right:7px;"><%= offer.counter_offers_count %></td>
+        <td align="center" style="padding-top:9px;padding-right:7px;"><%= offer.created_at.strftime('%m/%d/%Y') %></td>
+        <td align="center" style="padding-top:9px;padding-right:7px;">
+          <% status = offer.get_offer_status %>
+          <a class="ib-buyer-<%= status %>">
+            <%= status.capitalize %> <%= offer.send("#{status}_at").strftime("%m/%d/%Y") %></a>
+        </td>
+      </tr>
+      <tr><td></td></tr>
+    <% end %>
+  </table>
+<% else %>
+  <div class="seller-alert ib-empty-messages" style="margin-top: 50px;">
+    <span>
+      No offer's history is available yet.
+    </span>
+  </div>
+<% end %>

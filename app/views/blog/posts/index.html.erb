@@ -1,0 +1,11 @@
+<% @blog_posts.each do |blog_post| %>
+    <section>
+      <%= image_tag blog_post.avatar.blog.url, {:class => "thumb"} %>
+
+      <%= render :partial => "blog_post_title", :locals => {:blog_post => blog_post} %>
+
+      <%= blog_post.truncated_body %>
+      <%= link_to "Read the rest of this entry &raquo;".html_safe, blog_post, :class => "aGrey" %>
+    </section>
+    <%= paginate @blog_posts %>
+<% end %>

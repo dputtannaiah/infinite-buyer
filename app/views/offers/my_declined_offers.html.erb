@@ -1,0 +1,31 @@
+<!-- Content Starts Here -->
+<div id="ib-content-wrapper">
+  <div class="ib-content">
+    <div class="ib-content-title" style="padding-bottom:25px;">MyOffers</div>
+
+    <div class="ib-smo-accepted" style="height:105px;">
+      <%= render :partial => 'bids/offers_categorization' %>
+      <ul class="submenu">
+        <%= render :partial => 'declined_submenu' %>
+      </ul>
+    </div>
+
+    <div class="ib-myoffer-tab">
+      <%= render :partial => 'my_declined_offers' %>
+    </div>
+    <div id="bids-paginate">
+      <%= paginate @declined_offers, :remote => true %>
+    </div>
+    
+  </div>
+</div>
+<!-- Contents Ends Here -->
+
+<script type="text/javascript">
+  jQuery(document).ready(function($){
+    $('form#acc-bids-sort select#sort_key').bind('change',function(){
+      $('form#acc-bids-sort').submit();
+    });
+
+  });
+</script>

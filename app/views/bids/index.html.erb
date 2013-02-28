@@ -1,0 +1,45 @@
+<!-- Content Starts Here -->
+<div id="ib-content-wrapper">
+  <div class="ib-content" style="padding-top:7px;">
+    <div style="margin-bottom:10px;">
+      <a href="/offers"><img src="/assets/ib_blue_back_arrow.png" alt="Back" title="Back" /></a>
+    </div>
+    <div class="ib-content-title" style="padding-bottom:15px;">MyOffers Details</div>
+    <div class="ib-od-heading">
+      <table>
+        <tr>
+          <td width="46%"><span style="color: #144E8D;font-weight: bold;line-height: 17px;"><%= @offer.text %></span></td>
+          <td width="15%" align="center">
+            <div>
+              <span class="ib-offer">Offer Date&nbsp;</span>
+              <span class="ib-date"><%= @offer.created_at.strftime("%m/%d/%Y") if @offer.created_at.present? %></span>
+            </div>
+          </td>
+          <td width="17%" align="right" class="price-align" style="padding-left:12px;">
+            <div>
+              <span class="ib-offer">Offer Price</span><br />
+              <span><%= number_to_currency @offer.price %></span>
+            </div>
+          </td>
+
+          <% if @bids.present? %>
+            <td width="40%">
+              <label class="heading">Sort by:</label>
+              <%= form_tag offer_bids_path(@offer), :method => :get, :id => 'sort-form', :remote => true do %>
+                <%= select_tag 'sort_key', options_for_select([["Recent activity","created_at"], ["Responses", 'bid_type'],["Seller","users.username"], ["Seller exp. date","expires_at"],["Countered price","price"],["Shipping","shipping"]]) %>
+              <% end %>
+            </td>
+          <% end %>
+
+        </tr>
+      </table>
+    </div>
+    <div class="ib-mod-tab">
+      <%= render :partial => 'bids_details' %>
+    </div>
+    <div id="bids-paginate">
+      <%= paginate @bids, :remote => true %>
+    </div>
+  </div>
+</div>
+<!-- Contents Ends Here -->

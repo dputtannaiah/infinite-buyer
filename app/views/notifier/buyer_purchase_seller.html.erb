@@ -1,0 +1,26 @@
+<div>
+  <h2 style="color:#144E8D; font-family: Arial; font-weight: bold; font-size : 22px; text-align:left; background:#CCCCCC; vertical-align:middle;">Congratulations <%= @bid.user.username %>! </h2>
+  <p style="font-family: Arial; font-size: 16px; margin-top:20px;"> You just sold <%= @offer.text %> for $<%= @bid.price %>.  Now, wasn't that easy for you to make money on Infinite Buyer?</p>
+  <p style="font-family: Arial; font-size: 16px; margin-top:20px;">Now that you're in a good mood, can we ask you to do a couple of things for us?</p>
+
+  <ul>
+    <li style=" margin-top:20px;">Share your experience with your friends
+      <ul class="ib-social-media" style="margin-top:0px;">
+        <li style=" margin-top:20px;"><a href="http://www.facebook.com/InfiniteBuyer" title="Connect with us on Facebook" alt="Connect with us on Facebook" target="_blank" class="facebook"></a>
+        </li>
+        <li style=" margin-top:20px;"><a href="http://twitter.com/#!/InfiniteBuyer" title="Follow us on Twitter" alt="Follow us on Twitter" target="_blank" class="twitter"></a></li>
+        <li style=" margin-top:20px;"><a href="#" title="Connect with us on LinkedIn" alt="Connect with us on LinkedIn" target="_blank" class="linkedin"></a>
+        </li>
+      </ul>
+    </li>
+    <li style=" margin-top:20px;">Take a very short (2 minute) <a href="http://www.surveymonkey.com">survey</a> about your experience
+    </li>
+    <li style=" margin-top:20px;">Continue participating in Buyer Offers in Infinite Buyer!
+    </li>
+  </ul>
+
+</div>
+
+<% content_for :email_title do %>
+  <span>Thank you Mail</span>
+<% end %>

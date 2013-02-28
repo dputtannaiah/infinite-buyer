@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%= render 'common_head' %>
+    <%= stylesheet_link_tag 'application', :media => "all" %>
+    <%= javascript_include_tag 'application' %>
+    <%= yield :css %>
+    <%= yield :js %>
+    <%= render '/utils/facebook_logout' %>
+    <%= csrf_meta_tag %>
+    <%= render 'google_analytics' %>
+    <%= render 'wym_editor_invoke' %>
+    <%= render 'utils/click_script' %>
+  </head>
+  <body class="home">
+    <%= render 'facebook_comments' %>
+  <header>
+    <%= render 'header' %>
+  </header>
+  <nav>
+    <%= render seller? ? 'seller_nav' : 'buyer_nav' %>
+  </nav>
+  <%= render "ajax_indicator" %>
+  <div class="wFull">
+    <div class="span8 mAuto fNone">
+      <%= render :partial => "flash", :locals => {:flash => flash} %>
+    </div>
+  </div>
+  <%= render 'uservoice_contact_and_feedback'  %>
+  <%= yield %>
+  <%= render 'footer' %>
+
+</body>
+</html>

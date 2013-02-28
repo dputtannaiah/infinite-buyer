@@ -1,0 +1,94 @@
+<% if current_user.buyer? %>
+
+  <p class="ib-my-rf">* Required fields</p>
+  <%= form_for @account, :url => update_buyer_url, :remote => true do |f| %>
+
+    <div>
+      <%= f.label 'First Name*', :class => 'ib-bacc-left ib-bacc-name-label' %>
+      <%= f.label 'Last Name*', :class => 'ib-bacc-right ib-bacc-name-label' %>
+      <%= f.text_field :first_name, :id => "BuyerFName", :class => " ib-bacc-small-input", :value => my_buyer_account(:first_name) %>
+      <%= f.text_field :last_name, :id => "BuyerLName", :class => "ib-bacc-small-input", :value => my_buyer_account(:last_name) %>
+    </div>
+
+    <div>
+      <p id="BuyerFnameError" class="ib-acc-info-error error">First Name is a required field.</p>
+      <p id="BuyerLnameError" class="ib-acc-info-error error">Last Name is a required field.</p>
+    </div>
+
+    <div>
+      <label class="ib-bacc-left ib-bacc-name-label ">Infinite Buyer Screen Name*</label>
+      <label class="ib-bacc-right ib-bacc-name-label ">E-mail ID*</label>
+      <%= text_field_tag 'user[username]', (@account.user.username.presence || ''), :id => "BuyerName", :class => " ib-bacc-small-input" %>
+      <%= text_field_tag 'user[email]', (@account.user.email.presence || ''), :id => "BuyerEmail", :class => " ib-bacc-small-input" %>
+    </div>
+
+    <div>
+      <p id="BuyerUsernameError" class="ib-acc-info-error error">Username is a required field.</p>
+      <p id="BuyerEmailError" class="ib-acc-info-error error">Email is a required field.</p>
+    </div>
+    
+    <div>
+      <%= f.label :Address, :class => "ib-bacc-left" %>
+      <%= f.text_field :address, :id => "BuyerAddress", :class => "ib-bacc-big-input", :value => my_buyer_account(:address) %>
+    </div>
+   <div>
+      <p id="BuyerAddressError" class="ib-acc-info-error error" style="width:400px;"></p>
+
+    </div>
+    <div>
+      <%= f.label "Apt/Suite/Other", :class => "ib-bacc-left" %>
+      <%= f.text_field :apt_suite_others, :id => "BuyerApt", :class => "ib-bacc-big-input", :value => my_buyer_account(:apt_suite_others) %>
+    </div>
+
+    <div><div>
+      <p id="BuyerAptError" class="ib-acc-info-error error"></p>
+    </div>
+      <%= f.label :City, :class => "ib-bacc-left ib-bacc-city-label" %>
+      <label class="ib-bacc-right ib-bacc-zip-label ib-pr28">Zip Code*</label>
+      <%= f.text_field :city, :id => "BuyerCity", :class => "ib-bacc-city-input", :value => my_buyer_account(:city) %>
+      <%= f.text_field :zip, :id => "BuyerZip", :class => "required ib-bac-zip-input", :value => my_buyer_account(:zip), :maxlength => 5 %>
+    </div>
+  <div>
+    <p id="BuyerCityError" class="ib-acc-info-error error"></p>
+  </div>
+    <div>
+      <p id="BuyerZipError" class="ib-acc-info-error ib-zip-margin error">Zip Code is a required field.</p>
+    </div>
+
+    <div>
+      <%= f.label :State, :class => "ib-bacc-left ib-bacc-city-label" %>
+      <label class="ib-bacc-right ib-bacc-search-label ib-sr">Search radius for location based services*</label>
+      <%= select_tag 'buyer_account[state]', options_for_select(Account.all_states.collect { |state| [state, state] }, :selected => my_buyer_account(:state)), {:class => "ib-bacc-state-select"} %>
+      <%= select_tag 'buyer_account[search_radius]', options_for_select(Account.radii.collect { |radius| [radius, radius] }, :selected => my_buyer_account(:search_radius)), {:class => "ib-bacc-search-select"} %>
+    </div>
+
+    <div>
+      <label class="ib-bacc-left ib-bacc-city-label">Phone</label>
+      <label class="ib-bacc-right ib-bacc-miles-label ib-mz">miles from zip code</label>
+      <%= f.text_field :phone1, :id => "Phone1", :class => "ib-fl ib-ml18 ib-bacc-phone-input", :maxlength => "3", :value => my_buyer_account(:phone1) %>
+      <span class="ib-bacc-seperator"></span>
+      <%= f.text_field :phone2, :id => "Phone2", :class => "ib-bacc-phone-input1", :maxlength => "3", :value => my_buyer_account(:phone2) %>
+      <span class="ib-bacc-seperator"></span>
+      <%= f.text_field :phone3, :id => "Phone3", :class => "ib-bacc-phone-input2", :maxlength => "4", :value => my_buyer_account(:phone3) %>
+      <%= f.hidden_field :user_id, :value => current_user.id %>
+    </div>
+
+    <div>
+      <p id="BuyerPhone1Error" class="error float-none ib-acc-info-error">Phone Number Area code is invalid.</p>
+      <p id="BuyerPhone2Error" class="error float-none ib-acc-info-error">Phone Number Prefix is invalid.</p>
+      <p id="BuyerPhone3Error" class="error float-none ib-acc-info-error">Phone Number Suffix is invalid.</p>
+    </div>
+
+    <div class="ib-myaccount-buttons">
+      <div class="float_l">
+        <%= link_to image_tag('ib-buyer-cancel.gif'), root_url, :class => 'ib-sai-cancel' %>
+      </div>
+      <div class="float_l" style="margin-left:460px;">
+        <%= image_submit_tag 'ib-buyer-update.gif', :class => "ib-sai-update", :id => 'BuyerSubmit' %>
+      </div>
+      <div class="clear"></div>
+    </div>
+  <% end %>
+<% else %>
+  <label>No Buyer Account with this User.</label>
+<% end %>

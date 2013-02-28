@@ -1,0 +1,14 @@
+<script type="text/javascript">
+  // Wymeditor load
+  jQuery(function() {
+    if(jQuery('.wymeditor').length > 0) {
+      jQuery('.wymeditor').wymeditor({
+        iframeBasePath : '/home/wym_iframe',
+        postInit: function(wym) {
+          wym.resizable({handles: "s,e,se",
+            maxHeight: 600});
+        }
+      });
+    }
+  });
+</script>

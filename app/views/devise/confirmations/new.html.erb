@@ -1,0 +1,17 @@
+<div class="ib-content">
+  <div class="account-bc-errors">
+    <%= error_messages_for(@user) %>
+  </div>
+  <div class="ib-content-title">
+    Resend confirmation instructions
+  </div>
+  <div class="ib-registration-form">
+    <%= form_for(resource, :as => resource_name, :url => confirmation_path(resource_name), :html => { :method => :post }) do |f| %>
+
+      <div><%= f.label 'Email' %><br />
+        <%= f.text_field :email, :class => 'required' %></div>
+
+      <div><%= image_submit_tag '/assets/ib_sc_submit.png' %></div>
+    <% end %>
+  </div>
+</div>

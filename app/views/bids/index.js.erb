@@ -1,0 +1,2 @@
+jQuery('div.ib-mod-tab').html('<%= escape_javascript(render :partial => 'bids_details' || ('There are no bids available.')) %>');
+jQuery('div#bids-paginate').html('<%= escape_javascript(paginate @bids, :remote => true).to_s %>');

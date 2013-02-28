@@ -1,0 +1,6 @@
+<% if @account.errors.any? %>
+  jQuery('div.account-bc-errors').html('<%= escape_javascript(error_messages_for @account ) %>');
+<% else %>
+  jQuery('div.account-bc-errors').html('');
+  window.location = "<%= session[:referer] || root_url %>"
+<% end %>

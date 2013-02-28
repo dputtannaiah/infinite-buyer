@@ -1,0 +1,24 @@
+<%= error_messages_for @offer %>
+<div class="ib-content-form">
+  <div class="ib-myoffers">
+    <%= form_for @offer, :url => init_store_offer_path do |f| %>
+      <label class="ib-buy-small">I want to buy</label>
+
+      <div class="offer-item-small">
+        <%= f.text_field :text %>
+      </div>
+      <label class="ib-buy-small">for</label>
+
+      <div class="offer-price-small">
+        <%= f.text_field :price, :onfocus => "if (this.value=='0.00') {this.value='' };", :value => "0.00" %>
+      </div>
+      <%= submit_tag 'Make Offer', :id => 'make-offer', :class => 'make-offer-small' %>
+
+      <div class="new-offer-form-errors" style="margin-left:132px;">
+        <div class="errors offer-item-errors" id="OfferItemError">Please enter your item description.</div>
+        <div class="errors offer-price-errors" id="OfferPriceError" style="margin-left: 15px;">"Offer price must be greater than $0.00</div>
+      </div>
+
+    <% end %>
+  </div>
+</div>

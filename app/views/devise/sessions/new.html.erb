@@ -1,0 +1,2 @@
+<% session[:referer] = request.referer.presence || request.env['rack.session']['user_return_to'].presence %>
+<%= render "links" %>

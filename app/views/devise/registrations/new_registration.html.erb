@@ -1,0 +1,31 @@
+<div class="ib-content">
+  <div class="account-bc-errors">
+    <%= error_messages_for(@user) %>
+  </div>
+  <div class="ib-content-title">
+    Welcome to Infinite <%= display_user_type %>
+  </div>
+  <div class="ib-registration-form">
+    <p>* Required fields</p>
+    <%= form_for @user, {:url => create_registration_path, :id => 'BuyerRegForm'} do |f|%>
+      <div>
+        <%= label_tag 'Email Address*' %>
+        <%= f.text_field :email, :id => 'UserEmail', :class => 'required' %>
+      </div>
+      <div class ="ib-reg-error">
+        <p id="IBEmailError" class="ib-acc-info-error error">Please enter Email to register.</p>
+      </div>
+      <div>
+        <label>Create your Infinite <%= display_user_type %> Screen Name*</label>
+        <%= f.text_field :username, :id => 'UserScreen', :class => 'required' %><span><a href="#">Check availability</a></span>
+      </div>
+
+      <div class ="ib-reg-error">
+        <p id="IBUsernameError" class="ib-acc-info-error error">Please enter Infinite Buyer Screen Name to register.</p>
+      </div>
+      <%= submit_tag 'Register', :id => "#{display_user_type}Register" %>
+    <% end %>
+  </div>
+</div>
+
+

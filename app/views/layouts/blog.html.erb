@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%= render 'common_head' %>
+    <%= stylesheet_link_tag 'blog/application', :media => "all" %>
+    <%= stylesheet_link_tag 'application', :media => "all" %>
+    <%= javascript_include_tag 'application' %>
+    <%= yield :css %>
+    <%= yield :js %>
+    <%= render '/utils/facebook_logout' %>
+    <%= csrf_meta_tag %>
+    <%= render :partial => 'google_analytics' %>
+  </head>
+  <body class="home">
+    <%= render :partial => 'facebook_comments' %>
+  <header>
+    <%= render 'header' %>
+  </header>
+  <nav>
+    <%= render seller? ? 'seller_nav' : 'buyer_nav' %>
+  </nav>
+  <%= render :partial => "ajax_indicator" %>
+  <div class="wFull">
+    <div class="span8 mAuto fNone">
+      <%= render :partial => "flash", :locals => {:flash => flash} %>
+    </div>
+  </div>
+  <%= render :partial => 'uservoice_contact_and_feedback'  %>
+  <div id="ib-content-wrapper">
+    <!-- BEGIN CONTENT AREA: THE CONTENT OF THE PAGE INCLUDING SIDEBARS & MAIN CONTENT AREA  -->
+    <div id="content" class="twoColumn">
+      <div id="contentContainer">
+        <div class="wrapper cf">
+          <!--MAIN CONTENT-->
+          <div id="mainContent">
+            <%= yield %>
+          </div>
+          <%= render :partial => 'blog/posts/blog_sidebar'%>
+
+        </div>
+      </div>
+    </div>
+    <div style="clear:both"></div>
+  </div>
+  <%= render :partial => 'footer' %>
+</body>
+</html>

@@ -1,0 +1,9 @@
+<div>
+  <h2 style="color:#144E8D; font-family: Arial; font-weight: bold; font-size : 22px; text-align:left; background:#CCCCCC; vertical-align:middle;">Hello <%= @offer.user.buyer_account.first_name.presence || @offer.user.seller_account.first_name.presence %> </h2>
+  <p style="font-family: Arial; font-size: 16px; margin-top:20px;">Just a quick note to remind you that your Buyer Offer for "<%= @offer.text %>" will expire within <b><%= @no_of_hrs %> hours</b> from now. </p>
+  <p style="font-family: Arial; font-size: 16px; margin-top:20px;">If you want to gather more 'Accepts' or 'Counter Offers' from Sellers, you may extend the offer an additional 7 days.  Otherwise, do nothing and your Offer will expire shortly.</p>
+</div>
+
+<% content_for :email_title do %>
+  <span>Thank you Mail</span>
+<% end %>

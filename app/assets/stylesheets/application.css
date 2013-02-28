@@ -1,0 +1,45 @@
+/*
+ * This is a manifest file that'll automatically include all the stylesheets available in this directory
+ * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
+ * the top of the compiled file, but it's generally better to create a new file per style scope.
+ *= require_self
+ *= require error
+ *= require ui/jquery-ui-1.8.21.custom
+ *= require jquery.fancybox-1.3.4
+ *= require bootstrap_customized
+ *= require facebox
+ *= require jsCarousel-2.0.0
+ *= require infinite_buyer
+ *= require popup
+ *= require faqs
+ *= require skip
+ *= require style
+
+*/
+
+.mAuto {
+    margin: 0 auto;
+}
+
+.fNone {
+    float: none !important;
+}
+
+.fFloat {
+    float: left;
+}
+
+.fRight {
+    float: right;
+}
+
+.span8 {
+    width: 476px;
+}
+
+.wFull {
+    width: 100%
+}
+
+.youtube-image {
+}

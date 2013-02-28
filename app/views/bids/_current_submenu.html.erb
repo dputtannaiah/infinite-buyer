@@ -1,0 +1,12 @@
+<% if @my_offers.present? %>
+  <li class="buyer text-left-align" style="width:271px">Description</li>
+  <li class="buyer text-left-align" style="width:146px;">Buyer User ID</li>
+  <li class="buyer text-right-align" style="width:84px">Buyer<br />Offer Date</li>
+  <li class="buyer text-right-align" style="width:122px">Buyer Offer</li>
+  <li class="sort">
+    <label>Sort by:</label>
+    <%= form_tag my_offers_path, :id => 'myoffers-sort', :remote => true do %>
+      <%= select_tag 'sort_key', options_for_select([['Recent activity', 'created_at'],['Description', 'text'],['Buyer User ID', 'username'],['Buyer Offer Date','created_at'],['Buyer Offer','price']], :selected => @selected) %>
+    <% end %>
+  </li>
+<% end %>

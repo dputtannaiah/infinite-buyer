@@ -1,0 +1,29 @@
+<div id="ib-content-wrapper">
+  <div class="ib-content">
+
+    <div class="account-bc-errors-1">
+      <%= error_messages_for @account %>
+    </div>
+    <div class="account-bc-errors-2">
+      <%= error_messages_for @user %>
+    </div>
+
+    <div class="ib-content-title" style="padding-bottom:1px;">My Account Information</div>
+    <div class="ib-bs-registration">
+      <%= render :partial => 'account_tab' %>
+    </div>
+
+    <div class="ib-buyer-account-form">
+      <%= render :partial => 'buyer' %>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+<% if seller? %>
+    jQuery(document).ready(function ($) {
+      $('#seller_account').click()
+    });
+<% end %>
+
+</script>

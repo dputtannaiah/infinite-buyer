@@ -1,0 +1,15 @@
+<div class="add-photos-path">
+  <div style="float: left;margin-right: 10px;">
+    <%= image_tag f.object.image_url(:small_thumb), :alt => '' if f.object.present? %>
+  </div>
+  <div style="float: left;">
+    <%= f.file_field :image, :style => 'width:304px;' %>
+  </div>
+  <%= f.hidden_field :image_cache %>
+  <div style="float: left; margin-top: 13px;">
+    <%= link_to_remove_fields "remove", f %>
+  </div>
+  <div class="clear"></div>
+  <%= f.hidden_field :user_id, :value => current_user.id %>
+</div>
+

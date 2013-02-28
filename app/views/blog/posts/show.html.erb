@@ -1,0 +1,18 @@
+<%= render :partial => "flash", :locals => {:flash => flash} %>
+<section class="postShow">
+  <%= link_to '&larr; Back to blog homepage'.html_safe, root_path %>
+  <br/><br/>
+  <%= image_tag @blog_post.avatar.blog.url, {:class => "thumb"} %>
+
+  <%= render :partial => "/blog/posts/blog_post_title", :locals => {:blog_post => @blog_post} %>
+
+  <%= raw @blog_post.body %>
+</section>
+<% for comment in @blog_post.comments.reviewed %>
+    <section>
+      <%= render :partial => 'blog/comments/comment', :locals => {:blog_comment => comment} %>
+    </section>
+<% end %>
+<section>
+  <%= render :partial => 'blog/comments/form' %>
+</section>

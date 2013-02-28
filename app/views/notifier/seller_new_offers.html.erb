@@ -1,0 +1,18 @@
+<div style="color:#144E8D; font-family: Arial; font-weight: bold; font-size: 18px; padding-bottom:20px; text-align:left;">
+  Great news <%= @seller.seller_account.first_name if @seller.seller_account.present? %> - somebody wants to buy something that you sell!</div>
+<div style="font-family: Arial; font-size: 14px; margin-top:14px;">
+  A new 'Buyer Offer' for <%= @offer.text %> matches the seller categories or keywords that you have selected in your seller profile.
+  <br /><br />
+  &nbsp;&nbsp;&nbsp;&nbsp;Selling your products has never been so easy as it is on Infinite Buyer.
+  If you want to make a great impression on your potential customer, simply go to your
+  <%= link_to 'Seller Dashboard', my_offers_url %> to review any new Buyer Offers and decide if you want to Accept, make a reasonable Counter Offer, or Decline them as soon as possible.
+  <br />
+  You will be notified by email if your Accepted Offer or Counter Offer is purchased.
+  <br />
+  Check you Seller Dashboard often for new Buyer Offers.
+  <br />
+</div>
+
+<% content_for :email_title do %>
+  <span>Great news - Infinite Buyer</span>
+<% end %>

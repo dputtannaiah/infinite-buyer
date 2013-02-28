@@ -1,0 +1,28 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+en:
+  date:
+    formats:
+      default: "%m/%d/%Y"
+  activerecord:
+    attributes:
+      user:
+        email: "Email"
+        username: "Infinite Buyer Screen Name"
+      account:
+        zip: "Zip Code"
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              blank: " cannot be blank. Please enter an email address to register."
+            username:
+              blank: " cannot be blank. Please enter username to register."
+              too_short: " must be of at least 6 characters."
+        accounts:
+          attributes:
+            blank: " is a required field."
+  buyer: Buyer
+  seller: Seller

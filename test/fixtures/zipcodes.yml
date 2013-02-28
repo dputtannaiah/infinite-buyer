@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  zipcode: MyString
+
+two:
+  zipcode: MyString
+# == Schema Information
+#
+# Table name: zipcodes
+#
+#  id         :integer(4)      not null, primary key
+#  zipcode    :string(255)
+#  created_at :datetime
+#  updated_at :datetime
+#
+

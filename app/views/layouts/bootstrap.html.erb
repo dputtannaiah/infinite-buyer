@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%= render 'common_head' %>
+  <%= stylesheet_link_tag "bootstrap/application", :media => "all" %>
+  <%= javascript_include_tag "bootstrap/application" %>
+  <%= stylesheet_link_tag 'category_list/application', :media => "all" %>
+  <%= javascript_include_tag 'category_list/application' %>
+  <%= yield :css %>
+  <%= yield :js %>
+  <%= csrf_meta_tag %>
+  <%= render :partial => 'wym_editor_invoke' %>
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+      <%= brand %>
+      <div class="nav-collapse">
+        <%= render '/utils/bootstrap_nav'%>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="content">
+    <%= render :partial => "flash", :locals => {:flash => flash} %>
+    <%= yield %>
+    <!--/row-->
+  </div>
+  <!--/content-->
+  <footer>
+  </footer>
+</div>
+<!-- /container -->
+<!-- Le javascript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+</body>
+</html>
